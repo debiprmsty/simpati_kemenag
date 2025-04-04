@@ -14,20 +14,26 @@
       </p>
     </div>
     <!-- Grid responsive: 1 kolom mobile, 2 kolom sm, 3 kolom lg -->
-    <div class="grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 md:px-2">
+    <div
+      class="grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 md:px-2 md:mx-0 mx-3"
+    >
       <!-- Layanan Publik -->
       <div class="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
-        <div class="p-0.5 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg">
-          <div class="w-full h-56 bg-white bg-center bg-cover rounded-lg shadow-lg">
+        <div class="p-0.5 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg w-full">
+          <div
+            class="w-full h-56 md:pt-0 pt-1 bg-white bg-center bg-cover rounded-lg shadow-lg"
+          >
             <DotLottieVue
-              class="object-cover w-full h-full"
+              class="object-cover md:w-full md:h-full w-72 h-44 mx-auto"
               autoplay
               loop
               src="https://lottie.host/e3bc5738-a007-43ab-b55e-000607926986/kuJbIHMMui.lottie"
             />
           </div>
         </div>
-        <div class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64">
+        <div
+          class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 border border-gray-300"
+        >
           <h3 class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase">
             Layanan Publik
           </h3>
@@ -43,17 +49,21 @@
 
       <!-- Layanan Internal -->
       <div class="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
-        <div class="p-0.5 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg">
-          <div class="w-full h-56 bg-white bg-center bg-cover rounded-lg shadow-lg">
+        <div class="p-0.5 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg w-full">
+          <div
+            class="w-full h-56 md:pt-0 pt-2 bg-white bg-center bg-cover rounded-lg shadow-lg"
+          >
             <DotLottieVue
-              class="object-cover w-full h-full"
+              class="object-cover md:w-[21rem] md:h-52 w-[16] h-48 mx-auto"
               autoplay
               loop
               src="https://lottie.host/26363ba2-32ee-4371-abcf-0ef8973085d4/smEMUpz1VH.lottie"
             />
           </div>
         </div>
-        <div class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64">
+        <div
+          class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 border border-gray-300"
+        >
           <h3 class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase">
             Layanan Internal
           </h3>
@@ -70,7 +80,9 @@
       <!-- Syarat Layanan -->
       <div class="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
         <div class="p-0.5 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg w-full">
-          <div class="w-full h-56 bg-white bg-center bg-cover rounded-lg shadow-lg">
+          <div
+            class="w-full h-56 md:pt-0 pt-2 bg-white bg-center bg-cover rounded-lg shadow-lg"
+          >
             <DotLottieVue
               class="object-cover md:w-[19rem] md:h-48 w-72 h-44 mx-auto"
               autoplay
@@ -79,7 +91,9 @@
             />
           </div>
         </div>
-        <div class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64">
+        <div
+          class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 border border-gray-300"
+        >
           <h3 class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase">
             Syarat Layanan
           </h3>
@@ -95,17 +109,19 @@
 
       <!-- PPID -->
       <div class="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
-        <div class="p-0.5 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg">
+        <div class="p-0.5 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg w-full">
           <div class="w-full h-56 bg-white bg-center bg-cover rounded-lg shadow-lg">
             <DotLottieVue
-              class="object-cover w-full h-full"
+              class="object-cover md:w-[20rem] md:h-48 w-[19rem] h-[12.5rem] mx-auto"
               autoplay
               loop
               src="https://lottie.host/3ed3687b-e908-4302-96d0-260fc1fa76bc/jqnSmuZZNU.lottie"
             />
           </div>
         </div>
-        <div class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64">
+        <div
+          class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 border border-gray-300"
+        >
           <h3 class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase">
             PPID
           </h3>
@@ -121,17 +137,19 @@
 
       <!-- Bank Data -->
       <div class="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
-        <div class="p-0.5 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg">
+        <div class="p-0.5 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg w-full">
           <div class="w-full h-56 bg-white bg-center bg-cover rounded-lg shadow-lg">
             <DotLottieVue
-              class="object-cover w-full h-full"
+              class="object-cover md:w-[21rem] md:h-48 w-[21rem] h-48 mx-auto"
               autoplay
               loop
               src="https://lottie.host/8350d44e-996f-449e-8c9f-6a3ffccf7162/thARrXd7ZF.lottie"
             />
           </div>
         </div>
-        <div class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64">
+        <div
+          class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 border border-gray-300"
+        >
           <h3 class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase">
             Bank Data
           </h3>
@@ -147,17 +165,19 @@
 
       <!-- Progress Permohonan -->
       <div class="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
-        <div class="p-0.5 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg">
+        <div class="p-0.5 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg w-full">
           <div class="w-full h-56 bg-white bg-center bg-cover rounded-lg shadow-lg">
             <DotLottieVue
-              class="object-cover w-full h-full"
+              class="object-cover md:w-full md:h-full w-[21rem] h-52 mx-auto"
               autoplay
               loop
               src="https://lottie.host/fafa106e-88a8-4879-ab68-84c5bad2cdb3/4Hup4hO1ot.lottie"
             />
           </div>
         </div>
-        <div class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64">
+        <div
+          class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 border border-gray-300"
+        >
           <h3 class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase">
             Progress Permohonan
           </h3>
@@ -173,17 +193,19 @@
 
       <!-- Dosen ZI -->
       <div class="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
-        <div class="p-0.5 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg">
+        <div class="p-0.5 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg w-full">
           <div class="w-full h-56 bg-white bg-center bg-cover rounded-lg shadow-lg">
             <DotLottieVue
-              class="object-cover w-full h-full"
+              class="object-cover md:w-[19rem] md:h-48 w-80 h-48 mx-auto"
               autoplay
               loop
               src="https://lottie.host/502cf393-0643-4034-baee-070a364bc8d0/evpBQLGaiS.lottie"
             />
           </div>
         </div>
-        <div class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64">
+        <div
+          class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 border border-gray-300"
+        >
           <h3 class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase">
             Dosen ZI
           </h3>

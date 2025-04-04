@@ -1,8 +1,8 @@
 <template>
   <section class="overflow-hidden sm:grid sm:grid-cols-2 md:pr-10 md:pt-3">
-    <div class="p-8 md:p-12 lg:px-10 lg:py-10">
+    <div class="p-7 md:p-12 lg:px-10 lg:py-10">
       <div
-        class="mx-auto max-w-xl md:text-center text-center ltr:sm:text-left rtl:sm:text-right"
+        class="mx-auto max-w-xl md:text-center text-start ltr:sm:text-left rtl:sm:text-right"
       >
         <h1
           class="text-3xl leading-tight font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent md:text-5xl"
