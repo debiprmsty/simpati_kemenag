@@ -1,15 +1,17 @@
 <script setup>
-  import { RouterView } from 'vue-router';
-  import NavBar from './components/NavBar.vue';
-  import Footer from './components/Footer.vue';
+import { RouterView, useRoute } from "vue-router";
+import { computed } from "vue";
+import NavBar from "./components/NavBar.vue";
+import Footer from "./components/Footer.vue";
+
+const route = useRoute();
+const showComponents = computed(() => route.path !== "/maintenance");
 </script>
 
 <template>
-  <NavBar/>
+  <NavBar v-if="showComponents" />
   <main>
     <RouterView />
   </main>
-  <Footer/>
+  <Footer v-if="showComponents" />
 </template>
-
-

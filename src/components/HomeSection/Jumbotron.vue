@@ -16,9 +16,10 @@
         </h2>
 
         <p class="text-gray-500 md:mt-4 mt-5">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas tempus
-          tellus etiam sed. Quam a scelerisque amet ullamcorper eu enim et fermentum,
-          augue. Aliquet amet volutpat quisque ut interdum tincidunt duis.
+          Selamat datang di SIMPATI – <b>SIsteM Pelayananan Agama TerintegrasI</b> Kantor
+          Kementerian Agama Kabupaten Buleleng. Situs ini dirancang untuk memberikan
+          informasi dan layanan keagamaan yang cepat, transparan, dan terintegrasi bagi
+          masyarakat.
         </p>
 
         <div class="mt-8 md:mt-8">

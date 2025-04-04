@@ -36,9 +36,9 @@
             <div class="flex justify-start space-x-4 md:mt-4">
               <a
                 rel="noopener noreferrer"
-                href="https://wa.me/085928877957"
+                href="https://wa.me/+6285928877957"
                 title="WhatsApp"
-                class="flex items-center justify-center md:w-5 md:h-5 rounded-full text-white"
+                class="flex items-center justify-center md:w-7 md:h-7 rounded-full text-white"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

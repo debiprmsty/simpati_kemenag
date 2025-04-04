@@ -69,7 +69,7 @@
           </h3>
           <div class="flex items-center justify-center px-3 py-2 bg-gray-200">
             <a
-              href="/"
+              href="/maintenance"
               class="px-2 py-1 text-xs font-semibold text-white transition-colors duration-300 transform bg-[#16423C] rounded-lg hover:bg-gray-700 dark:hover:bg-[#1B4D3E] focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none cursor-pointer"
               >Lihat Selengkapnya</a
             >
@@ -81,10 +81,10 @@
       <div class="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
         <div class="p-0.5 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg w-full">
           <div
-            class="w-full h-56 md:pt-0 pt-2 bg-white bg-center bg-cover rounded-lg shadow-lg"
+            class="w-full h-56 md:pt-1 pt-2 bg-white bg-center bg-cover rounded-lg shadow-lg"
           >
             <DotLottieVue
-              class="object-cover md:w-[19rem] md:h-48 w-72 h-44 mx-auto"
+              class="object-cover md:w-[17.5rem] md:h-44 w-[16.5rem] h-[10.5rem] mx-auto"
               autoplay
               loop
               src="https://lottie.host/689fee33-5b1a-43c0-94c6-9db0a1c56360/D3imntQGnT.lottie"
@@ -99,7 +99,7 @@
           </h3>
           <div class="flex items-center justify-center px-3 py-2 bg-gray-200">
             <a
-              href="/"
+              href="/maintenance"
               class="px-2 py-1 text-xs font-semibold text-white transition-colors duration-300 transform bg-[#16423C] rounded-lg hover:bg-gray-700 dark:hover:bg-[#1B4D3E] focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none cursor-pointer"
               >Lihat Selengkapnya</a
             >
@@ -127,7 +127,7 @@
           </h3>
           <div class="flex items-center justify-center px-3 py-2 bg-gray-200">
             <a
-              href="/"
+              href="https://bali.kemenag.go.id/buleleng"
               class="px-2 py-1 text-xs font-semibold text-white transition-colors duration-300 transform bg-[#16423C] rounded-lg hover:bg-gray-700 dark:hover:bg-[#1B4D3E] focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none cursor-pointer"
               >Lihat Selengkapnya</a
             >
@@ -155,7 +155,7 @@
           </h3>
           <div class="flex items-center justify-center px-3 py-2 bg-gray-200">
             <a
-              href="/"
+              href="/maintenance"
               class="px-2 py-1 text-xs font-semibold text-white transition-colors duration-300 transform bg-[#16423C] rounded-lg hover:bg-gray-700 dark:hover:bg-[#1B4D3E] focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none cursor-pointer"
               >Lihat Selengkapnya</a
             >
@@ -168,7 +168,7 @@
         <div class="p-0.5 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg w-full">
           <div class="w-full h-56 bg-white bg-center bg-cover rounded-lg shadow-lg">
             <DotLottieVue
-              class="object-cover md:w-full md:h-full w-[21rem] h-52 mx-auto"
+              class="object-cover md:w-full md:h-full w-[22rem] h-56 mx-auto"
               autoplay
               loop
               src="https://lottie.host/fafa106e-88a8-4879-ab68-84c5bad2cdb3/4Hup4hO1ot.lottie"
@@ -183,7 +183,7 @@
           </h3>
           <div class="flex items-center justify-center px-3 py-2 bg-gray-200">
             <a
-              href="/"
+              href="/maintenance"
               class="px-2 py-1 text-xs font-semibold text-white transition-colors duration-300 transform bg-[#16423C] rounded-lg hover:bg-gray-700 dark:hover:bg-[#1B4D3E] focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none cursor-pointer"
               >Lihat Selengkapnya</a
             >
@@ -211,7 +211,7 @@
           </h3>
           <div class="flex items-center justify-center px-3 py-2 bg-gray-200">
             <a
-              href="/"
+              href="/maintenance"
               class="px-2 py-1 text-xs font-semibold text-white transition-colors duration-300 transform bg-[#16423C] rounded-lg hover:bg-gray-700 dark:hover:bg-[#1B4D3E] focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none cursor-pointer"
               >Lihat Selengkapnya</a
             >
