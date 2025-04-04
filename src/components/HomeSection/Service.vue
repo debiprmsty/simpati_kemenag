@@ -38,10 +38,10 @@
             Layanan Publik
           </h3>
           <div class="flex items-center justify-center px-3 py-2 bg-gray-200">
-            <a
-              href="/"
+            <router-link
+              to="/maintenance"
               class="px-2 py-1 text-xs font-semibold text-white transition-colors duration-300 transform bg-[#16423C] rounded-lg hover:bg-gray-700 dark:hover:bg-[#1B4D3E] focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none cursor-pointer"
-              >Lihat Selengkapnya</a
+              >Lihat Selengkapnya</router-link
             >
           </div>
         </div>
@@ -68,10 +68,10 @@
             Layanan Internal
           </h3>
           <div class="flex items-center justify-center px-3 py-2 bg-gray-200">
-            <a
-              href="/maintenance"
+            <router-link
+              to="/maintenance"
               class="px-2 py-1 text-xs font-semibold text-white transition-colors duration-300 transform bg-[#16423C] rounded-lg hover:bg-gray-700 dark:hover:bg-[#1B4D3E] focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none cursor-pointer"
-              >Lihat Selengkapnya</a
+              >Lihat Selengkapnya</router-link
             >
           </div>
         </div>
@@ -98,10 +98,10 @@
             Syarat Layanan
           </h3>
           <div class="flex items-center justify-center px-3 py-2 bg-gray-200">
-            <a
-              href="/maintenance"
+            <router-link
+              to="/maintenance"
               class="px-2 py-1 text-xs font-semibold text-white transition-colors duration-300 transform bg-[#16423C] rounded-lg hover:bg-gray-700 dark:hover:bg-[#1B4D3E] focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none cursor-pointer"
-              >Lihat Selengkapnya</a
+              >Lihat Selengkapnya</router-link
             >
           </div>
         </div>
@@ -154,10 +154,10 @@
             Bank Data
           </h3>
           <div class="flex items-center justify-center px-3 py-2 bg-gray-200">
-            <a
-              href="/maintenance"
+            <router-link
+              to="/maintenance"
               class="px-2 py-1 text-xs font-semibold text-white transition-colors duration-300 transform bg-[#16423C] rounded-lg hover:bg-gray-700 dark:hover:bg-[#1B4D3E] focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none cursor-pointer"
-              >Lihat Selengkapnya</a
+              >Lihat Selengkapnya</router-link
             >
           </div>
         </div>
@@ -182,10 +182,10 @@
             Progress Permohonan
           </h3>
           <div class="flex items-center justify-center px-3 py-2 bg-gray-200">
-            <a
-              href="/maintenance"
+            <router-link
+              to="/maintenance"
               class="px-2 py-1 text-xs font-semibold text-white transition-colors duration-300 transform bg-[#16423C] rounded-lg hover:bg-gray-700 dark:hover:bg-[#1B4D3E] focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none cursor-pointer"
-              >Lihat Selengkapnya</a
+              >Lihat Selengkapnya</router-link
             >
           </div>
         </div>
@@ -210,10 +210,10 @@
             Dosen ZI
           </h3>
           <div class="flex items-center justify-center px-3 py-2 bg-gray-200">
-            <a
-              href="/maintenance"
+            <router-link
+              to="/maintenance"
               class="px-2 py-1 text-xs font-semibold text-white transition-colors duration-300 transform bg-[#16423C] rounded-lg hover:bg-gray-700 dark:hover:bg-[#1B4D3E] focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none cursor-pointer"
-              >Lihat Selengkapnya</a
+              >Lihat Selengkapnya</router-link
             >
           </div>
         </div>

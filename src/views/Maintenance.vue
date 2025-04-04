@@ -13,12 +13,12 @@
       Kami sedang melakukan perbaikan untuk meningkatkan pengalaman Anda. Mohon maaf atas
       ketidaknyamanan ini, dan silakan kunjungi kembali dalam waktu dekat.
     </p>
-    <a
-      href="/"
+    <router-link
+      to="/"
       class="block px-4 py-2 bg-[#1B4D3E] text-white rounded-2xl font-semibold text-center md:mt-8 text-xs"
     >
       Kembali ke Beranda
-    </a>
+    </router-link>
   </div>
 </template>
 
