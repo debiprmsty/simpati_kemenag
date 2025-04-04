@@ -54,7 +54,7 @@
             class="w-full h-56 md:pt-0 pt-2 bg-white bg-center bg-cover rounded-lg shadow-lg"
           >
             <DotLottieVue
-              class="object-cover md:w-[21rem] md:h-52 w-[16] h-48 mx-auto"
+              class="object-cover md:w-[21rem] md:h-52 w-[16rem] h-48 mx-auto"
               autoplay
               loop
               src="https://lottie.host/26363ba2-32ee-4371-abcf-0ef8973085d4/smEMUpz1VH.lottie"
