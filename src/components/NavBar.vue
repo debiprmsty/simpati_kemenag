@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="w-full m-3 md:m-5 md:max-w-[95vw] max-w-[93vw] md:mx-auto bg-white border border-gray-300 rounded-2xl shadow-md px-3 py-2"
+    class="w-full m-3 md:m-4 md:max-w-[95vw] max-w-[93vw] md:mx-auto bg-white border border-gray-300 rounded-2xl shadow-md px-3 py-2"
   >
     <!-- Desktop View: Tiga Kolom -->
     <div class="hidden md:flex items-center justify-between">
@@ -137,7 +137,7 @@
               SP4N Lapor
             </a>
             <a
-              href="#"
+              href="https://wa.me/+6285928877957"
               class="block px-4 py-2 text-gray-700 hover:bg-[#E9EFEC] rounded-xl"
             >
               WhatsApp Center

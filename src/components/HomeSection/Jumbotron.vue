@@ -1,5 +1,5 @@
 <template>
-  <section class="overflow-hidden sm:grid sm:grid-cols-2 md:pr-10 md:pt-3">
+  <section class="overflow-hidden sm:grid sm:grid-cols-2 md:pr-10 md:pt-4">
     <div class="p-7 md:p-12 lg:px-10 lg:py-10">
       <div
         class="mx-auto max-w-xl md:text-center text-start ltr:sm:text-left rtl:sm:text-right"
