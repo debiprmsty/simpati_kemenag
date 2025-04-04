@@ -1,8 +1,8 @@
 <template>
-  <section class="overflow-hidden sm:grid sm:grid-cols-2 md:pr-10 md:pt-12">
+  <section class="overflow-hidden sm:grid sm:grid-cols-2 md:pr-10 md:pt-3">
     <div class="p-8 md:p-12 lg:px-10 lg:py-10">
       <div
-        class="mx-auto max-w-xl md:text-center text-start ltr:sm:text-left rtl:sm:text-right"
+        class="mx-auto max-w-xl md:text-center text-center ltr:sm:text-left rtl:sm:text-right"
       >
         <h1
           class="text-3xl leading-tight font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent md:text-5xl"
@@ -21,7 +21,7 @@
           augue. Aliquet amet volutpat quisque ut interdum tincidunt duis.
         </p>
 
-        <div class="mt-12 md:mt-8">
+        <div class="mt-8 md:mt-8">
           <a
             href="#"
             class="inline-block rounded-2xl bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-500 hover:to-blue-500 px-6 py-3 text-md font-semibold text-white shadow-md transition focus:ring-3 focus:ring-yellow-400 focus:outline-hidden"

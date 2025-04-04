@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="w-full m-3 md:max-w-[95vw] max-w-[93vw] md:mx-auto bg-white border border-gray-100 rounded-3xl shadow-lg px-4 py-3"
+    class="w-full m-3 md:m-5 md:max-w-[95vw] max-w-[93vw] md:mx-auto bg-white border border-gray-300 rounded-2xl shadow-md px-3 py-2"
   >
     <!-- Desktop View: Tiga Kolom -->
     <div class="hidden md:flex items-center justify-between">

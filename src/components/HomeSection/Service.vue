@@ -1,10 +1,8 @@
 <template>
   <div
-    class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
+    class="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
   >
-    <div
-      class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-10 px-5 md:px-0"
-    >
+    <div class="max-w-xl mb-10 md:mx-auto text-center lg:max-w-2xl md:mb-10 px-5 md:px-0">
       <h2
         class="mb-6 font-sans text-3xl font-bold leading-10 tracking-tight text-gray-900 md:text-5xl md:mx-auto"
       >
@@ -29,17 +27,11 @@
             />
           </div>
         </div>
-        <div
-          class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 dark:bg-gray-800"
-        >
-          <h3
-            class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white"
-          >
+        <div class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64">
+          <h3 class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase">
             Layanan Publik
           </h3>
-          <div
-            class="flex items-center justify-center px-3 py-2 bg-gray-200 dark:bg-gray-700"
-          >
+          <div class="flex items-center justify-center px-3 py-2 bg-gray-200">
             <a
               href="/"
               class="px-2 py-1 text-xs font-semibold text-white transition-colors duration-300 transform bg-[#16423C] rounded-lg hover:bg-gray-700 dark:hover:bg-[#1B4D3E] focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none cursor-pointer"
@@ -61,17 +53,11 @@
             />
           </div>
         </div>
-        <div
-          class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 dark:bg-gray-800"
-        >
-          <h3
-            class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white"
-          >
+        <div class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64">
+          <h3 class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase">
             Layanan Internal
           </h3>
-          <div
-            class="flex items-center justify-center px-3 py-2 bg-gray-200 dark:bg-gray-700"
-          >
+          <div class="flex items-center justify-center px-3 py-2 bg-gray-200">
             <a
               href="/"
               class="px-2 py-1 text-xs font-semibold text-white transition-colors duration-300 transform bg-[#16423C] rounded-lg hover:bg-gray-700 dark:hover:bg-[#1B4D3E] focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none cursor-pointer"
@@ -83,27 +69,21 @@
 
       <!-- Syarat Layanan -->
       <div class="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
-        <div class="p-0.5 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg">
+        <div class="p-0.5 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg w-full">
           <div class="w-full h-56 bg-white bg-center bg-cover rounded-lg shadow-lg">
             <DotLottieVue
-              class="object-cover w-full h-full"
+              class="object-cover md:w-[19rem] md:h-48 w-72 h-44 mx-auto"
               autoplay
               loop
               src="https://lottie.host/689fee33-5b1a-43c0-94c6-9db0a1c56360/D3imntQGnT.lottie"
             />
           </div>
         </div>
-        <div
-          class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 dark:bg-gray-800"
-        >
-          <h3
-            class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white"
-          >
+        <div class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64">
+          <h3 class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase">
             Syarat Layanan
           </h3>
-          <div
-            class="flex items-center justify-center px-3 py-2 bg-gray-200 dark:bg-gray-700"
-          >
+          <div class="flex items-center justify-center px-3 py-2 bg-gray-200">
             <a
               href="/"
               class="px-2 py-1 text-xs font-semibold text-white transition-colors duration-300 transform bg-[#16423C] rounded-lg hover:bg-gray-700 dark:hover:bg-[#1B4D3E] focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none cursor-pointer"
@@ -125,17 +105,11 @@
             />
           </div>
         </div>
-        <div
-          class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 dark:bg-gray-800"
-        >
-          <h3
-            class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white"
-          >
+        <div class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64">
+          <h3 class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase">
             PPID
           </h3>
-          <div
-            class="flex items-center justify-center px-3 py-2 bg-gray-200 dark:bg-gray-700"
-          >
+          <div class="flex items-center justify-center px-3 py-2 bg-gray-200">
             <a
               href="/"
               class="px-2 py-1 text-xs font-semibold text-white transition-colors duration-300 transform bg-[#16423C] rounded-lg hover:bg-gray-700 dark:hover:bg-[#1B4D3E] focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none cursor-pointer"
@@ -157,17 +131,11 @@
             />
           </div>
         </div>
-        <div
-          class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 dark:bg-gray-800"
-        >
-          <h3
-            class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white"
-          >
+        <div class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64">
+          <h3 class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase">
             Bank Data
           </h3>
-          <div
-            class="flex items-center justify-center px-3 py-2 bg-gray-200 dark:bg-gray-700"
-          >
+          <div class="flex items-center justify-center px-3 py-2 bg-gray-200">
             <a
               href="/"
               class="px-2 py-1 text-xs font-semibold text-white transition-colors duration-300 transform bg-[#16423C] rounded-lg hover:bg-gray-700 dark:hover:bg-[#1B4D3E] focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none cursor-pointer"
@@ -189,17 +157,11 @@
             />
           </div>
         </div>
-        <div
-          class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 dark:bg-gray-800"
-        >
-          <h3
-            class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white"
-          >
+        <div class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64">
+          <h3 class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase">
             Progress Permohonan
           </h3>
-          <div
-            class="flex items-center justify-center px-3 py-2 bg-gray-200 dark:bg-gray-700"
-          >
+          <div class="flex items-center justify-center px-3 py-2 bg-gray-200">
             <a
               href="/"
               class="px-2 py-1 text-xs font-semibold text-white transition-colors duration-300 transform bg-[#16423C] rounded-lg hover:bg-gray-700 dark:hover:bg-[#1B4D3E] focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none cursor-pointer"
@@ -221,17 +183,11 @@
             />
           </div>
         </div>
-        <div
-          class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64 dark:bg-gray-800"
-        >
-          <h3
-            class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white"
-          >
+        <div class="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-64">
+          <h3 class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase">
             Dosen ZI
           </h3>
-          <div
-            class="flex items-center justify-center px-3 py-2 bg-gray-200 dark:bg-gray-700"
-          >
+          <div class="flex items-center justify-center px-3 py-2 bg-gray-200">
             <a
               href="/"
               class="px-2 py-1 text-xs font-semibold text-white transition-colors duration-300 transform bg-[#16423C] rounded-lg hover:bg-gray-700 dark:hover:bg-[#1B4D3E] focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none cursor-pointer"
