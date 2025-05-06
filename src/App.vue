@@ -5,7 +5,12 @@ import NavBar from "./components/NavBar.vue";
 import Footer from "./components/Footer.vue";
 
 const route = useRoute();
-const showComponents = computed(() => route.path !== "/maintenance");
+const hidePaths = [
+  "/maintenance",
+  "/layanan-publik/auth/login",
+  "/layanan-publik/auth/register",
+];
+const showComponents = computed(() => !hidePaths.includes(route.path));
 </script>
 
 <template>

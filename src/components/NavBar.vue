@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="w-full m-3 md:m-4 md:max-w-[95vw] max-w-[93vw] md:mx-auto bg-white border border-gray-300 rounded-2xl shadow-md px-3 py-2"
+    class="w-full m-4 md:m-4.5 md:max-w-[93vw] max-w-[86vw] mx-auto md:mx-auto bg-white border border-gray-300 rounded-2xl shadow-md px-3 py-2"
   >
     <!-- Desktop View: Tiga Kolom -->
     <div class="hidden md:flex items-center justify-between">
@@ -46,13 +46,13 @@
           >
             <a
               href="#"
-              class="block px-4 py-2 text-md text-gray-700 hover:bg-[#E9EFEC] hover:rounded-xl"
+              class="block px-4 py-2 text-md text-gray-700 hover:bg-[#E9EFEC] hover:rounded-xl hover:cursor-pointer"
             >
               SP4N Lapor
             </a>
             <a
-              href="#"
-              class="block px-4 py-2 text-md text-gray-700 hover:bg-[#E9EFEC] hover:rounded-xl"
+              href="https://wa.me/+6285928877957"
+              class="block px-4 py-2 text-md text-gray-700 hover:bg-[#E9EFEC] hover:rounded-xl hover:cursor-pointer"
             >
               WhatsApp Center
             </a>
@@ -61,7 +61,12 @@
       </div>
       <!-- Kanan: Login & Daftar -->
       <div class="flex items-center space-x-4">
-        <a href="#" class="text-gray-800 hover:text-[#16423C] font-semibold"> Masuk </a>
+        <router-link
+          to="/layanan-publik/auth/login"
+          class="text-gray-800 hover:text-[#16423C] font-semibold"
+        >
+          Masuk
+        </router-link>
         <a
           href="#"
           class="px-4 py-2 bg-[#1B4D3E] text-white rounded-2xl hover:bg-[#16423C] font-semibold"
@@ -132,24 +137,24 @@
           <div v-if="showDropdown" class="mt-2 pl-4">
             <a
               href="#"
-              class="block px-4 py-2 text-gray-700 hover:bg-[#E9EFEC] rounded-xl mb-1"
+              class="block px-4 py-2 text-gray-700 hover:bg-[#E9EFEC] rounded-xl mb-1 hover:cursor-pointer"
             >
               SP4N Lapor
             </a>
             <a
               href="https://wa.me/+6285928877957"
-              class="block px-4 py-2 text-gray-700 hover:bg-[#E9EFEC] rounded-xl"
+              class="block px-4 py-2 text-gray-700 hover:bg-[#E9EFEC] rounded-xl hover:cursor-pointer"
             >
               WhatsApp Center
             </a>
           </div>
         </div>
-        <a
-          href="#"
+        <router-link
+          to="/layanan-publik/auth/login"
           class="block px-4 py-2 text-gray-800 hover:bg-gray-100 rounded-xl mb-2 font-semibold"
         >
           Masuk
-        </a>
+        </router-link>
         <a
           href="#"
           class="block px-4 py-2 bg-[#1B4D3E] text-white rounded-2xl font-semibold text-center"

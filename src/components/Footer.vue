@@ -1,9 +1,9 @@
 <template>
   <footer class="bg-[#16423C] text-white py-6 px-6">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="container md:mx-0 mx-auto md:px-5 px-1">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 my-2">
         <!-- Menu -->
-        <div class="">
+        <div>
           <h2 class="text-xl font-semibold mb-4">Menu</h2>
           <ul>
             <li class="mb-2">
@@ -223,7 +223,7 @@
           </div>
         </div>
         <!-- Minimap (embed google maps misalnya) -->
-        <div class="md:-ml-32">
+        <div class="md:-ml-28">
           <h2 class="text-xl font-semibold mb-4">Lokasi Kami</h2>
           <div class="w-full h-49">
             <!-- Jika ingin menyematkan google maps, gunakan iframe -->
