@@ -56,7 +56,7 @@ const loading = ref(true);
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-const goToLayanan = (id) => router.push({ name: 'DaftarLayanan', params: { id } });
+const goToLayanan = (id) => router.push({ name: 'DaftarLayanan', params: { id} });
 
 async function fetchSatker() {
   try {

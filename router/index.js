@@ -7,6 +7,7 @@ import Login from '../src/views/service/layanpub/auth/Login.vue';
 import Register from '../src/views/service/layanpub/auth/Register.vue';
 import ListSatker from '../src/views/service/layanpub/ListSatker.vue';
 import DaftarLayanan from '../src/views/service/layanpub/DaftarLayanan.vue';
+import FormLayanan from '../src/views/service/layanpub/FormLayanan.vue';
 
 const routes = [
   {
@@ -38,6 +39,12 @@ const routes = [
     path: '/daftar-layanan/:id',
     name: 'DaftarLayanan',
     component: DaftarLayanan,
+    props: true  // biar id masuk ke props component
+  },
+  {
+    path: '/form-layanan/:id/layanan/:idLayanan',
+    name: 'FormLayanan',
+    component: FormLayanan,
     props: true  // biar id masuk ke props component
   }
   

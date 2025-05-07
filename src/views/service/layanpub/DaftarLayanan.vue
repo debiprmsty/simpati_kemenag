@@ -37,7 +37,7 @@
             <div
               v-for="item in layanans"
               :key="item.id"
-              @click="goToDetail(item.id)"
+              @click="goToDetail(satkerId,item.id)"
               class="bg-gray-50 rounded-2xl shadow-inner p-6 flex items-center justify-between hover:bg-gray-100 transition cursor-pointer"
             >
               <div class="flex items-center space-x-4">
@@ -77,6 +77,7 @@
   const loading = ref(true);
   const status = ref("");
   
+  
   // Ambil id satker dari route params
   const satkerId = route.params.id;
   
@@ -101,8 +102,8 @@
   }
   
   // Navigasi ke detail layanan
-  function goToDetail(id) {
-    router.push({ name: "DetailLayanan", params: { id } });
+  function goToDetail(id,idLayanan) {
+    router.push({ name: "FormLayanan", params: { id,idLayanan } });
   }
   
   onMounted(fetchTasks);
