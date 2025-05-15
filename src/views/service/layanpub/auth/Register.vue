@@ -557,7 +557,7 @@
               to="/layanan-publik/auth/login"
               class="text-blue-600 underline font-medium"
             >
-              Masuk ke Akun
+              Masuk ke Akun 
             </router-link>
           </p>
         </div>
