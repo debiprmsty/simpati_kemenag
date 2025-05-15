@@ -73,13 +73,13 @@
       >
         Masuk
       </router-link>
-      <a
+      <router-link
         v-if="!isLoggedIn"
-        href="#"
+        to="/layanan-publik/auth/register"
         class="px-4 py-2 bg-[#1B4D3E] text-white rounded-2xl hover:bg-[#16423C] font-semibold transition"
       >
         Daftar
-      </a>
+      </router-link>
       <!-- If logged in, show avatar circle -->
       <router-link v-if="isLoggedIn" to="/profile" class="block">
         <img
@@ -164,13 +164,13 @@
     >
       Masuk
     </router-link>
-    <a
+    <router-link
       v-if="!isLoggedIn"
-      href="#"
+      to="/layanan-publik/auth/register"
       class="block mx-4 my-2 px-4 py-2 text-center bg-[#1B4D3E] text-white rounded-2xl font-semibold hover:bg-[#16423C] transition"
     >
       Daftar
-    </a>
+    </router-link>
 
     <!-- Mobile Avatar -->
     <router-link v-if="isLoggedIn" to="/profile" class="flex justify-center my-2">

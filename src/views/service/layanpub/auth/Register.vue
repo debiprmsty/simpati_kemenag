@@ -7,7 +7,7 @@
       <!-- DESKTOP LAYOUT -->
       <div class="hidden md:flex h-screen overflow-hidden w-screen">
         <!-- Left: Registration Form -->
-        <div class="w-3/5 p-8 lg:p-16 flex flex-col justify-center mt-7">
+        <div class="w-3/5 p-8 lg:p-16 flex flex-col justify-center mt-5">
           <h3
             class="relative inline-block text-3xl font-bold mb-12 acme-regular bg-gradient-to-r from-green-600 via-blue-700 to-blue-500 bg-clip-text text-transparent uppercase tracking-wider"
           >
@@ -16,6 +16,9 @@
               class="absolute left-0 -bottom-3 w-28 h-1 bg-[#16423C] rounded-sm"
             ></span>
           </h3>
+          <h5 class="text-green-800 -mt-8 mb-5 font-medium">
+            * Silakan isi data berikut untuk membuat akun Anda.
+          </h5>
 
           <!-- Registration Form -->
           <form @submit.prevent="register">
@@ -155,19 +158,22 @@
 
               <button
                 type="submit"
-                class="w-full bg-gradient-to-r from-green-600 to-blue-600 text-white py-2 px-4 rounded-xl hover:bg-[#16423C] transition duration-200 uppercase font-bold"
+                class="w-full bg-gradient-to-r from-green-600 to-blue-600 text-white py-2 px-4 rounded-xl hover:bg-[#16423C] transition duration-200 uppercase font-bold mt-2"
               >
                 Buat Akun
               </button>
             </div>
           </form>
 
-          <div class="mt-6 text-center">
+          <div class="mt-5 text-center">
             <p class="text-gray-600">
               Sudah memiliki akun?
-              <a href="#" class="text-blue-600 hover:underline font-medium"
-                >Masuk ke Akun</a
+              <router-link
+                to="/layanan-publik/auth/login"
+                class="text-blue-600 underline font-medium"
               >
+                Masuk ke Akun
+              </router-link>
             </p>
           </div>
         </div>
@@ -216,209 +222,219 @@
             </router-link>
           </div>
 
-          <div class="bg-gray-50 rounded-2xl shadow w-68 h-68 mt-32 ml-20 pt-5">
+          <div class="rounded-2xl w-68 h-68 mt-15 ml-7 pt-5">
             <img
-              class="md:w-20 h-auto ml-24 mb-10"
+              class="md:w-48 h-auto ml-24 mb-5"
               src="/public/image/logo_web.png"
               alt="Logo SIMPATI"
             />
             <h1
-              class="md:text-4xl text-4xl acme-regular bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent ml-18 mt-3"
+              class="md:text-5xl acme-regular bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent ml-26 mt-3"
             >
               SIMPATI
             </h1>
-            <div class="flex flex-col justify-start pt-8 lg:pt-0 mt-1">
-              <div class="flex justify-center space-x-4 md:mt-3">
-                <a
-                  rel="noopener noreferrer"
-                  href="https://wa.me/+6285928877957"
-                  title="WhatsApp"
-                  class="flex items-center justify-center md:w-7 md:h-7 rounded-full text-[#16423C]"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    x="0px"
-                    y="0px"
-                    width="100"
-                    height="100"
-                    viewBox="0,0,256,256"
+            <div class="flex flex-col justify-start pt-8 lg:pt-0 mt-1 ml-24">
+              <div class="flex justify-center space-x-5 md:mt-3">
+                <div class="bg-white rounded-lg shadow-md p-2">
+                  <a
+                    rel="noopener noreferrer"
+                    href="https://wa.me/+6285928877957"
+                    title="WhatsApp"
+                    class="flex items-center justify-center md:w-7 md:h-7 rounded-full text-[#16423C]"
                   >
-                    <g
-                      fill="#16423c"
-                      fill-rule="nonzero"
-                      stroke="none"
-                      stroke-width="1"
-                      stroke-linecap="butt"
-                      stroke-linejoin="miter"
-                      stroke-miterlimit="10"
-                      stroke-dasharray=""
-                      stroke-dashoffset="0"
-                      font-family="none"
-                      font-weight="none"
-                      font-size="none"
-                      text-anchor="none"
-                      style="mix-blend-mode: normal"
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      x="0px"
+                      y="0px"
+                      width="100"
+                      height="100"
+                      viewBox="0,0,256,256"
                     >
-                      <g transform="scale(5.12,5.12)">
-                        <path
-                          d="M25,2c-12.682,0 -23,10.318 -23,23c0,3.96 1.023,7.854 2.963,11.29l-2.926,10.44c-0.096,0.343 -0.003,0.711 0.245,0.966c0.191,0.197 0.451,0.304 0.718,0.304c0.08,0 0.161,-0.01 0.24,-0.029l10.896,-2.699c3.327,1.786 7.074,2.728 10.864,2.728c12.682,0 23,-10.318 23,-23c0,-12.682 -10.318,-23 -23,-23zM36.57,33.116c-0.492,1.362 -2.852,2.605 -3.986,2.772c-1.018,0.149 -2.306,0.213 -3.72,-0.231c-0.857,-0.27 -1.957,-0.628 -3.366,-1.229c-5.923,-2.526 -9.791,-8.415 -10.087,-8.804c-0.295,-0.389 -2.411,-3.161 -2.411,-6.03c0,-2.869 1.525,-4.28 2.067,-4.864c0.542,-0.584 1.181,-0.73 1.575,-0.73c0.394,0 0.787,0.005 1.132,0.021c0.363,0.018 0.85,-0.137 1.329,1.001c0.492,1.168 1.673,4.037 1.819,4.33c0.148,0.292 0.246,0.633 0.05,1.022c-0.196,0.389 -0.294,0.632 -0.59,0.973c-0.296,0.341 -0.62,0.76 -0.886,1.022c-0.296,0.291 -0.603,0.606 -0.259,1.19c0.344,0.584 1.529,2.493 3.285,4.039c2.255,1.986 4.158,2.602 4.748,2.894c0.59,0.292 0.935,0.243 1.279,-0.146c0.344,-0.39 1.476,-1.703 1.869,-2.286c0.393,-0.583 0.787,-0.487 1.329,-0.292c0.542,0.194 3.445,1.604 4.035,1.896c0.59,0.292 0.984,0.438 1.132,0.681c0.148,0.242 0.148,1.41 -0.344,2.771z"
-                        ></path>
+                      <g
+                        fill="#16423c"
+                        fill-rule="nonzero"
+                        stroke="none"
+                        stroke-width="1"
+                        stroke-linecap="butt"
+                        stroke-linejoin="miter"
+                        stroke-miterlimit="10"
+                        stroke-dasharray=""
+                        stroke-dashoffset="0"
+                        font-family="none"
+                        font-weight="none"
+                        font-size="none"
+                        text-anchor="none"
+                        style="mix-blend-mode: normal"
+                      >
+                        <g transform="scale(5.12,5.12)">
+                          <path
+                            d="M25,2c-12.682,0 -23,10.318 -23,23c0,3.96 1.023,7.854 2.963,11.29l-2.926,10.44c-0.096,0.343 -0.003,0.711 0.245,0.966c0.191,0.197 0.451,0.304 0.718,0.304c0.08,0 0.161,-0.01 0.24,-0.029l10.896,-2.699c3.327,1.786 7.074,2.728 10.864,2.728c12.682,0 23,-10.318 23,-23c0,-12.682 -10.318,-23 -23,-23zM36.57,33.116c-0.492,1.362 -2.852,2.605 -3.986,2.772c-1.018,0.149 -2.306,0.213 -3.72,-0.231c-0.857,-0.27 -1.957,-0.628 -3.366,-1.229c-5.923,-2.526 -9.791,-8.415 -10.087,-8.804c-0.295,-0.389 -2.411,-3.161 -2.411,-6.03c0,-2.869 1.525,-4.28 2.067,-4.864c0.542,-0.584 1.181,-0.73 1.575,-0.73c0.394,0 0.787,0.005 1.132,0.021c0.363,0.018 0.85,-0.137 1.329,1.001c0.492,1.168 1.673,4.037 1.819,4.33c0.148,0.292 0.246,0.633 0.05,1.022c-0.196,0.389 -0.294,0.632 -0.59,0.973c-0.296,0.341 -0.62,0.76 -0.886,1.022c-0.296,0.291 -0.603,0.606 -0.259,1.19c0.344,0.584 1.529,2.493 3.285,4.039c2.255,1.986 4.158,2.602 4.748,2.894c0.59,0.292 0.935,0.243 1.279,-0.146c0.344,-0.39 1.476,-1.703 1.869,-2.286c0.393,-0.583 0.787,-0.487 1.329,-0.292c0.542,0.194 3.445,1.604 4.035,1.896c0.59,0.292 0.984,0.438 1.132,0.681c0.148,0.242 0.148,1.41 -0.344,2.771z"
+                          ></path>
+                        </g>
                       </g>
-                    </g>
-                  </svg>
-                </a>
-                <a
-                  rel="noopener noreferrer"
-                  href="https://www.instagram.com/kemenagbuleleng"
-                  title="Instagram"
-                  class="flex items-center justify-center md:w-7 md:h-7 rounded-full text-white"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    x="0px"
-                    y="0px"
-                    width="100"
-                    height="100"
-                    viewBox="0,0,256,256"
+                    </svg>
+                  </a>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-2">
+                  <a
+                    rel="noopener noreferrer"
+                    href="https://www.instagram.com/kemenagbuleleng"
+                    title="Instagram"
+                    class="flex items-center justify-center md:w-7 md:h-7 rounded-full text-white"
                   >
-                    <g
-                      fill="#16423c"
-                      fill-rule="nonzero"
-                      stroke="none"
-                      stroke-width="1"
-                      stroke-linecap="butt"
-                      stroke-linejoin="miter"
-                      stroke-miterlimit="10"
-                      stroke-dasharray=""
-                      stroke-dashoffset="0"
-                      font-family="none"
-                      font-weight="none"
-                      font-size="none"
-                      text-anchor="none"
-                      style="mix-blend-mode: normal"
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      x="0px"
+                      y="0px"
+                      width="100"
+                      height="100"
+                      viewBox="0,0,256,256"
                     >
-                      <g transform="scale(5.12,5.12)">
-                        <path
-                          d="M16,3c-7.17,0 -13,5.83 -13,13v18c0,7.17 5.83,13 13,13h18c7.17,0 13,-5.83 13,-13v-18c0,-7.17 -5.83,-13 -13,-13zM37,11c1.1,0 2,0.9 2,2c0,1.1 -0.9,2 -2,2c-1.1,0 -2,-0.9 -2,-2c0,-1.1 0.9,-2 2,-2zM25,14c6.07,0 11,4.93 11,11c0,6.07 -4.93,11 -11,11c-6.07,0 -11,-4.93 -11,-11c0,-6.07 4.93,-11 11,-11zM25,16c-4.96,0 -9,4.04 -9,9c0,4.96 4.04,9 9,9c4.96,0 9,-4.04 9,-9c0,-4.96 -4.04,-9 -9,-9z"
-                        ></path>
+                      <g
+                        fill="#16423c"
+                        fill-rule="nonzero"
+                        stroke="none"
+                        stroke-width="1"
+                        stroke-linecap="butt"
+                        stroke-linejoin="miter"
+                        stroke-miterlimit="10"
+                        stroke-dasharray=""
+                        stroke-dashoffset="0"
+                        font-family="none"
+                        font-weight="none"
+                        font-size="none"
+                        text-anchor="none"
+                        style="mix-blend-mode: normal"
+                      >
+                        <g transform="scale(5.12,5.12)">
+                          <path
+                            d="M16,3c-7.17,0 -13,5.83 -13,13v18c0,7.17 5.83,13 13,13h18c7.17,0 13,-5.83 13,-13v-18c0,-7.17 -5.83,-13 -13,-13zM37,11c1.1,0 2,0.9 2,2c0,1.1 -0.9,2 -2,2c-1.1,0 -2,-0.9 -2,-2c0,-1.1 0.9,-2 2,-2zM25,14c6.07,0 11,4.93 11,11c0,6.07 -4.93,11 -11,11c-6.07,0 -11,-4.93 -11,-11c0,-6.07 4.93,-11 11,-11zM25,16c-4.96,0 -9,4.04 -9,9c0,4.96 4.04,9 9,9c4.96,0 9,-4.04 9,-9c0,-4.96 -4.04,-9 -9,-9z"
+                          ></path>
+                        </g>
                       </g>
-                    </g>
-                  </svg>
-                </a>
-                <a
-                  rel="noopener noreferrer"
-                  href="https://www.facebook.com/share/1Hd41qxV5u/"
-                  title="Facebook"
-                  class="flex items-center justify-center md:w-[29px] md:h-[29px] rounded-full text-white"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    x="0px"
-                    y="0px"
-                    width="100"
-                    height="100"
-                    viewBox="0,0,256,256"
+                    </svg>
+                  </a>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-2">
+                  <a
+                    rel="noopener noreferrer"
+                    href="https://www.facebook.com/share/1Hd41qxV5u/"
+                    title="Facebook"
+                    class="flex items-center justify-center md:w-[29px] md:h-[29px] rounded-full text-white"
                   >
-                    <g
-                      fill="#16423c"
-                      fill-rule="nonzero"
-                      stroke="none"
-                      stroke-width="1"
-                      stroke-linecap="butt"
-                      stroke-linejoin="miter"
-                      stroke-miterlimit="10"
-                      stroke-dasharray=""
-                      stroke-dashoffset="0"
-                      font-family="none"
-                      font-weight="none"
-                      font-size="none"
-                      text-anchor="none"
-                      style="mix-blend-mode: normal"
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      x="0px"
+                      y="0px"
+                      width="100"
+                      height="100"
+                      viewBox="0,0,256,256"
                     >
-                      <g transform="scale(5.12,5.12)">
-                        <path
-                          d="M41,4h-32c-2.76,0 -5,2.24 -5,5v32c0,2.76 2.24,5 5,5h32c2.76,0 5,-2.24 5,-5v-32c0,-2.76 -2.24,-5 -5,-5zM37,19h-2c-2.14,0 -3,0.5 -3,2v3h5l-1,5h-4v15h-5v-15h-4v-5h4v-3c0,-4 2,-7 6,-7c2.9,0 4,1 4,1z"
-                        ></path>
+                      <g
+                        fill="#16423c"
+                        fill-rule="nonzero"
+                        stroke="none"
+                        stroke-width="1"
+                        stroke-linecap="butt"
+                        stroke-linejoin="miter"
+                        stroke-miterlimit="10"
+                        stroke-dasharray=""
+                        stroke-dashoffset="0"
+                        font-family="none"
+                        font-weight="none"
+                        font-size="none"
+                        text-anchor="none"
+                        style="mix-blend-mode: normal"
+                      >
+                        <g transform="scale(5.12,5.12)">
+                          <path
+                            d="M41,4h-32c-2.76,0 -5,2.24 -5,5v32c0,2.76 2.24,5 5,5h32c2.76,0 5,-2.24 5,-5v-32c0,-2.76 -2.24,-5 -5,-5zM37,19h-2c-2.14,0 -3,0.5 -3,2v3h5l-1,5h-4v15h-5v-15h-4v-5h4v-3c0,-4 2,-7 6,-7c2.9,0 4,1 4,1z"
+                          ></path>
+                        </g>
                       </g>
-                    </g>
-                  </svg>
-                </a>
-                <a
-                  rel="noopener noreferrer"
-                  href="https://www.tiktok.com/@kemenagbuleleng"
-                  title="TikTok"
-                  class="flex items-center justify-center md:w-[30px] md:h-[30px] rounded-full text-white"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    x="0px"
-                    y="0px"
-                    width="100"
-                    height="100"
-                    viewBox="0,0,256,256"
+                    </svg>
+                  </a>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-2">
+                  <a
+                    rel="noopener noreferrer"
+                    href="https://www.tiktok.com/@kemenagbuleleng"
+                    title="TikTok"
+                    class="flex items-center justify-center md:w-[30px] md:h-[30px] rounded-full text-white"
                   >
-                    <g
-                      fill="#16423c"
-                      fill-rule="nonzero"
-                      stroke="none"
-                      stroke-width="1"
-                      stroke-linecap="butt"
-                      stroke-linejoin="miter"
-                      stroke-miterlimit="10"
-                      stroke-dasharray=""
-                      stroke-dashoffset="0"
-                      font-family="none"
-                      font-weight="none"
-                      font-size="none"
-                      text-anchor="none"
-                      style="mix-blend-mode: normal"
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      x="0px"
+                      y="0px"
+                      width="100"
+                      height="100"
+                      viewBox="0,0,256,256"
                     >
-                      <g transform="scale(5.12,5.12)">
-                        <path
-                          d="M41,4h-32c-2.757,0 -5,2.243 -5,5v32c0,2.757 2.243,5 5,5h32c2.757,0 5,-2.243 5,-5v-32c0,-2.757 -2.243,-5 -5,-5zM37.006,22.323c-0.227,0.021 -0.457,0.035 -0.69,0.035c-2.623,0 -4.928,-1.349 -6.269,-3.388c0,5.349 0,11.435 0,11.537c0,4.709 -3.818,8.527 -8.527,8.527c-4.709,0 -8.527,-3.818 -8.527,-8.527c0,-4.709 3.818,-8.527 8.527,-8.527c0.178,0 0.352,0.016 0.527,0.027v4.202c-0.175,-0.021 -0.347,-0.053 -0.527,-0.053c-2.404,0 -4.352,1.948 -4.352,4.352c0,2.404 1.948,4.352 4.352,4.352c2.404,0 4.527,-1.894 4.527,-4.298c0,-0.095 0.042,-19.594 0.042,-19.594h4.016c0.378,3.591 3.277,6.425 6.901,6.685z"
-                        ></path>
+                      <g
+                        fill="#16423c"
+                        fill-rule="nonzero"
+                        stroke="none"
+                        stroke-width="1"
+                        stroke-linecap="butt"
+                        stroke-linejoin="miter"
+                        stroke-miterlimit="10"
+                        stroke-dasharray=""
+                        stroke-dashoffset="0"
+                        font-family="none"
+                        font-weight="none"
+                        font-size="none"
+                        text-anchor="none"
+                        style="mix-blend-mode: normal"
+                      >
+                        <g transform="scale(5.12,5.12)">
+                          <path
+                            d="M41,4h-32c-2.757,0 -5,2.243 -5,5v32c0,2.757 2.243,5 5,5h32c2.757,0 5,-2.243 5,-5v-32c0,-2.757 -2.243,-5 -5,-5zM37.006,22.323c-0.227,0.021 -0.457,0.035 -0.69,0.035c-2.623,0 -4.928,-1.349 -6.269,-3.388c0,5.349 0,11.435 0,11.537c0,4.709 -3.818,8.527 -8.527,8.527c-4.709,0 -8.527,-3.818 -8.527,-8.527c0,-4.709 3.818,-8.527 8.527,-8.527c0.178,0 0.352,0.016 0.527,0.027v4.202c-0.175,-0.021 -0.347,-0.053 -0.527,-0.053c-2.404,0 -4.352,1.948 -4.352,4.352c0,2.404 1.948,4.352 4.352,4.352c2.404,0 4.527,-1.894 4.527,-4.298c0,-0.095 0.042,-19.594 0.042,-19.594h4.016c0.378,3.591 3.277,6.425 6.901,6.685z"
+                          ></path>
+                        </g>
                       </g>
-                    </g>
-                  </svg>
-                </a>
-                <a
-                  rel="noopener noreferrer"
-                  href="https://www.youtube.com/@kemenagbuleleng819"
-                  title="YouTube"
-                  class="flex items-center justify-center md:w-9 md:h-9 rounded-full text-white"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    x="0px"
-                    y="0px"
-                    width="100"
-                    height="100"
-                    viewBox="0,0,256,256"
+                    </svg>
+                  </a>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-2">
+                  <a
+                    rel="noopener noreferrer"
+                    href="https://www.youtube.com/@kemenagbuleleng819"
+                    title="YouTube"
+                    class="flex items-center justify-center md:w-7 md:h-7 rounded-full text-white"
                   >
-                    <g
-                      fill="#16423c"
-                      fill-rule="nonzero"
-                      stroke="none"
-                      stroke-width="1"
-                      stroke-linecap="butt"
-                      stroke-linejoin="miter"
-                      stroke-miterlimit="10"
-                      stroke-dasharray=""
-                      stroke-dashoffset="0"
-                      font-family="none"
-                      font-weight="none"
-                      font-size="none"
-                      text-anchor="none"
-                      style="mix-blend-mode: normal"
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      x="0px"
+                      y="0px"
+                      width="100"
+                      height="100"
+                      viewBox="0,0,256,256"
                     >
-                      <g transform="scale(5.12,5.12)">
-                        <path
-                          d="M44.89844,14.5c-0.39844,-2.19922 -2.29687,-3.80078 -4.5,-4.30078c-3.29687,-0.69922 -9.39844,-1.19922 -16,-1.19922c-6.59766,0 -12.79687,0.5 -16.09766,1.19922c-2.19922,0.5 -4.10156,2 -4.5,4.30078c-0.40234,2.5 -0.80078,6 -0.80078,10.5c0,4.5 0.39844,8 0.89844,10.5c0.40234,2.19922 2.30078,3.80078 4.5,4.30078c3.5,0.69922 9.5,1.19922 16.10156,1.19922c6.60156,0 12.60156,-0.5 16.10156,-1.19922c2.19922,-0.5 4.09766,-2 4.5,-4.30078c0.39844,-2.5 0.89844,-6.10156 1,-10.5c-0.20312,-4.5 -0.70312,-8 -1.20312,-10.5zM19,32v-14l12.19922,7z"
-                        ></path>
+                      <g
+                        fill="#16423c"
+                        fill-rule="nonzero"
+                        stroke="none"
+                        stroke-width="1"
+                        stroke-linecap="butt"
+                        stroke-linejoin="miter"
+                        stroke-miterlimit="10"
+                        stroke-dasharray=""
+                        stroke-dashoffset="0"
+                        font-family="none"
+                        font-weight="none"
+                        font-size="none"
+                        text-anchor="none"
+                        style="mix-blend-mode: normal"
+                      >
+                        <g transform="scale(5.12,5.12)">
+                          <path
+                            d="M44.89844,14.5c-0.39844,-2.19922 -2.29687,-3.80078 -4.5,-4.30078c-3.29687,-0.69922 -9.39844,-1.19922 -16,-1.19922c-6.59766,0 -12.79687,0.5 -16.09766,1.19922c-2.19922,0.5 -4.10156,2 -4.5,4.30078c-0.40234,2.5 -0.80078,6 -0.80078,10.5c0,4.5 0.39844,8 0.89844,10.5c0.40234,2.19922 2.30078,3.80078 4.5,4.30078c3.5,0.69922 9.5,1.19922 16.10156,1.19922c6.60156,0 12.60156,-0.5 16.10156,-1.19922c2.19922,-0.5 4.09766,-2 4.5,-4.30078c0.39844,-2.5 0.89844,-6.10156 1,-10.5c-0.20312,-4.5 -0.70312,-8 -1.20312,-10.5zM19,32v-14l12.19922,7z"
+                          ></path>
+                        </g>
                       </g>
-                    </g>
-                  </svg>
-                </a>
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -430,7 +446,7 @@
         <!-- logo + teks, center-horizontal, sedikit di atas form -->
         <div class="absolute inset-x-0 top-10 flex justify-center items-center z-10">
           <img
-            class="w-8 h-auto mr-4"
+            class="w-8 h-auto mr-3"
             src="/public/image/logo_web.png"
             alt="Logo SIMPATI"
           />
@@ -443,85 +459,77 @@
 
         <!-- floating white card dengan form -->
         <div
-          class="absolute inset-x-0 top-24 mx-auto w-[96%] sm:w-2/3 max-w-md bg-white rounded-2xl shadow-lg p-4 z-20"
+          class="absolute inset-x-0 top-28 mx-auto w-[98%] sm:w-2/3 max-w-md bg-white rounded-2xl shadow-lg p-6 z-20 space-y-4"
         >
-          <h3 class="text-lg font-semibold mb-3 text-gray-800">Daftar Akun</h3>
+          <h3 class="text-center text-xl text-slate-700 poppins-light">
+            Daftar Akun Baru
+          </h3>
+          <h5 class="text-green-800">
+            * Silakan isi data berikut untuk membuat akun Anda.
+          </h5>
           <form @submit.prevent="handleSubmit" class="space-y-3">
             <div>
-              <label class="block text-gray-600 mb-1 text-sm">Nama Lengkap</label>
+              <label class="block text-green-950 mb-1 text-m font-normal"
+                >Nama Lengkap</label
+              >
               <input
                 v-model="form.name"
                 type="text"
                 required
-                class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"
+                class="w-full border-gray-300 rounded-xl px-3 py-2 text-sm focus:outline-none focus:bg-gradient-border border-[1.5px]"
                 placeholder="Masukkan nama lengkap Anda"
               />
             </div>
             <div>
-              <label class="block text-gray-600 mb-1 text-sm">Email</label>
+              <label class="block text-green-950 mb-1 text-m font-normal">Email</label>
               <input
                 v-model="form.email"
                 type="email"
                 required
-                class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"
-                placeholder="Masukkan email Anda"
+                class="w-full border-gray-300 rounded-xl px-3 py-2 text-sm focus:outline-none focus:bg-gradient-border border-[1.5px]"
+                placeholder="nama@email.com"
               />
             </div>
             <div>
-              <label class="block text-gray-600 mb-1 text-sm">WhatsApp</label>
+              <label class="block text-green-950 mb-1 text-m font-normal"
+                >Nomor WhatsApp</label
+              >
               <input
                 v-model="form.phone"
                 type="tel"
                 required
-                class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"
+                class="w-full border-gray-300 rounded-xl px-3 py-2 text-sm focus:outline-none focus:bg-gradient-border border-[1.5px]"
                 placeholder="Masukkan nomor WhatsApp Anda"
               />
             </div>
             <div>
-              <label class="block text-gray-600 mb-1 text-sm">Alamat</label>
+              <label class="block text-green-950 mb-1 text-m font-normal">Alamat</label>
               <input
                 v-model="form.address"
                 type="text"
                 required
-                class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"
+                class="w-full border-gray-300 rounded-xl px-3 py-2 text-sm focus:outline-none focus:bg-gradient-border border-[1.5px]"
                 placeholder="Masukkan alamat tempat tinggal Anda"
               />
             </div>
             <div class="relative">
-              <label class="block text-gray-600 mb-1 text-sm">Password</label>
+              <label class="block text-green-950 mb-1 text-m font-normal">Password</label>
               <input
                 v-model="form.password"
                 :type="showPassword ? 'text' : 'password'"
                 required
-                class="w-full border border-gray-300 rounded-lg px-3 py-2 pr-8 text-sm"
-                placeholder="Masukkan password Anda"
+                class="w-full border-gray-300 rounded-xl px-3 py-2 text-sm focus:outline-none focus:bg-gradient-border border-[1.5px]"
+                placeholder="••••••••"
               />
               <button
                 type="button"
                 @click="togglePassword"
-                class="absolute inset-y-0 right-2 flex items-center text-gray-500"
+                class="absolute inset-y-0 top-6 right-3 flex items-center text-gray-500"
               >
                 <component :is="showPassword ? EyeSlashIcon : EyeIcon" class="h-4 w-4" />
               </button>
             </div>
-            <div class="relative">
-              <label class="block text-gray-600 mb-1 text-sm">Konfirmasi Password</label>
-              <input
-                v-model="form.confirmPassword"
-                :type="showPassword ? 'text' : 'password'"
-                required
-                class="w-full border border-gray-300 rounded-lg px-3 py-2 pr-8 text-sm"
-                placeholder="Ulangi password Anda"
-              />
-              <button
-                type="button"
-                @click="togglePassword"
-                class="absolute inset-y-0 right-2 flex items-center text-gray-500"
-              >
-                <component :is="showPassword ? EyeSlashIcon : EyeIcon" class="h-4 w-4" />
-              </button>
-            </div>
-            <div class="flex items-center text-sm">
+            <div class="flex items-center text-sm mb-7">
               <input
                 id="terms-mobile"
                 v-model="form.terms"
@@ -531,25 +539,30 @@
               />
               <label for="terms-mobile" class="ml-2 text-gray-700">
                 Saya menyetujui
-                <a href="#" class="text-[#16423C] hover:underline">Ketentuan Layanan</a>
+                <a href="#" class="text-blue-600 underline">Ketentuan Layanan</a>
                 dan
-                <a href="#" class="text-[#16423C] hover:underline">Kebijakan Privasi</a>
+                <a href="#" class="text-blue-600 underline">Kebijakan Privasi</a>
               </label>
             </div>
             <button
               type="submit"
-              class="w-full bg-[#1B4D3E] text-white py-2 rounded-lg text-sm hover:bg-[#16423C] transition"
+              class="w-full rounded-xl bg-gradient-to-r from-green-600 to-blue-600 text-white font-bold py-2 text-m transition uppercase"
             >
               Buat Akun
             </button>
           </form>
-          <p class="mt-3 text-center text-gray-600 text-xs">
-            Sudah punya akun?
-            <a href="#" class="text-[#16423C] font-medium hover:underline">Masuk</a>
+          <p class="mt-3 text-center text-gray-600 text-m">
+            Sudah memiliki akun?
+            <router-link
+              to="/layanan-publik/auth/login"
+              class="text-blue-600 underline font-medium"
+            >
+              Masuk ke Akun
+            </router-link>
           </p>
         </div>
         <div
-          class="md:hidden absolute inset-x-0 top-205 flex justify-center items-center space-x-4 z-20"
+          class="md:hidden absolute inset-x-0 top-207 flex justify-center items-center space-x-4 z-20"
         >
           <a
             rel="noopener noreferrer"
