@@ -1,12 +1,14 @@
 <template>
   <nav
-    class="w-full mt-5 max-w-[92vw] mx-auto px-4 py-3 bg-white border border-gray-300 rounded-2xl shadow-md flex items-center justify-between"
+    class="w-full mt-4 max-w-[92vw] mx-auto px-4 py-3 bg-white border border-gray-300 rounded-2xl shadow-md flex items-center justify-between"
   >
     <!-- Brand -->
     <div class="flex items-center space-x-2">
       <router-link to="/" class="flex gap-2">
         <img src="/image/logo_web.png" alt="Logo" class="h-8 hover:cursor-pointer" />
-        <span class="text-gray-900 font-semibold text-lg hover:cursor-pointer">SIMPATI</span>
+        <span class="text-gray-900 font-semibold text-lg hover:cursor-pointer"
+          >SIMPATI</span
+        >
       </router-link>
     </div>
 
@@ -30,8 +32,15 @@
           class="inline-flex items-center space-x-1 font-medium text-gray-800 hover:text-gray-900 transition"
         >
           <span>Pengaduan Publik</span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.98l3.71-3.75a.75.75 0 011.08 1.04l-4.24 4.29a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M5.23 7.21a.75.75 0 011.06.02L10 10.98l3.71-3.75a.75.75 0 011.08 1.04l-4.24 4.29a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z"
+            />
           </svg>
         </button>
         <div
@@ -83,8 +92,19 @@
 
     <!-- Mobile Hamburger -->
     <button @click="mobileOpen = !mobileOpen" class="md:hidden text-gray-800">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        />
       </svg>
     </button>
   </nav>
@@ -109,8 +129,15 @@
         class="w-full flex justify-between items-center px-4 py-2 font-semibold text-gray-800 hover:bg-gray-100 transition"
       >
         <span>Pengaduan Publik</span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.98l3.71-3.75a.75.75 0 011.08 1.04l-4.24 4.29a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M5.23 7.21a.75.75 0 011.06.02L10 10.98l3.71-3.75a.75.75 0 011.08 1.04l-4.24 4.29a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z"
+          />
         </svg>
       </button>
       <div v-if="dropdownOpen" class="pl-4 border-t border-gray-100">
@@ -146,11 +173,7 @@
     </a>
 
     <!-- Mobile Avatar -->
-    <router-link
-      v-if="isLoggedIn"
-      to="/profile"
-      class="flex justify-center my-2"
-    >
+    <router-link v-if="isLoggedIn" to="/profile" class="flex justify-center my-2">
       <img
         :src="user.avatarUrl"
         alt="Avatar"
