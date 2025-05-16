@@ -1,6 +1,6 @@
 <template>
   <!-- FULLSCREEN CONTAINER WITH BACKGROUND IMAGE -->
-  <section class="relative h-screen overflow-hidden">
+  <section class="relative h-screen md:overflow-hidden overflow-y-scroll">
     <div
       class="relative z-20 flex flex-col items-center justify-center h-full px-4 md:-mt-2"
     >
@@ -21,7 +21,7 @@
           </h5>
 
           <!-- Registration Form -->
-          <form @submit.prevent="register">
+          <form @submit.prevent="handleRegister">
             <div class="space-y-4">
               <!-- Name Field -->
               <div class="relative">
@@ -31,7 +31,7 @@
                 <input
                   v-model="form.name"
                   type="text"
-                  class="w-full bg-gray-50 rounded-2xl py-3 pl-12 pr-4 text-m text-green-950 placeholder-gray-500 focus:outline-none focus:bg-gradient-border border-[1.5px] border-gray-200"
+                  class="w-full bg-gray-50 rounded-2xl py-3 pl-12 pr-4 text-m text-green-950 placeholder-gray-500 focus:outline-none focus:bg-gradient-border border-[1.5px] border-gray-300"
                   placeholder="Masukkan nama lengkap Anda"
                   required
                 />
@@ -45,7 +45,7 @@
                 <input
                   v-model="form.email"
                   type="email"
-                  class="w-full bg-gray-50 rounded-2xl py-3 pl-12 pr-4 text-m text-green-950 placeholder-gray-500 focus:outline-none focus:bg-gradient-border border-[1.5px] border-gray-200"
+                  class="w-full bg-gray-50 rounded-2xl py-3 pl-12 pr-4 text-m text-green-950 placeholder-gray-500 focus:outline-none focus:bg-gradient-border border-[1.5px] border-gray-300"
                   placeholder="Masukkan email Anda"
                   required
                 />
@@ -90,9 +90,9 @@
                   </svg>
                 </div>
                 <input
-                  v-model="form.phone"
+                  v-model="form.no_hp"
                   type="tel"
-                  class="w-full bg-gray-50 rounded-2xl py-3 pl-12 pr-4 text-m text-green-950 placeholder-gray-500 focus:outline-none focus:bg-gradient-border border-[1.5px] border-gray-200"
+                  class="w-full bg-gray-50 rounded-2xl py-3 pl-12 pr-4 text-m text-green-950 placeholder-gray-500 focus:outline-none focus:bg-gradient-border border-[1.5px] border-gray-300"
                   placeholder="Masukkan nomor WhatsApp Anda"
                   required
                 />
@@ -105,9 +105,9 @@
                 </div>
                 <input
                   id="name"
-                  v-model="form.address"
+                  v-model="form.alamat"
                   type="text"
-                  class="w-full bg-gray-50 rounded-2xl py-3 pl-12 pr-4 text-m text-green-950 placeholder-gray-500 focus:outline-none focus:bg-gradient-border border-[1.5px] border-gray-200"
+                  class="w-full bg-gray-50 rounded-2xl py-3 pl-12 pr-4 text-m text-green-950 placeholder-gray-500 focus:outline-none focus:bg-gradient-border border-[1.5px] border-gray-300"
                   placeholder="Masukkan alamat tempat tinggal Anda"
                   required
                 />
@@ -122,7 +122,7 @@
                 <input
                   v-model="form.password"
                   :type="showPassword ? 'text' : 'password'"
-                  class="w-full bg-gray-50 rounded-2xl py-3 pl-12 pr-4 text-m text-green-950 placeholder-gray-500 focus:outline-none focus:bg-gradient-border border-[1.5px] border-gray-200"
+                  class="w-full bg-gray-50 rounded-2xl py-3 pl-12 pr-4 text-m text-green-950 placeholder-gray-500 focus:outline-none focus:bg-gradient-border border-[1.5px] border-gray-300"
                   placeholder="Masukkan password Anda"
                   required
                 />
@@ -143,7 +143,7 @@
               <div class="flex items-center">
                 <input
                   id="terms"
-                  v-model="form.terms"
+                  v-model="terms"
                   type="checkbox"
                   class="h-4 w-4 border-green-800 rounded"
                   required
@@ -158,7 +158,8 @@
 
               <button
                 type="submit"
-                class="w-full bg-gradient-to-r from-green-600 to-blue-600 text-white py-2 px-4 rounded-xl hover:bg-[#16423C] transition duration-200 uppercase font-bold mt-2"
+                :disabled="!terms"
+                :class="terms == true ? 'w-full bg-gradient-to-r from-green-600 to-blue-600 text-white py-2 px-4 rounded-xl hover:bg-[#16423C] transition duration-200 uppercase font-bold mt-2 hover:cursor-pointer': 'w-full bg-gradient-to-r from-green-300 to-blue-300 text-white py-2 px-4 rounded-xl hover:bg-[#16423C] transition duration-200 uppercase font-bold mt-2 hover:cursor-not-allowed'"
               >
                 Buat Akun
               </button>
@@ -183,7 +184,7 @@
           <div class="flex justify-end mr-17 mt-6">
             <router-link
               to="/"
-              class="bg-[#16423C] flex text-white px-2 py-1 rounded-lg shadow-lg hover:cursor-pointer"
+              class="bg-[#16423C] flex text-white px-2 py-1 mt-3 rounded-lg shadow-lg hover:cursor-pointer"
             >
               <span
                 ><svg
@@ -440,9 +441,9 @@
           </div>
         </div>
       </div>
-
+      
       <!-- MOBILE LAYOUT -->
-      <div class="md:hidden relative min-h-screen w-full bg-cover bg-right">
+      <div class="md:hidden relative min-h-[105vh] w-full bg-cover bg-right">
         <!-- logo + teks, center-horizontal, sedikit di atas form -->
         <div class="absolute inset-x-0 top-10 flex justify-center items-center z-10">
           <img
@@ -467,7 +468,7 @@
           <h5 class="text-green-800">
             * Silakan isi data berikut untuk membuat akun Anda.
           </h5>
-          <form @submit.prevent="handleSubmit" class="space-y-3">
+          <form @submit.prevent="handleRegister" class="space-y-3">
             <div>
               <label class="block text-green-950 mb-1 text-m font-normal"
                 >Nama Lengkap</label
@@ -495,7 +496,7 @@
                 >Nomor WhatsApp</label
               >
               <input
-                v-model="form.phone"
+                v-model="form.no_hp"
                 type="tel"
                 required
                 class="w-full border-gray-300 rounded-xl px-3 py-2 text-sm focus:outline-none focus:bg-gradient-border border-[1.5px]"
@@ -505,7 +506,7 @@
             <div>
               <label class="block text-green-950 mb-1 text-m font-normal">Alamat</label>
               <input
-                v-model="form.address"
+                v-model="form.alamat"
                 type="text"
                 required
                 class="w-full border-gray-300 rounded-xl px-3 py-2 text-sm focus:outline-none focus:bg-gradient-border border-[1.5px]"
@@ -531,8 +532,8 @@
             </div>
             <div class="flex items-center text-sm mb-7">
               <input
-                id="terms-mobile"
-                v-model="form.terms"
+                id="terms"
+                v-model="terms"
                 type="checkbox"
                 class="h-4 w-4 text-yellow-500 focus:ring-yellow-400 border-gray-300 rounded"
                 required
@@ -546,7 +547,8 @@
             </div>
             <button
               type="submit"
-              class="w-full rounded-xl bg-gradient-to-r from-green-600 to-blue-600 text-white font-bold py-2 text-m transition uppercase"
+              :disabled="!terms"
+              :class="terms == true ? 'w-full rounded-xl bg-gradient-to-r from-green-600 to-blue-600 text-white font-bold py-2 text-m transition uppercase': 'w-full rounded-xl bg-gradient-to-r from-green-300 to-blue-300 text-white font-bold py-2 text-m transition uppercase'"
             >
               Buat Akun
             </button>
@@ -756,12 +758,17 @@
           </a>
         </div>
       </div>
+
     </div>
   </section>
 </template>
 
 <script setup>
 import { reactive, ref } from "vue";
+import { useRouter } from "vue-router";
+import axios from "axios";
+import Swal from "sweetalert2";
+
 import {
   UserIcon,
   EnvelopeIcon,
@@ -773,9 +780,14 @@ import {
   MapPinIcon,
 } from "@heroicons/vue/24/outline";
 
+const router = useRouter();
+const terms = ref(false);
+
 const form = reactive({
   name: "",
   email: "",
+  no_hp:"",
+  alamat:"",
   password: "",
 });
 
@@ -784,10 +796,36 @@ function togglePassword() {
   showPassword.value = !showPassword.value;
 }
 
-function handleSubmit() {
-  // validasi & kirim data
-  console.log("Submitting", form);
-  alert("Registrasi sukses!");
+const handleRegister = async () => {
+  const API_URL = import.meta.env.VITE_API_URL;
+
+      try {
+        const response = await axios.post(`${API_URL}/register`, {
+          name: form.name,
+          email: form.email,
+          no_hp: form.no_hp,
+          alamat: form.alamat,
+          password: form.password,
+        });
+        const result = response.data;
+        if (result.status === 201) {
+          await Swal.fire({
+            icon: "success",
+            title: "Anda Berhasil Mendaftarkan Akun",
+            text: "Anda akan dialihkan ke halaman Masuk Akun",
+            timer: 1500,
+            showConfirmButton: false,
+          });
+          router.push({ name: "Login" });    // <-- gunakan router.push
+        }
+      } catch (error) {
+        console.log(error);
+        Swal.fire({
+          icon: "error",
+          title: "Daftar Akun Gagal",
+          text: error.response?.data?.message || "Terjadi kesalahan",
+        });
+      }
 }
 </script>
 
