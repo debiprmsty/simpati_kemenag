@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/vue-fontawesome": "^3.0.8",
     "@heroicons/vue": "^2.2.0",
     "@lottiefiles/dotlottie-vue": "^0.6.1",
     "@tailwindcss/vite": "^4.0.17",

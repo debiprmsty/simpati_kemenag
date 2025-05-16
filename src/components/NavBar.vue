@@ -1,11 +1,13 @@
 <template>
   <nav
-    class="w-full mt-5 max-w-[92vw] mx-auto px-4 py-3 bg-white border border-gray-300 rounded-2xl shadow-md flex items-center justify-between"
+    class="w-full mt-4 max-w-[92vw] mx-auto px-4 py-3 bg-white border border-gray-300 rounded-2xl shadow-md flex items-center justify-between"
   >
     <div class="flex items-center space-x-2">
       <router-link to="/" class="flex gap-2">
         <img src="/image/logo_web.png" alt="Logo" class="h-8 hover:cursor-pointer" />
-        <span class="text-gray-900 font-semibold text-lg hover:cursor-pointer">SIMPATI</span>
+        <span class="text-gray-900 font-semibold text-lg hover:cursor-pointer"
+          >SIMPATI</span
+        >
       </router-link>
     </div>
 
@@ -29,8 +31,15 @@
           class="inline-flex items-center space-x-1 font-medium text-gray-800 hover:text-gray-900 transition"
         >
           <span>Pengaduan Publik</span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.98l3.71-3.75a.75.75 0 011.08 1.04l-4.24 4.29a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M5.23 7.21a.75.75 0 011.06.02L10 10.98l3.71-3.75a.75.75 0 011.08 1.04l-4.24 4.29a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z"
+            />
           </svg>
         </button>
         <div
@@ -62,12 +71,13 @@
       >
         Masuk
       </router-link>
-      <a
+      <router-link
         v-if="!isLoggedIn"
-        href="#"
+        to="/layanan-publik/auth/register"
         class="px-4 py-2 bg-[#1B4D3E] text-white rounded-2xl hover:bg-[#16423C] font-semibold transition"
       >
         Daftar
+<<<<<<< HEAD
       </a>
       
       <div v-if="isLoggedIn" class="relative">
@@ -104,11 +114,33 @@
           </button>
         </div>
       </div>
+=======
+      </router-link>
+      <!-- If logged in, show avatar circle -->
+      <router-link v-if="isLoggedIn" to="/profile" class="block">
+        <img
+          :src="user.avatarUrl"
+          alt="Avatar"
+          class="h-8 w-8 rounded-full border-2 border-gray-300 hover:border-[#16423C] transition"
+        />
+      </router-link>
+>>>>>>> 2ac9897b84111caadf621764e59d2d2cd382f857
     </div>
 
     <button @click="mobileOpen = !mobileOpen" class="md:hidden text-gray-800">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        />
       </svg>
     </button>
   </nav>
@@ -134,8 +166,20 @@
         class="w-full flex justify-between items-center px-4 py-2 font-semibold text-gray-800 hover:bg-gray-100 transition"
       >
         <span>Pengaduan Publik</span>
+<<<<<<< HEAD
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" :class="{'rotate-180': pengaduanDropdownOpen}" fill="currentColor" viewBox="0 0 20 20">
           <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.98l3.71-3.75a.75.75 0 011.08 1.04l-4.24 4.29a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z" />
+=======
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M5.23 7.21a.75.75 0 011.06.02L10 10.98l3.71-3.75a.75.75 0 011.08 1.04l-4.24 4.29a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z"
+          />
+>>>>>>> 2ac9897b84111caadf621764e59d2d2cd382f857
         </svg>
       </button>
       <div v-if="pengaduanDropdownOpen" class="pl-4 border-t border-gray-100">
@@ -156,6 +200,7 @@
       </div>
     </div>
 
+<<<<<<< HEAD
     <div v-if="!isLoggedIn" class="border-t border-gray-100">
       <router-link
         to="/layanan-publik/auth/login"
@@ -195,6 +240,32 @@
         Logout
       </button>
     </div>
+=======
+    <!-- Mobile Auth Links -->
+    <router-link
+      v-if="!isLoggedIn"
+      to="/layanan-publik/auth/login"
+      class="block px-4 py-2 font-semibold text-gray-800 hover:bg-gray-100 transition"
+    >
+      Masuk
+    </router-link>
+    <router-link
+      v-if="!isLoggedIn"
+      to="/layanan-publik/auth/register"
+      class="block mx-4 my-2 px-4 py-2 text-center bg-[#1B4D3E] text-white rounded-2xl font-semibold hover:bg-[#16423C] transition"
+    >
+      Daftar
+    </router-link>
+
+    <!-- Mobile Avatar -->
+    <router-link v-if="isLoggedIn" to="/profile" class="flex justify-center my-2">
+      <img
+        :src="user.avatarUrl"
+        alt="Avatar"
+        class="h-10 w-10 rounded-full border-2 border-gray-300 hover:border-[#16423C] transition"
+      />
+    </router-link>
+>>>>>>> 2ac9897b84111caadf621764e59d2d2cd382f857
   </div>
 
   <div v-if="showLogoutConfirmModal" class="fixed inset-0 bg-gray-50 bg-opacity-50 flex items-center justify-center z-50 p-4">
