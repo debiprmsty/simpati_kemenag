@@ -8,6 +8,9 @@ import Register from '../src/views/service/layanpub/auth/Register.vue';
 import ListSatker from '../src/views/service/layanpub/ListSatker.vue';
 import DaftarLayanan from '../src/views/service/layanpub/DaftarLayanan.vue';
 import FormLayanan from '../src/views/service/layanpub/FormLayanan.vue';
+import LayananInternal from '../src/views/service/layaninternal/LayananInternal.vue';
+import SyaratLayanan from '../src/views/service/syaratlayanan/SyaratLayanan.vue';
+import DosenZI from '../src/views/service/dosenzi/DosenZI.vue';
 
 const routes = [
   {
@@ -19,6 +22,21 @@ const routes = [
     path: '/maintenance',
     name: 'Maintenance',
     component: Maintenance
+  },
+  {
+    path: '/layanan-internal',
+    name: 'LayananInternal',
+    component: LayananInternal
+  },
+  {
+    path: '/syarat-layanan',
+    name: 'SyaratLayanan',
+    component: SyaratLayanan
+  },
+  {
+    path: '/dosen-zi',
+    name: 'DosenZI',
+    component: DosenZI
   },
   {
     path: '/layanan-publik/auth/login',
