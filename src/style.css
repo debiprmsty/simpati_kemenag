@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
-body{
+/* body{
   border: none;
-}
+  background-color: rgb(245, 245, 245);
+} */
 .acme-regular {
   font-family: "Acme", sans-serif;
   font-weight: 600;

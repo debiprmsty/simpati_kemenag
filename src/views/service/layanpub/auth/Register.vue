@@ -808,6 +808,7 @@ const handleRegister = async () => {
           password: form.password,
         });
         const result = response.data;
+        
         if (result.status === 201) {
           await Swal.fire({
             icon: "success",

@@ -183,7 +183,7 @@
           </h3>
           <div class="flex items-center justify-center px-3 py-2 bg-gray-200">
             <router-link
-              to="/maintenance"
+              to="/progress-permohonan"
               class="px-2 py-1 text-xs font-semibold text-white transition-colors duration-300 transform bg-[#16423C] rounded-lg hover:bg-gray-700 dark:hover:bg-[#1B4D3E] focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none cursor-pointer"
               >Lihat Selengkapnya</router-link
             >

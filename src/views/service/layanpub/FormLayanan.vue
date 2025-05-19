@@ -215,6 +215,7 @@ async function submitForm() {
   try {
     const formData = new FormData()
     formData.append('role_id', idRole)
+    formData.append('produk_id', idLayanan)
     formData.append('catatan', note.value)
     fileList.value.forEach(f => formData.append('filenames[]', f))
 
