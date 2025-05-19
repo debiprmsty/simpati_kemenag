@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 // Import komponen halaman
 import Home from '../src/views/Home.vue';
+import FAQ from '../src/views/FAQ.vue';
+import SP4NLapor from '../src/views/SP4NLapor.vue';
 import Maintenance from '../src/views/Maintenance.vue';
 import Login from '../src/views/service/layanpub/auth/Login.vue';
 import Register from '../src/views/service/layanpub/auth/Register.vue';
@@ -17,6 +19,16 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/faq',
+    name: 'FAQ',
+    component: FAQ
+  },
+  {
+    path: '/sp4n-lapor',
+    name: 'SP4NLapor',
+    component: SP4NLapor
   },
   {
     path: '/maintenance',

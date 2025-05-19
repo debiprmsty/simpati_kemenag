@@ -47,12 +47,12 @@
           v-if="dropdownOpen"
           class="absolute right-0 mt-2 bg-white border border-gray-100 rounded-xl shadow-lg w-44 z-20"
         >
-          <a
-            href="#"
+          <router-link
+            to="/sp4n-lapor"
             class="block px-4 py-2 text-gray-700 hover:bg-[#E9EFEC] rounded-xl transition"
           >
             SP4N Lapor
-          </a>
+          </router-link>
           <a
             href="https://wa.me/+6285928877957"
             class="block px-4 py-2 text-gray-700 hover:bg-[#E9EFEC] rounded-xl transition"
@@ -141,12 +141,12 @@
         </svg>
       </button>
       <div v-if="dropdownOpen" class="pl-4 border-t border-gray-100">
-        <a
-          href="#"
+        <router-link
+          to="/sp4n-lapor"
           class="block px-4 py-2 font-medium text-gray-700 hover:bg-[#E9EFEC] rounded-xl transition"
         >
           SP4N Lapor
-        </a>
+        </router-link>
         <a
           href="https://wa.me/+6285928877957"
           class="block px-4 py-2 font-medium text-gray-700 hover:bg-[#E9EFEC] rounded-xl transition"
