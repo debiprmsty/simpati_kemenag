@@ -5,6 +5,8 @@ import Home from '../src/views/Home.vue';
 import FAQ from '../src/views/FAQ.vue';
 import SP4NLapor from '../src/views/SP4NLapor.vue';
 import Maintenance from '../src/views/Maintenance.vue';
+
+// Layanan Publik
 import Login from '../src/views/service/layanpub/auth/Login.vue';
 import Register from '../src/views/service/layanpub/auth/Register.vue';
 import ListSatker from '../src/views/service/layanpub/ListSatker.vue';
@@ -13,6 +15,9 @@ import FormLayanan from '../src/views/service/layanpub/FormLayanan.vue';
 import LayananInternal from '../src/views/service/layaninternal/LayananInternal.vue';
 import SyaratLayanan from '../src/views/service/syaratlayanan/SyaratLayanan.vue';
 import DosenZI from '../src/views/service/dosenzi/DosenZI.vue';
+
+// Progress Permohonan
+import ProgressPermohonn from '../src/views/service/progress/ProgressPermohonn.vue';
 
 const routes = [
   {
@@ -76,6 +81,11 @@ const routes = [
     name: 'FormLayanan',
     component: FormLayanan,
     props: true  // biar id masuk ke props component
+  },
+  {
+    path: '/progress-permohonan',
+    name: 'ProgressPermohonan',
+    component: ProgressPermohonn,
   }
   
 

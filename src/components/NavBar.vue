@@ -154,15 +154,8 @@
         class="w-full flex justify-between items-center px-4 py-2 font-semibold text-gray-800 hover:bg-gray-100 transition"
       >
         <span>Pengaduan Publik</span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-4 w-4"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-        >
-          <path
-            d="M5.23 7.21a.75.75 0 011.06.02L10 10.98l3.71-3.75a.75.75 0 011.08 1.04l-4.24 4.29a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z"
-          />
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" :class="{'rotate-180': pengaduanDropdownOpen}" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.98l3.71-3.75a.75.75 0 011.08 1.04l-4.24 4.29a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z" />
         </svg>
       </button>
       <div v-if="dropdownOpen" class="pl-4 border-t border-gray-100">
