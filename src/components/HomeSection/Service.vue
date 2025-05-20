@@ -4,7 +4,7 @@
       class="px-2 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20"
     >
       <div
-        class="max-w-xl mb-10 md:mx-auto text-center lg:max-w-2xl md:mb-10 px-5 md:px-0"
+        class="max-w-xl mb-10 md:mx-auto text-center lg:max-w-6xl md:mb-10 px-5 md:px-0"
       >
         <h2
           class="mb-6 font-sans text-3xl font-bold leading-10 tracking-tight text-gray-900 md:text-5xl md:mx-auto"
@@ -12,8 +12,11 @@
           Layanan & Informasi Publik
         </h2>
         <p class="text-base text-gray-700 md:text-lg">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-          doloremque rem aperiam, eaque ipsa quae.
+          Pusat akses layanan dan informasi terpecaya dari Kementerian Agama Kabupaten
+          Buleleng yang dirancang guna mendukung keterbukaan, akuntabilitas, serta
+          kemudahan pelayanan bagi seluruh pemangku kepentingan. Jelajahi berbagai
+          informasi dan layanan yang tersedia untuk memenuhi kebutuhan Anda secara cepat,
+          tepat, dan terpercaya.
         </p>
       </div>
       <!-- Grid responsive: 1 kolom mobile, 2 kolom sm, 3 kolom lg -->
