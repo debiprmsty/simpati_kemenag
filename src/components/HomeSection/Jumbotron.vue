@@ -1,6 +1,6 @@
 <template>
   <section class="overflow-hidden sm:grid sm:grid-cols-2 md:pr-10 md:pt-7">
-    <div class="p-7 md:p-12 lg:px-10 lg:py-10">
+    <div class="p-5 md:px-10 md:py-10">
       <div
         class="mx-auto max-w-xl md:text-center text-start ltr:sm:text-left rtl:sm:text-right"
       >
@@ -15,7 +15,7 @@
           Kantor Kementerian Agama Kabupaten Buleleng
         </h2>
 
-        <p class="text-gray-500 md:mt-4 mt-5">
+        <p class="text-gray-500 md:mt-4 mt-5 text-justify">
           Selamat datang di SIMPATI – <b>SIsteM Pelayananan Agama TerintegrasI</b> Kantor
           Kementerian Agama Kabupaten Buleleng. Situs ini dirancang untuk memberikan
           informasi dan layanan keagamaan yang cepat, transparan, dan terintegrasi bagi
@@ -25,6 +25,7 @@
         <div class="mt-8 md:mt-8">
           <a
             href="#"
+            @click.prevent="$emit('scroll-service')"
             class="inline-block rounded-2xl bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-500 hover:to-blue-500 px-6 py-3 text-md font-semibold text-white shadow-md transition focus:ring-3 focus:ring-yellow-400 focus:outline-hidden"
           >
             Lihat Layanan
@@ -33,7 +34,7 @@
       </div>
     </div>
 
-    <div class="mx-2 md:mx-0">
+    <div class="mx-4 md:mx-0 md:p-0">
       <video
         src="/public/video/jv.mp4"
         type="video/mp4"
@@ -47,4 +48,6 @@
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+defineEmits(["scroll-service"]);
+</script>

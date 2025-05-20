@@ -5,7 +5,7 @@
       class="mb-6 mt-6 p-4 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-xl shadow-md"
     >
       <h2 class="text-lg md:text-xl font-bold uppercase">Daftar Syarat Layanan</h2>
-      <p class="text-xs md:text-[1rem] opacity-90 mt-1">
+      <p class="text-xs md:text-[1rem] opacity-90 mt-1 text-justify">
         Untuk kelancaran proses pelayanan, setiap pemohon diharapkan memenuhi seluruh
         persyaratan yang telah ditetapkan Kementerian Agama Kabupaten Buleleng. Kepatuhan
         terhadap persyaratan ini akan mempercepat proses pelayanan serta memastikan
@@ -157,7 +157,7 @@
         <button
           @click="nextPage"
           :disabled="currentPage === totalPages"
-          class="px-4 py-2 bg-white text-green-600 border border-green-600 rounded-full disabled:opacity-50 hover:bg-green-50 hover:shadow transition"
+          class="px-4 py-2 md:ml-0 ml-4 bg-white text-green-600 border border-green-600 rounded-full disabled:opacity-50 hover:bg-green-50 hover:shadow transition md:mb-0 mb-2"
         >
           Next
         </button>
