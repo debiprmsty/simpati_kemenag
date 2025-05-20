@@ -2,7 +2,7 @@
     <div class="min-h-screen bg-white flex items-start justify-center py-12 px-4">
       <!-- Wrapper Card Besar -->
       <div
-        class="w-full md:max-w-[92vw] bg-white rounded-3xl shadow-sm border border-gray-100 p-8"
+        class="w-full md:max-w-[94vw] bg-white rounded-3xl shadow-sm border border-gray-100 p-8"
       >
         <!-- Title -->
         <h1 class="text-3xl font-extrabold text-gray-900 text-start">

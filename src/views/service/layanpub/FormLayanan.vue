@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen bg-gray-50 p-4 md:p-8 relative">
-    <div class="md:max-w-[92vw] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="md:max-w-[94vw] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
       <!-- Left Column: Syarat & Ketentuan -->
       <div class="md:col-span-2 bg-white rounded-2xl shadow p-6">
         <h2 class="text-2xl font-bold mb-4 flex items-center space-x-2">

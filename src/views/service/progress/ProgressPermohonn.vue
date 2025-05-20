@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex flex-col justify-center px-4 md:px-12 bg-gray-50">
+  <div class="w-full flex flex-col justify-center px-4 md:px-10 bg-gray-50">
     <!-- Banner Kecil -->
     <div class="mb-6 mt-6 p-4 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-xl shadow-md">
       <h2 class="text-lg md:text-xl font-bold">Daftar Progress Permohonan</h2>
@@ -14,15 +14,30 @@
       <div class="flex flex-col md:flex-row justify-between items-stretch md:items-center gap-4 md:gap-0">
         <!-- Dropdown Filter -->
         <div class="w-full md:w-64">
-          <select
+          <div class="relative">
+            <select
             v-model="selectedLayanan"
-            class="w-full px-4 py-2 bg-gray-100 text-gray-700 border border-transparent rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+           class="w-full px-4 py-2 bg-gray-100 text-gray-700 border border-transparent rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 transition appearance-none pr-10"
           >
             <option value="">Semua Layanan</option>
             <option v-for="layanan in layananOptions" :key="layanan" :value="layanan">
               {{ layanan }}
             </option>
           </select>
+           <svg
+              class="w-4 h-4 absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none text-gray-500"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </div>
         </div>
 
         <!-- Search -->
