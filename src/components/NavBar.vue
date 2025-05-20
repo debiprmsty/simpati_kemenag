@@ -47,12 +47,12 @@
           ref="pengaduanDropdownContent"
           class="absolute right-0 mt-2 bg-white border border-gray-100 rounded-xl shadow-lg w-44 z-20"
         >
-          <a
-            href="#"
+          <router-link
+            to="/sp4n-lapor"
             class="block px-4 py-2 text-gray-700 hover:bg-[#E9EFEC] rounded-xl transition"
           >
             SP4N Lapor
-          </a>
+          </router-link>
           <a
             href="https://wa.me/+6285928877957"
             class="block px-4 py-2 text-gray-700 hover:bg-[#E9EFEC] rounded-xl transition"
@@ -158,14 +158,14 @@
           <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.98l3.71-3.75a.75.75 0 011.08 1.04l-4.24 4.29a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z" />
         </svg>
       </button>
-      <div v-if="pengaduanDropdownOpen" class="pl-4 border-t border-gray-100">
-        <a
-          href="#"
+      <div v-if="dropdownOpen" class="pl-4 border-t border-gray-100">
+        <router-link
+          to="/sp4n-lapor"
           class="block px-4 py-2 font-medium text-gray-700 hover:bg-[#E9EFEC] rounded-xl transition"
           @click="mobileOpen = false; pengaduanDropdownOpen = false;"
         >
           SP4N Lapor
-        </a>
+        </router-link>
         <a
           href="https://wa.me/+6285928877957"
           class="block px-4 py-2 font-medium text-gray-700 hover:bg-[#E9EFEC] rounded-xl transition"
