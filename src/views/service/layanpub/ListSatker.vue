@@ -2,10 +2,10 @@
   <div class="min-h-screen bg-white flex flex-col items-center py-12 px-4">
     <!-- Header -->
     <div class="text-center mb-10 md:mt-10">
-      <h1 class="text-3xl font-extrabold text-slate-900 mb-2">
+      <h1 class="sm:text-4xl md:max-w-full max-w-md text-2xl font-extrabold text-slate-900 mb-2">
         Seksi Pelayanan Kantor Kementrian Agama Kabupaten Buleleng
       </h1>
-      <p class="text-md text-slate-500">
+      <p class="text-md text-slate-500 text-lg">
         Bersinergi untuk Pelayanan Keagamaan yang Optimal
       </p>
     </div>
@@ -44,11 +44,15 @@
       </div>
     </div>
   </div>
+  <div class="md:h-[120vh] bg-gray-50 w-full md:py-20 py-10 md:px-8">
+    <ProgressDocument />
+  </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
+import ProgressDocument from './ProgressDocument.vue'
 
 const router = useRouter();
 const cards = ref([]);

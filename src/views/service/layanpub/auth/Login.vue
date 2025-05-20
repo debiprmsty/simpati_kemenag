@@ -94,6 +94,7 @@
 import axios from "axios";
 import Swal from "sweetalert2";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/vue/24/outline";
+// import { requestAndSaveFcmToken } from "../../../../main";
 
 export default {
   name: "LoginView",
@@ -107,6 +108,12 @@ export default {
       isLoading: false, // untuk disable tombol saat loading
     };
   },
+  mounted() {
+    const token = localStorage.getItem("token");
+    if (token) {
+      this.$router.push({ name: "ListSatker" });
+    }
+  },
   methods: {
     async handleLogin() {
       const API_URL = import.meta.env.VITE_API_URL;
@@ -119,6 +126,8 @@ export default {
 
         const token = response.data.token;
         localStorage.setItem("token", token);
+
+        // requestAndSaveFcmToken(token);
 
         await Swal.fire({
           icon: "success",
