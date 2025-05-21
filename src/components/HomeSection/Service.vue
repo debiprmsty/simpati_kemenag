@@ -1,27 +1,20 @@
 <template>
   <section id="service">
-    <div
-      class="px-2 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-5  lg:py-20"
-    >
-      <div
-        class="max-w-xl mb-10 md:mx-auto text-center lg:max-w-6xl md:mb-10 px-5 md:px-0"
+    <div class="min-h-screen p-4 md:p-8 relative">
+      <h2
+        class="mb-6 font-sans text-3xl font-bold leading-10 tracking-tight text-gray-900 md:text-5xl md:mx-auto text-center md:mt-20"
       >
-        <h2
-          class="mb-6 font-sans text-3xl font-bold leading-10 tracking-tight text-gray-900 md:text-5xl md:mx-auto"
-        >
-          Layanan & Informasi Publik
-        </h2>
-        <p class="text-base text-gray-700 md:text-lg">
-          Pusat akses layanan dan informasi terpecaya dari Kementerian Agama Kabupaten
-          Buleleng yang dirancang guna mendukung keterbukaan, akuntabilitas, serta
-          kemudahan pelayanan bagi seluruh pemangku kepentingan. Jelajahi berbagai
-          informasi dan layanan yang tersedia untuk memenuhi kebutuhan Anda secara cepat,
-          tepat, dan terpercaya.
-        </p>
-      </div>
-      <!-- Grid responsive: 1 kolom mobile, 2 kolom sm, 3 kolom lg -->
+        Layanan & Informasi Publik
+      </h2>
+      <p class="text-base text-gray-700 md:text-lg text-center mb-10">
+        Pusat akses layanan dan informasi terpecaya dari Kementerian Agama Kabupaten
+        Buleleng yang dirancang guna mendukung keterbukaan, akuntabilitas, serta kemudahan
+        pelayanan bagi seluruh pemangku kepentingan. Jelajahi berbagai informasi dan
+        layanan yang tersedia untuk memenuhi kebutuhan Anda secara cepat, tepat, dan
+        terpercaya.
+      </p>
       <div
-        class="grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 md:px-2 md:mx-0 mx-3"
+        class="md:max-w-[94vw] mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-x-22 md:gap-y-10"
       >
         <!-- Layanan Publik -->
         <div class="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
@@ -32,7 +25,7 @@
               class="w-full h-56 md:pt-0 pt-1 bg-white bg-center bg-cover rounded-lg shadow-lg"
             >
               <DotLottieVue
-                class="object-cover md:w-full md:h-full w-72 h-44 mx-auto"
+                class="object-cover md:w-[21rem] md:h-50 w-72 h-44 mx-auto"
                 autoplay
                 loop
                 src="https://lottie.host/e3bc5738-a007-43ab-b55e-000607926986/kuJbIHMMui.lottie"
@@ -178,7 +171,7 @@
             </div>
           </div>
         </div>
-         <!-- Progress Permohonan -->
+        <!-- Progress Permohonan -->
         <div class="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
           <div
             class="p-0.5 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg w-full"
@@ -237,14 +230,8 @@
             </div>
           </div>
         </div>
-
       </div>
-
-       
-
-        
     </div>
-   
   </section>
 </template>
 
