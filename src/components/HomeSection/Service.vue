@@ -1,7 +1,8 @@
 <template>
   <section id="service" class="overflow-x-hidden">
     <div class="min-h-screen p-4 md:p-8">
-      <h2
+      <div class="max-w-6xl mx-auto">
+         <h2
         class="mb-6 font-sans text-3xl font-bold leading-10 tracking-tight text-gray-900 md:text-5xl md:mx-auto text-center md:mt-20"
       >
         Layanan & Informasi Publik
@@ -13,6 +14,7 @@
         layanan yang tersedia untuk memenuhi kebutuhan Anda secara cepat, tepat, dan
         terpercaya.
       </p>
+      </div>
       <div
         class="md:max-w-[94vw] w-full mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-x-22 md:gap-y-10"
       >
@@ -22,7 +24,7 @@
             class="p-0.5 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg w-full"
           >
             <div
-              class="w-full h-56 bg-white bg-center bg-cover rounded-lg shadow-lg overflow-hidden"
+              class="w-full h-56 bg-white bg-center bg-cover rounded-lg shadow-lg overflow-hidden pb-8"
             >
               <DotLottieVue
                 class="w-full h-full object-cover"
@@ -57,7 +59,7 @@
               class="w-full h-56 bg-white bg-center bg-cover rounded-lg shadow-lg overflow-hidden"
             >
               <DotLottieVue
-                class="w-full h-full object-cover"
+                class="w-full h-56 object-cover"
                 autoplay
                 loop
                 src="https://lottie.host/26363ba2-32ee-4371-abcf-0ef8973085d4/smEMUpz1VH.lottie"
@@ -149,7 +151,7 @@
           >
             <div class="w-full h-56 bg-white bg-center bg-cover rounded-lg shadow-lg overflow-hidden">
               <DotLottieVue
-                class="w-full h-full object-cover"
+                class="w-full h-56 object-cover"
                 autoplay
                 loop
                 src="https://lottie.host/8350d44e-996f-449e-8c9f-6a3ffccf7162/thARrXd7ZF.lottie"
