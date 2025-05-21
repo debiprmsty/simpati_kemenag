@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="w-full mt-4 max-w-[94vw] mx-auto px-4 py-3 bg-white border border-gray-300 rounded-2xl shadow-md flex items-center justify-between"
+    class="w-full mt-4 md:max-w-[94vw] max-w-[92vw]  mx-auto px-4 py-3 bg-white border border-gray-300 rounded-2xl shadow-md flex items-center justify-between"
   >
     <div class="flex items-center space-x-2">
       <router-link to="/" class="flex gap-2">

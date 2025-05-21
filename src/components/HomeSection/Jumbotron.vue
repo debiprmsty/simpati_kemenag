@@ -1,6 +1,6 @@
 <template>
   <section
-    class="overflow-hidden sm:grid sm:grid-cols-2 md:max-w-[100vw] md:pt-9 md:p-5 lg:p-8"
+    class="overflow-hidden w-full md:max-w-[97vw] max-w-[100vw] mx-auto sm:grid sm:grid-cols-2 md:pt-9 md:p-2 lg:p-5"
   >
     <div class="md:py-10 md:mr-15 md:p-0 lg:p-0 p-4 md:mt-13">
       <div class="mx-auto md:text-center text-start ltr:sm:text-left rtl:sm:text-right">
@@ -34,11 +34,11 @@
       </div>
     </div>
 
-    <div class="md:mx-0 md:p-0 p-4 md:mt-1">
+    <div class="md:mx-0 md:p-0 p-4 md:mt-1 ">
       <video
         src="/public/video/jv.mp4"
         type="video/mp4"
-        class="md:h-[76vh] w-full object-cover md:rounded-3xl rounded-xl shadow-lg h-[50vh]"
+        class="w-full h-[50vh] md:h-[76vh] object-cover rounded-xl md:rounded-3xl shadow-lg"
         autoplay
         muted
         loop
