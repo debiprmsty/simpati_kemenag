@@ -1,6 +1,6 @@
 <template>
-  <section id="service">
-    <div class="min-h-screen p-4 md:p-8 relative">
+  <section id="service" class="overflow-x-hidden">
+    <div class="min-h-screen p-4 md:p-8">
       <h2
         class="mb-6 font-sans text-3xl font-bold leading-10 tracking-tight text-gray-900 md:text-5xl md:mx-auto text-center md:mt-20"
       >
@@ -14,7 +14,7 @@
         terpercaya.
       </p>
       <div
-        class="md:max-w-[94vw] mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-x-22 md:gap-y-10"
+        class="md:max-w-[94vw] w-full mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-x-22 md:gap-y-10"
       >
         <!-- Layanan Publik -->
         <div class="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
@@ -22,10 +22,10 @@
             class="p-0.5 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg w-full"
           >
             <div
-              class="w-full h-56 md:pt-0 pt-1 bg-white bg-center bg-cover rounded-lg shadow-lg"
+              class="w-full h-56 bg-white bg-center bg-cover rounded-lg shadow-lg overflow-hidden"
             >
               <DotLottieVue
-                class="object-cover md:w-[21rem] md:h-50 w-72 h-44 mx-auto"
+                class="w-full h-full object-cover"
                 autoplay
                 loop
                 src="https://lottie.host/e3bc5738-a007-43ab-b55e-000607926986/kuJbIHMMui.lottie"
@@ -54,10 +54,10 @@
             class="p-0.5 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg w-full"
           >
             <div
-              class="w-full h-56 md:pt-0 pt-2 bg-white bg-center bg-cover rounded-lg shadow-lg"
+              class="w-full h-56 bg-white bg-center bg-cover rounded-lg shadow-lg overflow-hidden"
             >
               <DotLottieVue
-                class="object-cover md:w-[21rem] md:h-52 w-[16rem] h-48 mx-auto"
+                class="w-full h-full object-cover"
                 autoplay
                 loop
                 src="https://lottie.host/26363ba2-32ee-4371-abcf-0ef8973085d4/smEMUpz1VH.lottie"
@@ -86,10 +86,10 @@
             class="p-0.5 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg w-full"
           >
             <div
-              class="w-full h-56 md:pt-1 pt-2 bg-white bg-center bg-cover rounded-lg shadow-lg"
+              class="w-full h-56 bg-white bg-center bg-cover rounded-lg shadow-lg overflow-hidden"
             >
               <DotLottieVue
-                class="object-cover md:w-[17.5rem] md:h-44 w-[16.5rem] h-[10.5rem] mx-auto"
+                class="w-full h-full object-cover"
                 autoplay
                 loop
                 src="https://lottie.host/689fee33-5b1a-43c0-94c6-9db0a1c56360/D3imntQGnT.lottie"
@@ -117,9 +117,9 @@
           <div
             class="p-0.5 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg w-full"
           >
-            <div class="w-full h-56 bg-white bg-center bg-cover rounded-lg shadow-lg">
+            <div class="w-full h-56 bg-white bg-center bg-cover rounded-lg shadow-lg overflow-hidden">
               <DotLottieVue
-                class="object-cover md:w-[20rem] md:h-48 w-[19rem] h-[12.5rem] mx-auto"
+                class="w-full h-full object-cover"
                 autoplay
                 loop
                 src="https://lottie.host/3ed3687b-e908-4302-96d0-260fc1fa76bc/jqnSmuZZNU.lottie"
@@ -147,9 +147,9 @@
           <div
             class="p-0.5 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg w-full"
           >
-            <div class="w-full h-56 bg-white bg-center bg-cover rounded-lg shadow-lg">
+            <div class="w-full h-56 bg-white bg-center bg-cover rounded-lg shadow-lg overflow-hidden">
               <DotLottieVue
-                class="object-cover md:w-[21rem] md:h-48 w-[21rem] h-48 mx-auto"
+                class="w-full h-full object-cover"
                 autoplay
                 loop
                 src="https://lottie.host/8350d44e-996f-449e-8c9f-6a3ffccf7162/thARrXd7ZF.lottie"
@@ -176,9 +176,9 @@
           <div
             class="p-0.5 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg w-full"
           >
-            <div class="w-full h-56 bg-white bg-center bg-cover rounded-lg shadow-lg">
+            <div class="w-full h-56 bg-white bg-center bg-cover rounded-lg shadow-lg overflow-hidden">
               <DotLottieVue
-                class="object-cover md:w-full md:h-full w-[22rem] h-56 mx-auto"
+                class="w-full h-full object-cover"
                 autoplay
                 loop
                 src="https://lottie.host/fafa106e-88a8-4879-ab68-84c5bad2cdb3/4Hup4hO1ot.lottie"
@@ -206,9 +206,9 @@
           <div
             class="p-0.5 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg w-full"
           >
-            <div class="w-full h-56 bg-white bg-center bg-cover rounded-lg shadow-lg">
+            <div class="w-full h-56 bg-white bg-center bg-cover rounded-lg shadow-lg overflow-hidden">
               <DotLottieVue
-                class="object-cover md:w-[19rem] md:h-48 w-80 h-48 mx-auto"
+                class="w-full h-full object-cover"
                 autoplay
                 loop
                 src="https://lottie.host/502cf393-0643-4034-baee-070a364bc8d0/evpBQLGaiS.lottie"
@@ -238,3 +238,10 @@
 <script setup>
 import { DotLottieVue } from "@lottiefiles/dotlottie-vue";
 </script>
+
+<style scoped>
+#service {
+  /* ensure no horizontal scroll */
+  overflow-x: hidden;
+}
+</style>
