@@ -1,5 +1,5 @@
 <template>
-  <div class="px-4 py-1 flex-grow overflow-x-hidden">
+  <div class="px-4 py-1 flex-grow overflow-x-hidden" id="me-progress">
     <!-- Card utama -->
     <div
       class="mx-auto w-full max-w-full sm:max-w-xl lg:max-w-[120vw] bg-white rounded-2xl shadow p-4 sm:p-6"
@@ -168,6 +168,7 @@
 
 <script setup>
 import { ref, watch, computed, onMounted } from "vue";
+import { useRoute } from "vue-router";
 import axios from "axios";
 
 // Setup axios instance
@@ -189,6 +190,38 @@ const startDate = ref("");
 const endDate = ref("");
 const loadingDocs = ref(false);
 const loadingTimeline = ref(false);
+
+const route = useRoute();
+const scrollToSection = (hash) => {
+  const section = document.querySelector(hash);
+  if (section) {
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+};
+
+// Watch perubahan hash pada URL
+watch(
+  () => route.hash,
+  (newHash) => {
+    if (newHash === "#me-progress") {
+      nextTick(() => {
+        scrollToSection(newHash);
+      });
+    }
+  }
+);
+
+// Pada mounted
+onMounted(() => {
+  if (route.hash === "#me-section") {
+    nextTick(() => {
+      scrollToSection(route.hash);
+    });
+  }
+});
 
 // Helpers: safe parsing ISO string to Date, formatting locale id
 function getDate(iso) {
