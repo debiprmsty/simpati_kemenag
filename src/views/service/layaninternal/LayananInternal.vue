@@ -1,7 +1,13 @@
 <template>
-  <div class="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-10 md:p-10 p-4 bg-gray-50">
+  <div
+    class="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-10 mx-auto w-full md:px-8.5 md:py-10 px-4 py-7 bg-gray-50"
+  >
     <div class="max-w-md">
-      <a href="https://simpeg5.kemenag.go.id" class="hover:cursor-pointer">
+      <a
+        href="https://simpeg5.kemenag.go.id"
+        target="_blank"
+        class="hover:cursor-pointer"
+      >
         <div
           class="bg-white rounded-3xl p-6 flex items-center justify-between shadow-md h-48"
         >
@@ -14,6 +20,7 @@
             </p>
             <a
               href="https://simpeg5.kemenag.go.id"
+              target="_blank"
               class="rounded-xl border-2 border-green-800 px-3 py-1 flex items-center justify-center transition-all hover:bg-green-100 w-12 h-5 mt-3 mb-1.5 hover:cursor-pointer"
             >
               <svg
@@ -44,7 +51,11 @@
       </a>
     </div>
     <div class="max-w-md">
-      <a href="https://simpeg5.kemenag.go.id" class="hover:cursor-pointer">
+      <a
+        href="https://simpeg5.kemenag.go.id"
+        target="_blank"
+        class="hover:cursor-pointer"
+      >
         <div
           class="bg-white rounded-3xl p-6 flex items-center justify-between shadow-md h-48"
         >
@@ -57,6 +68,7 @@
             </p>
             <a
               href="https://simpeg5.kemenag.go.id"
+              target="_blank"
               class="rounded-xl border-2 border-green-800 px-3 py-1 flex items-center justify-center transition-all hover:bg-green-100 w-12 h-5 mt-3 mb-1.5 hover:cursor-pointer"
             >
               <svg
@@ -87,7 +99,7 @@
       </a>
     </div>
     <div class="max-w-md">
-      <a href="https://simdiklat-kemenag.id" class="hover:cursor-pointer">
+      <a href="https://simdiklat-kemenag.id" target="_blank" class="hover:cursor-pointer">
         <div
           class="bg-white rounded-3xl p-6 flex items-center justify-between shadow-md h-48"
         >
@@ -100,6 +112,7 @@
             </p>
             <a
               href="https://simdiklat-kemenag.id"
+              target="_blank"
               class="rounded-xl border-2 border-green-800 px-3 py-1 flex items-center justify-center transition-all hover:bg-green-100 w-12 h-5 mt-3 mb-1.5 hover:cursor-pointer"
             >
               <svg
@@ -130,7 +143,11 @@
       </a>
     </div>
     <div class="max-w-md">
-      <a href="https://pusaka.kemenag.go.id/login" class="hover:cursor-pointer">
+      <a
+        href="https://pusaka.kemenag.go.id/login"
+        target="_blank"
+        class="hover:cursor-pointer"
+      >
         <div
           class="bg-white rounded-3xl p-6 flex items-center justify-between shadow-md h-48"
         >
@@ -143,6 +160,7 @@
             </p>
             <a
               href="https://pusaka.kemenag.go.id/login"
+              target="_blank"
               class="rounded-xl border-2 border-green-800 px-3 py-1 flex items-center justify-center transition-all hover:bg-green-100 w-12 h-5 mt-3 mb-1.5 hover:cursor-pointer"
             >
               <svg
@@ -173,7 +191,11 @@
       </a>
     </div>
     <div class="max-w-md">
-      <a href="https://absensi.kemenag.go.id" class="hover:cursor-pointer">
+      <a
+        href="https://absensi.kemenag.go.id"
+        target="_blank"
+        class="hover:cursor-pointer"
+      >
         <div
           class="bg-white rounded-3xl p-6 flex items-center justify-between shadow-md h-48"
         >
@@ -186,6 +208,7 @@
             </p>
             <a
               href="https://absensi.kemenag.go.id"
+              target="_blank"
               class="rounded-xl border-2 border-green-800 px-3 py-1 flex items-center justify-center transition-all hover:bg-green-100 w-12 h-5 mt-3 mb-1.5 hover:cursor-pointer"
             >
               <svg
@@ -216,7 +239,11 @@
       </a>
     </div>
     <div class="max-w-md">
-      <a href="https://sitaksu.kemenagbuleleng.id/" class="hover:cursor-pointer">
+      <a
+        href="https://sitaksu.kemenagbuleleng.id/"
+        target="_blank"
+        class="hover:cursor-pointer"
+      >
         <div
           class="bg-white rounded-3xl p-6 flex items-center justify-between shadow-md h-48"
         >
@@ -229,6 +256,7 @@
             </p>
             <a
               href="https://sitaksu.kemenagbuleleng.id/"
+              target="_blank"
               class="rounded-xl border-2 border-green-800 px-3 py-1 flex items-center justify-center transition-all hover:bg-green-100 w-12 h-5 mt-3 mb-2 hover:cursor-pointer"
             >
               <svg
@@ -261,6 +289,7 @@
     <div class="max-w-md">
       <a
         href="https://drive.google.com/drive/folders/13Fh5-TDd45GXvzPeneH9TIoXwr6ctG-Y"
+        target="_blank"
         class="hover:cursor-pointer"
       >
         <div
@@ -275,6 +304,7 @@
             </p>
             <a
               href="https://drive.google.com/drive/folders/13Fh5-TDd45GXvzPeneH9TIoXwr6ctG-Y"
+              target="_blank"
               class="rounded-xl border-2 border-green-800 px-3 py-1 flex items-center justify-center transition-all hover:bg-green-100 w-12 h-5 mt-3 mb-1 hover:cursor-pointer"
             >
               <svg

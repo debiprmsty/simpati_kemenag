@@ -5,6 +5,7 @@ import Home from '../src/views/Home.vue';
 import FAQ from '../src/views/FAQ.vue';
 import SP4NLapor from '../src/views/SP4NLapor.vue';
 import Maintenance from '../src/views/Maintenance.vue';
+import Profile from '../src/views/service/layanpub/auth/Profile.vue';
 
 // Layanan Publik
 import Login from '../src/views/service/layanpub/auth/Login.vue';
@@ -12,13 +13,14 @@ import Register from '../src/views/service/layanpub/auth/Register.vue';
 import ListSatker from '../src/views/service/layanpub/ListSatker.vue';
 import DaftarLayanan from '../src/views/service/layanpub/DaftarLayanan.vue';
 import FormLayanan from '../src/views/service/layanpub/FormLayanan.vue';
+
+// Service
 import LayananInternal from '../src/views/service/layaninternal/LayananInternal.vue';
 import SyaratLayanan from '../src/views/service/syaratlayanan/SyaratLayanan.vue';
+import BankData from '../src/views/service/bankdata/BankData.vue';
 import DosenZI from '../src/views/service/dosenzi/DosenZI.vue';
-
-
-// Progress Permohonan
 import ProgressPermohonn from '../src/views/service/progress/ProgressPermohonn.vue';
+
 
 const routes = [
   {
@@ -42,6 +44,11 @@ const routes = [
     component: Maintenance
   },
   {
+    path: '/profile',
+    name: 'Profile',
+    component: Profile
+  },
+  {
     path: '/layanan-internal',
     name: 'LayananInternal',
     component: LayananInternal
@@ -50,6 +57,11 @@ const routes = [
     path: '/syarat-layanan',
     name: 'SyaratLayanan',
     component: SyaratLayanan
+  },
+  {
+    path: '/bank-data',
+    name: 'BankData',
+    component: BankData
   },
   {
     path: '/dosen-zi',

@@ -1,11 +1,11 @@
 <template>
   <nav
-    class="w-full mt-4 md:max-w-[94vw] max-w-[92vw]  mx-auto px-4 py-3 bg-white border border-gray-300 rounded-2xl shadow-md flex items-center justify-between"
+    class="w-full mt-4 md:max-w-[94vw] max-w-[92vw] mx-auto px-4 py-3 bg-white border border-gray-300 rounded-2xl shadow-md flex items-center justify-between"
   >
     <div class="flex items-center space-x-2">
       <router-link to="/" class="flex gap-2">
         <img src="/image/logo_web.png" alt="Logo" class="h-8 hover:cursor-pointer" />
-        <span class="text-gray-900 font-semibold text-lg hover:cursor-pointer"
+        <span class="text-gray-900 font-semibold text-lg hover:cursor-pointer md:mt-0.5"
           >SIMPATI</span
         >
       </router-link>
@@ -51,7 +51,7 @@
             to="/sp4n-lapor"
             class="block px-4 py-2 text-gray-700 hover:bg-[#E9EFEC] rounded-xl transition"
           >
-            SP4N Lapor
+            SP4N Lapor!
           </router-link>
           <a
             href="https://wa.me/+6285928877957"
@@ -78,22 +78,26 @@
       >
         Daftar
       </router-link>
-      
+
       <div v-if="isLoggedIn" class="relative">
-        <button 
+        <button
           @click="toggleProfileDropdown"
           ref="profileDropdownButton"
           class="flex items-center space-x-2 group focus:outline-none"
         >
-          <span v-if="user.name" class="text-gray-800 font-medium group-hover:text-[#16423C] transition">
+          <span
+            v-if="user.name"
+            class="text-gray-800 font-medium group-hover:text-[#16423C] transition"
+          >
             {{ user.name }}
           </span>
           <img
-            :src="user.avatarUrl || '/image/cartoon.png'" alt="Avatar"
+            :src="user.avatarUrl || '/image/cartoon.png'"
+            alt="Avatar"
             class="h-8 w-8 rounded-full border-2 border-gray-300 group-hover:border-[#16423C] transition"
           />
         </button>
-        <div 
+        <div
           v-if="profileDropdownOpen"
           ref="profileDropdownContent"
           class="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-gray-100 z-20 py-1"
@@ -101,7 +105,7 @@
           <router-link
             to="/profile"
             class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#E9EFEC] transition"
-            @click="profileDropdownOpen = false" 
+            @click="profileDropdownOpen = false"
           >
             Profil Saya
           </router-link>
@@ -133,7 +137,11 @@
     </button>
   </nav>
 
-  <div v-if="mobileOpen" class="md:hidden bg-white border-t border-gray-200 shadow-md">
+  <!-- Mobile Navbar -->
+  <div
+    v-if="mobileOpen"
+    class="md:hidden bg-white border-t border-gray-200 shadow-md mx-4 rounded-xl"
+  >
     <router-link
       to="/"
       class="block px-4 py-2 font-semibold text-gray-800 hover:bg-gray-100 transition"
@@ -154,22 +162,36 @@
         class="w-full flex justify-between items-center px-4 py-2 font-semibold text-gray-800 hover:bg-gray-100 transition"
       >
         <span>Pengaduan Publik</span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" :class="{'rotate-180': pengaduanDropdownOpen}" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M5.23 7.21a.75.75 0 011.06.02L10 10.98l3.71-3.75a.75.75 0 011.08 1.04l-4.24 4.29a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4"
+          :class="{ 'rotate-180': pengaduanDropdownOpen }"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M5.23 7.21a.75.75 0 011.06.02L10 10.98l3.71-3.75a.75.75 0 011.08 1.04l-4.24 4.29a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z"
+          />
         </svg>
       </button>
       <div v-if="dropdownOpen" class="pl-4 border-t border-gray-100">
         <router-link
           to="/sp4n-lapor"
           class="block px-4 py-2 font-medium text-gray-700 hover:bg-[#E9EFEC] rounded-xl transition"
-          @click="mobileOpen = false; pengaduanDropdownOpen = false;"
+          @click="
+            mobileOpen = false;
+            pengaduanDropdownOpen = false;
+          "
         >
-          SP4N Lapor
+          SP4N Lapor!
         </router-link>
         <a
           href="https://wa.me/+6285928877957"
           class="block px-4 py-2 font-medium text-gray-700 hover:bg-[#E9EFEC] rounded-xl transition"
-          @click="mobileOpen = false; pengaduanDropdownOpen = false;"
+          @click="
+            mobileOpen = false;
+            pengaduanDropdownOpen = false;
+          "
         >
           WhatsApp Center
         </a>
@@ -204,7 +226,10 @@
           alt="Avatar"
           class="h-10 w-10 rounded-full border-2 border-gray-300 group-hover:border-[#16423C] transition"
         />
-        <span v-if="user.name" class="text-gray-800 font-semibold group-hover:text-[#16423C] transition">
+        <span
+          v-if="user.name"
+          class="text-gray-800 font-semibold group-hover:text-[#16423C] transition"
+        >
           {{ user.name }}
         </span>
       </router-link>
@@ -217,7 +242,10 @@
     </div>
   </div>
 
-  <div v-if="showLogoutConfirmModal" class="fixed inset-0 bg-gray-50 bg-opacity-50 flex items-center justify-center z-50 p-4">
+  <div
+    v-if="showLogoutConfirmModal"
+    class="fixed inset-0 bg-gray-50 bg-opacity-50 flex items-center justify-center z-50 p-4"
+  >
     <div class="bg-white p-6 rounded-lg shadow-xl max-w-sm w-full">
       <h3 class="text-lg font-semibold mb-4 text-gray-900">Konfirmasi Logout</h3>
       <p class="text-gray-700 mb-6">Apakah Anda yakin ingin keluar dari akun ini?</p>
@@ -237,12 +265,11 @@
       </div>
     </div>
   </div>
-
 </template>
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
-import { useRouter } from 'vue-router';
+import { useRouter } from "vue-router";
 
 const mobileOpen = ref(false);
 const pengaduanDropdownOpen = ref(false); // Ganti nama dari dropdownOpen
@@ -264,33 +291,32 @@ const pengaduanDropdownContent = ref(null);
 const profileDropdownButton = ref(null);
 const profileDropdownContent = ref(null);
 
-
 async function fetchUserData(token) {
   try {
     const response = await fetch(`${apiUrl}/me`, {
-      method: 'GET',
+      method: "GET",
       headers: {
-        'Authorization': `Bearer ${token}`,
-        'Accept': 'application/json',
+        Authorization: `Bearer ${token}`,
+        Accept: "application/json",
       },
     });
 
     if (response.ok) {
       const data = await response.json();
-      user.value.name = data.data.name; 
+      user.value.name = data.data.name;
       // Jika API juga mengembalikan URL avatar:
       // if (data.data.avatar_url) user.value.avatarUrl = data.data.avatar_url;
       // Jika tidak, pastikan avatarUrl di-set dari localStorage atau default di onMounted
-      if (!user.value.avatarUrl) { // Hanya set jika belum ada (misal dari API)
-           user.value.avatarUrl = localStorage.getItem("avatarUrl") || '/image/cartoon.png';
+      if (!user.value.avatarUrl) {
+        // Hanya set jika belum ada (misal dari API)
+        user.value.avatarUrl = localStorage.getItem("avatarUrl") || "/image/cartoon.png";
       }
-
     } else {
       console.error("Failed to fetch user data:", response.status);
       if (response.status === 401) {
         // Jika fetch user gagal karena token tidak valid, lakukan logout
-        await performClientSideLogout(); 
-        router.push('/layanan-publik/auth/login');
+        await performClientSideLogout();
+        router.push("/layanan-publik/auth/login");
       }
     }
   } catch (error) {
@@ -332,14 +358,15 @@ async function executeLogout() {
   showLogoutConfirmModal.value = false;
   const token = localStorage.getItem("token");
 
-  if (token && apiUrl) { // Hanya panggil API jika ada token dan apiUrl
+  if (token && apiUrl) {
+    // Hanya panggil API jika ada token dan apiUrl
     try {
       // Panggil API logout di backend (opsional tapi direkomendasikan)
       const response = await fetch(`${apiUrl}/logout`, {
-        method: 'POST', // atau 'GET', sesuai implementasi backend Anda
+        method: "POST", // atau 'GET', sesuai implementasi backend Anda
         headers: {
-          'Authorization': `Bearer ${token}`,
-          'Accept': 'application/json',
+          Authorization: `Bearer ${token}`,
+          Accept: "application/json",
         },
       });
       if (!response.ok) {
@@ -350,49 +377,51 @@ async function executeLogout() {
       console.error("Error calling logout API:", error);
     }
   }
-  
-  await performClientSideLogout();
-  router.push('/layanan-publik/auth/login'); // Arahkan ke halaman login
-}
 
+  await performClientSideLogout();
+  router.push("/layanan-publik/auth/login"); // Arahkan ke halaman login
+}
 
 onMounted(() => {
   const token = localStorage.getItem("token");
   isLoggedIn.value = !!token;
 
   if (isLoggedIn.value) {
-     // Inisialisasi avatarUrl dari localStorage atau default, akan dioverride oleh fetchUserData jika API menyediakannya
-    user.value.avatarUrl = localStorage.getItem("avatarUrl") || '/image/cartoon.png';
+    // Inisialisasi avatarUrl dari localStorage atau default, akan dioverride oleh fetchUserData jika API menyediakannya
+    user.value.avatarUrl = localStorage.getItem("avatarUrl") || "/image/cartoon.png";
     fetchUserData(token);
   }
 
-  document.addEventListener('click', handleClickOutside);
+  document.addEventListener("click", handleClickOutside);
 });
 
 onBeforeUnmount(() => {
-  document.removeEventListener('click', handleClickOutside);
+  document.removeEventListener("click", handleClickOutside);
 });
 
 const handleClickOutside = (event) => {
   // Cek untuk dropdown pengaduan
-  if (pengaduanDropdownOpen.value &&
-      pengaduanDropdownButton.value && 
-      !pengaduanDropdownButton.value.contains(event.target) &&
-      pengaduanDropdownContent.value && 
-      !pengaduanDropdownContent.value.contains(event.target)) {
+  if (
+    pengaduanDropdownOpen.value &&
+    pengaduanDropdownButton.value &&
+    !pengaduanDropdownButton.value.contains(event.target) &&
+    pengaduanDropdownContent.value &&
+    !pengaduanDropdownContent.value.contains(event.target)
+  ) {
     pengaduanDropdownOpen.value = false;
   }
 
   // Cek untuk dropdown profil
-  if (profileDropdownOpen.value &&
-      profileDropdownButton.value &&
-      !profileDropdownButton.value.contains(event.target) &&
-      profileDropdownContent.value &&
-      !profileDropdownContent.value.contains(event.target)) {
+  if (
+    profileDropdownOpen.value &&
+    profileDropdownButton.value &&
+    !profileDropdownButton.value.contains(event.target) &&
+    profileDropdownContent.value &&
+    !profileDropdownContent.value.contains(event.target)
+  ) {
     profileDropdownOpen.value = false;
   }
 };
-
 </script>
 
 <style>

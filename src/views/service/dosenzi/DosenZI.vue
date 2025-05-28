@@ -1,6 +1,6 @@
 <template>
   <div
-    class="grid grid-cols-1 gap-8 lg:grid-cols-4 lg:gap-8 md:px-10 md:py-10 px-4 py-6 bg-gray-50"
+    class="grid grid-cols-1 gap-8 lg:grid-cols-4 lg:gap-8 md:px-8.5 md:py-10 px-4 py-6 bg-gray-50"
   >
     <div>
       <div class="px-2 py-4 bg-white rounded-xl shadow-lg h-64">
@@ -15,6 +15,7 @@
           />
           <a
             href="https://drive.google.com/drive/folders/1awnZR98wZn1PUiHa5PibLr6WAU6Urns3"
+            target="_blank"
             class="mx-auto flex items-center justify-center gap-2 px-4 py-1 text-green-950 border-2 border-green-950 rounded-full hover:bg-green-100 transition-colors duration-200 mt-5 hover:cursor-pointer w-40 h-7"
           >
             <svg
@@ -56,6 +57,7 @@
           />
           <a
             href="https://drive.google.com/drive/folders/1AYpmqodMbCOtPRSm1P3O3X_NvND8fY_U"
+            target="_blank"
             class="mx-auto flex items-center justify-center gap-2 px-4 py-1 text-green-950 border-2 border-green-950 rounded-full hover:bg-green-100 transition-colors duration-200 mt-5 hover:cursor-pointer w-40 h-7"
           >
             <svg
@@ -97,6 +99,7 @@
           />
           <a
             href="https://drive.google.com/drive/folders/1n1-_xTpy4dbqrBGQfBW_wiBx3TTMa-vM"
+            target="_blank"
             class="mx-auto flex items-center justify-center gap-2 px-4 py-1 text-green-950 border-2 border-green-950 rounded-full hover:bg-green-100 transition-colors duration-200 mt-5 hover:cursor-pointer w-40 h-7"
           >
             <svg
@@ -138,6 +141,7 @@
           />
           <a
             href="https://drive.google.com/drive/folders/1JYR9Gavr-rCBcw0fyEKgotaI42LXpSnz"
+            target="_blank"
             class="mx-auto flex items-center justify-center gap-2 px-4 py-1 text-green-950 border-2 border-green-950 rounded-full hover:bg-green-100 transition-colors duration-200 mt-5 hover:cursor-pointer w-40 h-7"
           >
             <svg

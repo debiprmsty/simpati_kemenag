@@ -1,18 +1,22 @@
 <template>
-  <div class="min-h-screen bg-white flex flex-col items-center py-12 px-4">
+  <div
+    class="min-h-screen bg-white flex flex-col items-center md:py-10 md:px-8.5 py-4 px-4"
+  >
     <!-- Header -->
-    <div class="text-center mb-10 md:mt-10">
-      <h1 class="sm:text-4xl md:max-w-full max-w-md text-2xl font-extrabold text-slate-900 mb-2">
+    <div class="text-center mb-10">
+      <h1
+        class="sm:text-4xl md:max-w-full max-w-md text-2xl font-extrabold text-slate-900 mb-2"
+      >
         Seksi Pelayanan Kantor Kementrian Agama Kabupaten Buleleng
       </h1>
-      <p class="text-md text-slate-500 text-lg">
+      <p class="text-md text-slate-600 md:text-xl">
         Bersinergi untuk Pelayanan Keagamaan yang Optimal
       </p>
     </div>
 
     <!-- Grid Cards -->
-    <div class="w-full mt-8">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 m-7 md:m-7.5">
+    <div class="w-full">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Skeleton Loading -->
         <template v-if="loading">
           <div v-for="n in 6" :key="n" class="space-y-2">
@@ -44,15 +48,15 @@
       </div>
     </div>
   </div>
-  <div class="md:h-[120vh] bg-gray-50 w-full md:py-20 py-10 md:px-8">
+  <div class="md:h-[120vh] bg-gray-50 w-full md:py-20 py-10 md:px-5">
     <ProgressDocument />
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-import { useRouter } from 'vue-router';
-import ProgressDocument from './ProgressDocument.vue'
+import { ref, onMounted } from "vue";
+import { useRouter } from "vue-router";
+import ProgressDocument from "./ProgressDocument.vue";
 
 const router = useRouter();
 const cards = ref([]);
@@ -60,16 +64,16 @@ const loading = ref(true);
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-const goToLayanan = (id) => router.push({ name: 'DaftarLayanan', params: { id} });
+const goToLayanan = (id) => router.push({ name: "DaftarLayanan", params: { id } });
 
 async function fetchSatker() {
   try {
     const res = await fetch(`${API_URL}/satker/all`);
-    if (!res.ok) throw new Error('Network response was not ok');
+    if (!res.ok) throw new Error("Network response was not ok");
     const data = await res.json();
     cards.value = data.datas;
   } catch (err) {
-    console.error('Fetch error:', err);
+    console.error("Fetch error:", err);
     cards.value = [];
   } finally {
     loading.value = false;
@@ -77,9 +81,9 @@ async function fetchSatker() {
 }
 
 onMounted(() => {
-  const token = localStorage.getItem('token');
+  const token = localStorage.getItem("token");
   if (!token) {
-    router.push({ name: 'Login' });
+    router.push({ name: "Login" });
     return;
   }
   fetchSatker();

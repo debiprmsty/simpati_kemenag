@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex flex-col justify-center px-4 md:px-10 bg-gray-50">
+  <div class="w-full flex flex-col justify-center px-4 md:px-8 bg-gray-50">
     <!-- Banner Kecil -->
     <div
       class="mb-6 mt-6 p-4 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-xl shadow-md"
@@ -16,7 +16,6 @@
     <!-- Kontainer Utama -->
     <div class="bg-white rounded-xl shadow-lg p-4 md:p-6 space-y-6 mb-16 md:mb-72">
       <!-- Filter & Search -->
-      <!-- Ini comentar aja  -->
       <div
         class="flex flex-col md:flex-row justify-between items-stretch md:items-center gap-4 md:gap-0"
       >
@@ -98,11 +97,6 @@
               <th
                 class="px-4 py-2 md:px-6 md:py-3 text-left text-xs md:text-sm font-semibold text-white uppercase tracking-wide"
               >
-                Waktu Penyelesaian
-              </th>
-              <th
-                class="px-4 py-2 md:px-6 md:py-3 text-left text-xs md:text-sm font-semibold text-white uppercase tracking-wide"
-              >
                 Syarat
               </th>
             </tr>
@@ -126,11 +120,17 @@
                 {{ item.bentukLayanan }}
               </td>
               <td class="px-4 py-2 md:px-6 md:py-4 text-xs md:text-sm text-gray-700">
-                {{ item.waktuPenyelesaian }}
-              </td>
-              <td class="px-4 py-2 md:px-6 md:py-4 text-xs md:text-sm text-gray-700">
                 <button
-                  @click="openModal(item.persyaratan, item.sistem_html)"
+                  @click="
+                    openModal(
+                      item.persyaratan,
+                      item.sistem_html,
+                      item.waktuPenyelesaian,
+                      item.biayaLayanan,
+                      item.produkLayanan,
+                      item.penanganan
+                    )
+                  "
                   class="px-3 py-1 bg-[#1B4D3E] text-white rounded-lg hover:bg-green-800 transition"
                 >
                   Lihat
@@ -148,17 +148,17 @@
         <button
           @click="prevPage"
           :disabled="currentPage === 1"
-          class="px-4 md:mr-10 mr-4 py-2 bg-white text-green-600 border border-green-600 rounded-full disabled:opacity-50 hover:bg-green-50 hover:shadow transition"
+          class="px-4 mr-4 py-2 bg-white text-green-600 border border-green-600 rounded-full disabled:opacity-50 hover:bg-green-50 hover:shadow transition"
         >
           Prev
         </button>
-        <span class="text-gray-700 font-medium text-sm"
+        <span class="text-gray-700 font-medium text-sm mr-4"
           >{{ currentPage }} dari {{ totalPages }}</span
         >
         <button
           @click="nextPage"
           :disabled="currentPage === totalPages"
-          class="px-4 py-2 md:ml-0 ml-4 bg-white text-green-600 border border-green-600 rounded-full disabled:opacity-50 hover:bg-green-50 hover:shadow transition md:mb-0 mb-2"
+          class="px-4 py-2 bg-white text-green-600 border border-green-600 rounded-full disabled:opacity-50 hover:bg-green-50 hover:shadow transition md:mb-0 lg:mb-0 mb-1.5"
         >
           Next
         </button>
@@ -169,86 +169,243 @@
         v-if="showModal"
         class="fixed inset-0 flex items-center justify-center bg-opacity-50 backdrop-blur-sm z-50"
       >
-        <div class="bg-white rounded-xl shadow-xl max-w-lg w-full p-6 relative">
-          <h3 class="text-lg font-bold mb-4">Detail Syarat</h3>
+        <div
+          class="bg-white rounded-xl shadow-xl md:w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl p-4 relative space-y-3"
+        >
+          <h3 class="text-lg font-bold mb-2">Detail Syarat</h3>
 
-          <!-- Accordion 1: Persyaratan -->
-          <div
-            @click="toggleAccordion(1)"
-            :class="[
-              'flex justify-between items-center cursor-pointer p-3 bg-white rounded-lg shadow-md transition-colors',
-              activeAccordion === 1
-                ? 'border border-slate-700'
-                : 'border border-gray-200',
-            ]"
-          >
-            <div class="flex items-center">
-              <CheckCircleIcon class="text-green-500 w-5 h-5" />
-              <span class="ml-2 font-medium text-gray-800">Persyaratan</span>
-            </div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 transform transition-transform duration-200 text-gray-600"
-              :class="{ 'rotate-180': activeAccordion === 1 }"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+          <!-- Accordion Items -->
+          <div class="space-y-3">
+            <!-- Persyaratan -->
+            <div
+              @click="toggleAccordion(1)"
+              :class="[
+                'flex justify-between items-center cursor-pointer p-3 bg-white rounded-lg shadow-md transition-colors',
+                activeAccordion === 1
+                  ? 'border border-slate-700'
+                  : 'border border-gray-200',
+              ]"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </div>
-          <div
-            v-if="activeAccordion === 1"
-            class="mt-2 p-4 bg-white border border-gray-200 rounded-lg shadow-inner max-h-64 overflow-y-auto whitespace-pre-line text-gray-700"
-          >
-            {{ persyaratanContent }}
-          </div>
-
-          <!-- Accordion 2: Sistem, Mekanisme, Prosedur -->
-          <div
-            @click="toggleAccordion(2)"
-            :class="[
-              'flex justify-between items-center cursor-pointer p-3 bg-white rounded-lg shadow-md transition-colors mt-2',
-              activeAccordion === 2
-                ? 'border border-slate-700'
-                : 'border border-gray-200',
-            ]"
-          >
-            <div class="flex items-center">
-              <DocumentTextIcon class="text-green-500 w-5 h-5" />
-              <span class="ml-2 font-medium text-gray-800"
-                >Sistem, Mekanisme, dan Prosedur</span
+              <div class="flex items-center">
+                <CheckCircleIcon class="text-green-500 w-5 h-5" />
+                <span class="ml-2 font-medium text-gray-800">Persyaratan</span>
+              </div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 transform transition-transform duration-200 text-gray-600"
+                :class="{ 'rotate-180': activeAccordion === 1 }"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
               >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
             </div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 transform transition-transform duration-200 text-gray-600"
-              :class="{ 'rotate-180': activeAccordion === 2 }"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+            <div
+              v-if="activeAccordion === 1"
+              class="mt-2 p-4 bg-white border border-gray-200 rounded-lg shadow-inner max-h-64 overflow-y-auto whitespace-pre-line text-gray-700"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </div>
-          <div
-            v-if="activeAccordion === 2"
-            class="mt-2 p-4 bg-white border border-gray-200 rounded-lg shadow-inner max-h-64 overflow-y-auto whitespace-pre-line text-gray-700"
-          >
-            {{ sistemContent }}
+              {{ persyaratanContent }}
+            </div>
+
+            <!-- Sistem, Mekanisme, Prosedur -->
+            <div
+              @click="toggleAccordion(2)"
+              :class="[
+                'flex justify-between items-center cursor-pointer p-3 bg-white rounded-lg shadow-md transition-colors',
+                activeAccordion === 2
+                  ? 'border border-slate-700'
+                  : 'border border-gray-200',
+              ]"
+            >
+              <div class="flex items-center">
+                <DocumentTextIcon class="text-green-500 w-5 h-5" />
+                <span class="ml-2 font-medium text-gray-800"
+                  >Sistem, Mekanisme, dan Prosedur</span
+                >
+              </div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 transform transition-transform duration-200 text-gray-600"
+                :class="{ 'rotate-180': activeAccordion === 2 }"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+            <div
+              v-if="activeAccordion === 2"
+              class="mt-2 p-4 bg-white border border-gray-200 rounded-lg shadow-inner max-h-64 overflow-y-auto whitespace-pre-line text-gray-700"
+            >
+              {{ sistemContent }}
+            </div>
+
+            <!-- Waktu Penyelesaian -->
+            <div
+              @click="toggleAccordion(3)"
+              :class="[
+                'flex justify-between items-center cursor-pointer p-3 bg-white rounded-lg shadow-md transition-colors',
+                activeAccordion === 3
+                  ? 'border border-slate-700'
+                  : 'border border-gray-200',
+              ]"
+            >
+              <div class="flex items-center">
+                <ClockIcon class="text-green-500 w-5 h-5" />
+                <span class="ml-2 font-medium text-gray-800">Waktu Penyelesaian</span>
+              </div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 transform transition-transform duration-200 text-gray-600"
+                :class="{ 'rotate-180': activeAccordion === 3 }"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+            <div
+              v-if="activeAccordion === 3"
+              class="mt-2 p-4 bg-white border border-gray-200 rounded-lg shadow-inner max-h-64 overflow-y-auto whitespace-pre-line text-gray-700"
+            >
+              {{ waktuPenyelesaian }}
+            </div>
+
+            <!-- Biaya Layanan -->
+            <div
+              @click="toggleAccordion(4)"
+              :class="[
+                'flex justify-between items-center cursor-pointer p-3 bg-white rounded-lg shadow-md transition-colors',
+                activeAccordion === 4
+                  ? 'border border-slate-700'
+                  : 'border border-gray-200',
+              ]"
+            >
+              <div class="flex items-center">
+                <BanknotesIcon class="text-green-500 w-5 h-5" />
+                <span class="ml-2 font-medium text-gray-800">Biaya Layanan</span>
+              </div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 transform transition-transform duration-200 text-gray-600"
+                :class="{ 'rotate-180': activeAccordion === 4 }"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+            <div
+              v-if="activeAccordion === 4"
+              class="mt-2 p-4 bg-white border border-gray-200 rounded-lg shadow-inner max-h-64 overflow-y-auto whitespace-pre-line text-gray-700"
+            >
+              <p v-if="biayaLayanan > 0">Rp {{ biayaLayanan.toLocaleString("id-ID") }}</p>
+              <p v-else-if="biayaLayanan === 0">
+                Rp 0,- (Nol Rupiah) / Tidak Dipungut Biaya / Gratis
+              </p>
+              <p v-else>Biaya Layanan tidak tersedia</p>
+            </div>
+
+            <!-- Produk Layanan -->
+            <div
+              @click="toggleAccordion(5)"
+              :class="[
+                'flex justify-between items-center cursor-pointer p-3 bg-white rounded-lg shadow-md transition-colors',
+                activeAccordion === 5
+                  ? 'border border-slate-700'
+                  : 'border border-gray-200',
+              ]"
+            >
+              <div class="flex items-center">
+                <TagIcon class="text-green-500 w-5 h-5" />
+                <span class="ml-2 font-medium text-gray-800">Produk Layanan</span>
+              </div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 transform transition-transform duration-200 text-gray-600"
+                :class="{ 'rotate-180': activeAccordion === 5 }"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+            <div
+              v-if="activeAccordion === 5"
+              class="mt-2 p-4 bg-white border border-gray-200 rounded-lg shadow-inner max-h-64 overflow-y-auto whitespace-pre-line text-gray-700"
+            >
+              {{ produkLayanan }}
+            </div>
+
+            <!-- Penanganan -->
+            <div
+              @click="toggleAccordion(6)"
+              :class="[
+                'flex justify-between items-center cursor-pointer p-3 bg-white rounded-lg shadow-md transition-colors',
+                activeAccordion === 6
+                  ? 'border border-slate-700'
+                  : 'border border-gray-200',
+              ]"
+            >
+              <div class="flex items-center">
+                <UserCircleIcon class="text-green-500 w-5 h-5" />
+                <span class="ml-2 font-medium text-gray-800">Penanganan</span>
+              </div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 transform transition-transform duration-200 text-gray-600"
+                :class="{ 'rotate-180': activeAccordion === 6 }"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+            <div
+              v-if="activeAccordion === 6"
+              class="mt-2 p-4 bg-white border border-gray-200 rounded-lg shadow-inner max-h-64 overflow-y-auto whitespace-pre-line text-gray-700"
+            >
+              {{ penanganan }}
+            </div>
           </div>
 
-          <div class="text-right mt-6">
+          <div class="text-right mt-4">
             <button
               @click="closeModal"
               class="px-4 py-2 bg-[#1B4D3E] text-white rounded-full hover:bg-green-800 transition"
@@ -264,7 +421,14 @@
 
 <script setup>
 import { ref, computed, onMounted } from "vue";
-import { DocumentTextIcon, CheckCircleIcon } from "@heroicons/vue/24/outline";
+import {
+  CheckCircleIcon,
+  DocumentTextIcon,
+  ClockIcon,
+  BanknotesIcon,
+  TagIcon,
+  UserCircleIcon,
+} from "@heroicons/vue/24/outline";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 const requests = ref([]);
@@ -274,13 +438,17 @@ const selectedSeksi = ref("");
 const currentPage = ref(1);
 const perPage = 5;
 
-// Modal & Accordion State
+// Modal State
 const showModal = ref(false);
 const activeAccordion = ref(null);
 const persyaratanContent = ref("");
 const sistemContent = ref("");
+const waktuPenyelesaian = ref("");
+const biayaLayanan = ref("");
+const produkLayanan = ref("");
+const penanganan = ref("");
 
-// Fetch and map data
+// Fetch Data
 onMounted(async () => {
   try {
     const res = await fetch(`${apiUrl}/syarat-ketentuan/all`);
@@ -293,61 +461,83 @@ onMounted(async () => {
       bentukLayanan: item.jenis.bentuk_layanan,
       waktuPenyelesaian: item.durasi,
       persyaratan: item.persyaratan,
-      sistem_html: item.simpro, // pastikan field ini ada di API
+      sistem_html: item.simpro,
+      biayaLayanan: item.biaya,
+      produkLayanan: item.produk_layanan,
+      penanganan: item.penanganan,
     }));
   } catch (e) {
-    console.error(e);
+    console.error("Error fetching data:", e);
   } finally {
     loading.value = false;
   }
 });
 
-// Computed for filter, pagination
+// Computed Properties
 const seksiOptions = computed(() => [...new Set(requests.value.map((r) => r.seksi))]);
+
 const filteredItems = computed(() =>
   requests.value.filter((item) => {
-    const q = searchTerm.value.toLowerCase();
-    return (
-      (item.seksi.toLowerCase().includes(q) ||
-        item.jenisPelayanan.toLowerCase().includes(q) ||
-        item.bentukLayanan.toLowerCase().includes(q) ||
-        item.waktuPenyelesaian.toLowerCase().includes(q)) &&
-      (!selectedSeksi.value || item.seksi === selectedSeksi.value)
-    );
+    const searchQuery = searchTerm.value.toLowerCase();
+    const matchesSearch =
+      item.seksi.toLowerCase().includes(searchQuery) ||
+      item.jenisPelayanan.toLowerCase().includes(searchQuery) ||
+      item.bentukLayanan.toLowerCase().includes(searchQuery);
+
+    const matchesSeksi = !selectedSeksi.value || item.seksi === selectedSeksi.value;
+
+    return matchesSearch && matchesSeksi;
   })
 );
+
 const totalPages = computed(() => Math.ceil(filteredItems.value.length / perPage));
+
 const paginatedItems = computed(() => {
   const start = (currentPage.value - 1) * perPage;
-  return filteredItems.value.slice(start, start + perPage);
+  const end = start + perPage;
+  return filteredItems.value.slice(start, end);
 });
 
-// Pagination handlers
-function nextPage() {
+// Pagination Methods
+const nextPage = () => {
   if (currentPage.value < totalPages.value) currentPage.value++;
-}
-function prevPage() {
-  if (currentPage.value > 1) currentPage.value--;
-}
+};
 
-// Modal handlers
-function openModal(htmlPersyaratan, htmlSistem) {
-  persyaratanContent.value = htmlToPlainText(htmlPersyaratan);
-  sistemContent.value = htmlToPlainText(htmlSistem);
+const prevPage = () => {
+  if (currentPage.value > 1) currentPage.value--;
+};
+
+// Modal Methods
+const openModal = (
+  persyaratanHTML,
+  sistemHTML,
+  waktuHTML,
+  biayaHTML,
+  produkHTML,
+  penangananHTML
+) => {
+  persyaratanContent.value = htmlToPlainText(persyaratanHTML);
+  sistemContent.value = htmlToPlainText(sistemHTML);
+  waktuPenyelesaian.value = htmlToPlainText(waktuHTML);
+  const raw = htmlToPlainText(biayaHTML);
+  const digitsOnly = raw.replace(/\D/g, "");
+  biayaLayanan.value = parseInt(digitsOnly, 10);
+  produkLayanan.value = htmlToPlainText(produkHTML);
+  penanganan.value = htmlToPlainText(penangananHTML);
   showModal.value = true;
   activeAccordion.value = null;
-}
-function closeModal() {
+};
+
+const closeModal = () => {
   showModal.value = false;
   activeAccordion.value = null;
-}
+};
 
-// Accordion toggle: only one open at a time
-function toggleAccordion(index) {
+const toggleAccordion = (index) => {
   activeAccordion.value = activeAccordion.value === index ? null : index;
-}
+};
 
-// Utility: convert HTML to plain text with list support
+// HTML to Text Converter with List Support
 function htmlToPlainText(html) {
   const parser = new DOMParser();
   const doc = parser.parseFromString(html, "text/html");
@@ -409,7 +599,22 @@ function htmlToPlainText(html) {
 }
 
 thead tr {
+  background: linear-gradient(90deg, #059669 0%, #2563eb 100%);
   animation: neon 6s ease infinite;
   background-size: 200% 200%;
+}
+
+.shadow-inner {
+  box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+}
+
+.hover\:-translate-y-0\.5:hover {
+  transform: translateY(-0.125rem);
+}
+
+.transition {
+  transition-property: color, background-color, border-color, transform, box-shadow;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 </style>

@@ -1,9 +1,33 @@
 <template>
-  <footer class="bg-[#16423C] text-white py-6 px-5">
-    <div class="container md:mx-0 mx-auto md:px-5 px-1">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 my-2">
-        <!-- Menu -->
-        <div>
+  <footer
+    class="bg-gradient-to-br from-green-900 via-green-950 to-green-900 text-white relative overflow-hidden"
+  >
+    <!-- Animated background elements -->
+    <div class="absolute inset-0 opacity-20">
+      <div
+        class="absolute top-10 left-10 w-32 h-32 bg-cyan-500 rounded-full blur-xl animate-pulse"
+      ></div>
+      <div
+        class="absolute bottom-20 right-20 w-24 h-24 bg-indigo-500 rounded-full blur-xl animate-pulse delay-1000"
+      ></div>
+      <div
+        class="absolute top-1/2 left-1/2 w-40 h-40 bg-blue-500 rounded-full blur-2xl animate-pulse delay-500"
+      ></div>
+    </div>
+
+    <!-- Grid lines overlay -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="grid grid-cols-12 h-full">
+        <div v-for="i in 12" :key="i" class="border-r border-cyan-400"></div>
+      </div>
+    </div>
+
+    <!-- Utama -->
+    <div class="mx-auto w-full md:px-8.5 px-4.5 py-1 relative z-10 md:mt-7 mt-3">
+      <!-- Main footer content -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:mb-8">
+        <!-- Column 1: Menu -->
+        <div class="space-y-6 md:w-40">
           <h2 class="text-xl font-semibold mb-4">Menu</h2>
           <ul>
             <li class="mb-2">
@@ -20,8 +44,9 @@
             </li>
           </ul>
         </div>
-        <!-- Kontak Perusahaan -->
-        <div class="md:-ml-44 md:w-[25rem]">
+
+        <!-- Column 2: Social Media -->
+        <div class="space-y-6 md:-ml-50 md:w-100">
           <h2 class="text-xl font-semibold mb-4">Kontak Kami</h2>
           <p class="mb-2">
             <strong>Kantor Kementerian Agama Kabupaten Buleleng</strong>
@@ -32,11 +57,12 @@
           </p>
           <p class="mb-2">Email: kabbuleleng@kemenag.go.id</p>
           <p>Telepon: (0362) 28554</p>
-          <div class="flex flex-col justify-start pt-8 lg:pt-0">
+          <div class="flex flex-col justify-start lg:pt-0">
             <div class="flex justify-start space-x-4 md:mt-4">
               <a
                 rel="noopener noreferrer"
                 href="https://wa.me/+6285928877957"
+                target="_blank"
                 title="WhatsApp"
                 class="flex items-center justify-center md:w-7 md:h-7 rounded-full text-white"
               >
@@ -74,6 +100,7 @@
               <a
                 rel="noopener noreferrer"
                 href="https://www.instagram.com/kemenagbuleleng"
+                target="_blank"
                 title="Instagram"
                 class="flex items-center justify-center md:w-8 md:h-8 rounded-full text-white"
               >
@@ -111,6 +138,7 @@
               <a
                 rel="noopener noreferrer"
                 href="https://www.facebook.com/share/1Hd41qxV5u/"
+                target="_blank"
                 title="Facebook"
                 class="flex items-center justify-center md:w-7.5 md:h-7.5 rounded-full text-white"
               >
@@ -148,6 +176,7 @@
               <a
                 rel="noopener noreferrer"
                 href="https://www.tiktok.com/@kemenagbuleleng"
+                target="_blank"
                 title="TikTok"
                 class="flex items-center justify-center md:w-7.5 md:h-7.5 rounded-full text-white"
               >
@@ -185,6 +214,7 @@
               <a
                 rel="noopener noreferrer"
                 href="https://www.youtube.com/@kemenagbuleleng819"
+                target="_blank"
                 title="YouTube"
                 class="flex items-center justify-center md:w-10 md:h-10 rounded-full text-white"
               >
@@ -222,36 +252,110 @@
             </div>
           </div>
         </div>
-        <!-- Minimap (embed google maps misalnya) -->
-        <div class="md:-ml-28">
+
+        <!-- Column 3: Maps -->
+        <div class="space-y-6 md:-ml-40">
           <h2 class="text-xl font-semibold mb-4">Lokasi Kami</h2>
-          <div class="w-full h-49">
-            <!-- Jika ingin menyematkan google maps, gunakan iframe -->
-            <iframe
-              class="w-full h-full rounded-md"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.881784897694!2d115.08420363391353!3d-8.113517737974668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd19a0cd75be739%3A0x48ebae1baa58d3!2sKantor%20Kementerian%20Agama%20Kabupaten%20Buleleng!5e0!3m2!1sid!2sid!4v1743597704020!5m2!1sid!2sid"
-              width="600"
-              height="450"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
+          <div class="relative">
+            <!-- Mock map container -->
+            <div
+              class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-green-400/50 transition-all duration-300 group h-60"
+            >
+              <div
+                class="aspect-video bg-gradient-to-br from-green-900/50 to-blue-900/50 rounded-lg relative overflow-hidden h-48 w-full"
+              >
+                <div class="w-full h-full">
+                  <!-- Jika ingin menyematkan google maps, gunakan iframe -->
+                  <iframe
+                    class="w-full h-full rounded-md"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.881784897694!2d115.08420363391353!3d-8.113517737974668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd19a0cd75be739%3A0x48ebae1baa58d3!2sKantor%20Kementerian%20Agama%20Kabupaten%20Buleleng!5e0!3m2!1sid!2sid!4v1743597704020!5m2!1sid!2sid"
+                    width="600"
+                    height="450"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
+                <!-- Map overlay -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
+                ></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <!-- Baris bawah footer -->
-      <div class="mt-8 border-t border-gray-700 pt-4 text-center text-sm">
-        <p>
-          &copy; 2025 Kantor Kementerian Agama Kabupaten Buleleng. All rights reserved.
-        </p>
+
+      <!-- Bottom section -->
+      <div class="border-t border-white/10 pt-6 mb-6">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
+        >
+          <div class="text-gray-400 text-sm text-center mx-auto">
+            © 2025 Kantor Kementerian Agama Kabupaten Buleleng. All rights reserved.
+          </div>
+        </div>
       </div>
     </div>
+
+    <!-- Scanning line effect -->
+    <div
+      class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-pulse"
+    ></div>
   </footer>
 </template>
 
-<script>
-export default {
-  name: "ResponsiveFooter",
+<script setup>
+// Hover sound effect (mock function)
+const playHoverSound = () => {
+  // In a real app, you could play a subtle sci-fi sound effect here
+  console.log("Hover sound effect");
 };
 </script>
+
+<style scoped>
+.glow {
+  text-shadow: 0 0 10px currentColor;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+.delay-1000 {
+  animation-delay: 1s;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #06b6d4, #8b5cf6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #0891b2, #7c3aed);
+}
+</style>

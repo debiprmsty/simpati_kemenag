@@ -1,17 +1,17 @@
 <template>
-  <div class="p-4 md:p-10">
+  <div class="p-4 md:p-8.5">
     <!-- Judul Utama -->
     <div class="text-center flex flex-col items-center space-y-2">
       <h1 class="text-lg md:text-3xl font-bold uppercase text-green-950 text-center">
         SISTEM PENGELOLAAN PENGADUAN PELAYANAN PUBLIK NASIONAL (SP4N)
       </h1>
       <h1 class="text-lg md:text-3xl font-bold uppercase text-green-950 text-center mb-3">
-        LAYANAN ASPIRASI DAN PENGADUAN ONLINE RAKYAT (LAPOR)
+        LAYANAN ASPIRASI DAN PENGADUAN ONLINE RAKYAT (LAPOR!)
       </h1>
     </div>
 
     <!-- Section 1 -->
-    <div class="mx-auto max-w-screen-xl mt-8">
+    <div class="mx-auto max-w-full mt-8">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
         <div class="order-1">
           <img
@@ -33,16 +33,26 @@
               href="https://www.lapor.go.id/"
               target="_blank"
             >
-              www.lapor.go.id </a
+              www.lapor.go.id</a
             >, SMS 1708 (Telkomsel, Indosat, Three), Twitter @lapor1708 serta aplikasi
             mobile (Android dan iOS).
           </h5>
+          <div class="flex justify-center md:block mt-6">
+            <a
+              href="https://www.lapor.go.id"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-red-900 hover:bg-red-800 text-white font-semibold py-2 px-6 rounded-lg shadow-lg transition duration-300 ease-in-out"
+            >
+              Laporkan Sekarang di LAPOR!
+            </a>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Section 2 -->
-    <div class="mx-auto max-w-screen-xl mt-10">
+    <div class="mx-auto max-w-full mt-10">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
         <div class="order-2 md:order-1">
           <h5 class="text-base md:text-lg text-green-950 font-medium text-justify">
@@ -68,7 +78,9 @@
 
     <!-- Section Tujuan -->
     <div class="mb-10 mt-16 text-center">
-      <h2 class="text-2xl md:text-4xl font-bold text-gray-900 mb-4">Tujuan SP4N Lapor</h2>
+      <h2 class="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
+        Tujuan SP4N-LAPOR!
+      </h2>
       <p class="text-md md:text-lg text-gray-800 px-2 md:px-0 font-medium">
         SP4N-LAPOR! dibentuk untuk merealisasikan kebijakan
         <span class="italic font-medium text-red-700">“no wrong door policy”</span>
@@ -79,7 +91,7 @@
     </div>
 
     <!-- Section Tujuan Detail -->
-    <div class="mx-auto max-w-screen-xl mt-8 mb-20">
+    <div class="mx-auto max-w-full mt-8 mb-20">
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-15">
         <!-- Gambar utama -->
         <div>
@@ -93,7 +105,7 @@
         <!-- Teks dan ikon -->
         <div class="flex flex-col justify-center md:-ml-12 mt-5">
           <div class="flex">
-            <div class="mr-4">
+            <div class="md:mr-4 mr-2">
               <div
                 class="flex items-center justify-center w-10 h-10 mb-3 rounded-full bg-green-50"
               >
@@ -110,7 +122,7 @@
           </div>
 
           <div class="flex">
-            <div class="mr-4">
+            <div class="md:mr-4 mr-2">
               <div
                 class="flex items-center justify-center w-10 h-10 mb-3 rounded-full bg-green-50"
               >
@@ -127,7 +139,7 @@
           </div>
 
           <div class="flex">
-            <div class="mr-4">
+            <div class="md:mr-4 mr-2">
               <div
                 class="flex items-center justify-center w-10 h-10 mb-3 rounded-full bg-green-50"
               >

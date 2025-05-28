@@ -1,6 +1,8 @@
 <template>
-  <section class="md:px-8 px-5 py-6 mx-auto max-w-8xl bg-gray-50">
-    <div class="grid grid-cols-2 md:gap-8 gap-4 text-center lg:grid-cols-4">
+  <section class="md:px-8 md:py-8 px-4.5 py-6 bg-gray-50">
+    <div
+      class="grid grid-cols-2 md:gap-8 gap-4 text-center lg:grid-cols-4 mx-auto md:max-w-[93.5vw] max-w-[92vw]"
+    >
       <div
         class="flex items-center justify-center p-6 bg-opacity-25 bg-primary-light bg-white shadow-lg rounded-2xl"
       >
