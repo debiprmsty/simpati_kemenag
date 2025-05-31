@@ -1,11 +1,11 @@
 <template>
   <div
-    class="min-h-screen bg-white flex flex-col items-center md:py-10 md:px-8.5 py-4 px-4"
+    class="min-h-screen bg-white flex flex-col items-center md:py-10 md:px-8 py-4 px-4"
   >
     <!-- Header -->
     <div class="text-center mb-10">
       <h1
-        class="sm:text-4xl md:max-w-full max-w-md text-2xl font-extrabold text-slate-900 mb-2"
+        class="sm:text-4xl md:max-w-full max-w-md text-2xl font-sans font-bold text-slate-900 mb-2"
       >
         Seksi Pelayanan Kantor Kementrian Agama Kabupaten Buleleng
       </h1>
@@ -16,7 +16,7 @@
 
     <!-- Grid Cards -->
     <div class="w-full">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:mb-10 mb-0">
         <!-- Skeleton Loading -->
         <template v-if="loading">
           <div v-for="n in 6" :key="n" class="space-y-2">
@@ -31,7 +31,7 @@
             v-for="card in cards"
             :key="card.id"
             @click="goToLayanan(card.id)"
-            class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-105 transition border border-slate-100 hover:cursor-pointer"
+            class="bg-white rounded-2xl shadow-lg overflow-hidden transform hover:scale-102 transition border border-slate-100 hover:cursor-pointer"
           >
             <img
               :src="`${API_URL}/satker/logo/${card.logo}`"

@@ -47,7 +47,7 @@
       ></div>
     </div>
 
-    <div class="mx-auto md:px-8.5 px-4 md:py-12 py-6 relative z-10">
+    <div class="mx-auto md:px-8 px-4 md:py-12 py-6 relative z-10">
       <!-- Header -->
       <div class="text-center mb-16">
         <div

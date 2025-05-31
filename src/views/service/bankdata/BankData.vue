@@ -110,6 +110,7 @@
               >
                 <a
                   :href="item.link"
+                  target="_blank"
                   class="inline-block w-20 h-8 leading-8 text-center bg-[#1B4D3E] text-white rounded-lg hover:bg-green-800 transition flex-none"
                 >
                   Lihat Data

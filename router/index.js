@@ -106,7 +106,17 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
-});
+  routes,
+  scrollBehavior(to) {
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth',
+        top: 100 // Offset untuk header jika diperlukan
+      }
+    }
+    return { top: 0 }
+  }
+})
 
 export default router;

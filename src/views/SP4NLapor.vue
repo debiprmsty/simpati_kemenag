@@ -1,5 +1,5 @@
 <template>
-  <div class="p-4 md:p-8.5">
+  <div class="p-4 md:p-8">
     <!-- Judul Utama -->
     <div class="text-center flex flex-col items-center space-y-2">
       <h1 class="text-lg md:text-3xl font-bold uppercase text-green-950 text-center">
