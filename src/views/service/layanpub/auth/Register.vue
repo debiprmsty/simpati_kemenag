@@ -4,7 +4,7 @@
     class="relative min-h-screen w-screen flex items-center justify-center bg-cover bg-center"
     style="background-image: url('/public/image/bg-auth.png')"
   >
-    <!-- Overlay putih semi‐transparan menutupi seluruh area -->
+    <!-- Overlay putih semi‐transparan menutupi seluruh area ini ada perubahan terakhir -->
     <div class="absolute inset-0 bg-white opacity-93"></div>
 
     <!-- Konten utama: posisi relatif agar berada di atas overlay -->
