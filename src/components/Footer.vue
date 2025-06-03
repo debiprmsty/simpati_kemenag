@@ -23,7 +23,7 @@
     </div>
 
     <!-- Utama -->
-    <div class="mx-auto w-full md:px-8 px-4.5 py-1 relative z-10 md:mt-7 mt-3">
+    <div class="mx-auto w-full px-4.5 py-1 relative z-10 md:mt-7 mt-3 md:max-w-[96.5vw]">
       <!-- Main footer content -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:mb-8">
         <!-- Column 1: Menu -->

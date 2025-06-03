@@ -1,6 +1,6 @@
 <template>
   <section id="service" class="overflow-x-hidden">
-    <div class="min-h-screen p-4 md:p-8">
+    <div class="min-h-screen p-4 md:mb-10">
       <div class="max-w-6xl mx-auto">
         <h2
           class="mb-6 font-sans text-3xl font-bold leading-10 tracking-tight text-gray-900 md:text-5xl md:mx-auto text-center md:mt-20"

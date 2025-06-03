@@ -1,5 +1,7 @@
 <template>
-  <div class="w-full flex flex-col justify-center px-4 md:px-8 bg-gray-50">
+  <div
+    class="w-full flex flex-col justify-center md:max-w-[94vw] max-w-[92vw] mx-auto bg-gray-50"
+  >
     <!-- Banner -->
     <div
       class="mb-6 mt-6 p-4 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-xl shadow-md"

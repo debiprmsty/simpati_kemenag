@@ -1,6 +1,6 @@
 <template>
   <div
-    class="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-10 mx-auto w-full md:px-8 md:py-10 px-4 py-7 bg-gray-50"
+    class="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-10 mx-auto w-full md:max-w-[94vw] max-w-[92vw] md:my-10 my-4 bg-gray-50"
   >
     <div class="max-w-md">
       <a

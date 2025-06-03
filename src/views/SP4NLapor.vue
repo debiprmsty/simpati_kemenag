@@ -1,5 +1,5 @@
 <template>
-  <div class="p-4 md:p-8">
+  <div class="md:max-w-[94vw] max-w-[92vw] mx-auto md:my-10 my-4">
     <!-- Judul Utama -->
     <div class="text-center flex flex-col items-center space-y-2">
       <h1 class="text-lg md:text-3xl font-bold uppercase text-green-950 text-center">

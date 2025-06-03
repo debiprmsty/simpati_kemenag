@@ -1,5 +1,8 @@
 <template>
-  <div class="px-4 py-1 flex-grow overflow-x-hidden" id="me-progress">
+  <div
+    class="md:max-w-[94vw] max-w-[92vw] mx-auto md:my-2 md:-mt-0 -mt-3 flex-grow overflow-x-hidden mb-0"
+    id="me-progress"
+  >
     <!-- Card utama -->
     <div
       class="mx-auto w-full max-w-full sm:max-w-xl lg:max-w-[120vw] bg-white rounded-2xl shadow p-4 sm:p-6"
@@ -98,22 +101,22 @@
         <!-- PAGINASI -->
         <div
           v-if="meta.total > meta.per_page"
-          class="flex justify-center mt-4 text-xs sm:text-sm space-x-2"
+          class="flex justify-center mt-4 text-xs sm:text-sm space-x-2 md:space-x-4"
         >
           <button
             @click="fetchDocs(currentPage - 1)"
             :disabled="currentPage === 1"
-            class="px-2 py-1 bg-gray-200 rounded disabled:opacity-50"
+            class="px-2 py-1 bg-gray-300 rounded disabled:opacity-50 text-lg"
           >
             &laquo;
           </button>
-          <span class="text-gray-600">
+          <span class="text-gray-600 mt-2">
             Halaman {{ meta.current_page }} dari {{ meta.last_page }}
           </span>
           <button
             @click="fetchDocs(currentPage + 1)"
             :disabled="currentPage === meta.last_page"
-            class="px-2 py-1 bg-gray-200 rounded disabled:opacity-50"
+            class="px-2 py-1 bg-gray-200 rounded disabled:opacity-50 text-shadow-lg"
           >
             &raquo;
           </button>

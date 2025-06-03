@@ -47,7 +47,7 @@
       ></div>
     </div>
 
-    <div class="mx-auto md:px-8 px-4 md:py-12 py-6 relative z-10">
+    <div class="mx-auto md:max-w-[94vw] max-w-[92vw] md:my-12 my-6 relative z-10">
       <!-- Header -->
       <div class="text-center mb-16">
         <div
@@ -169,7 +169,7 @@
                     class="flex items-center md:space-x-3 space-x-2 text-gray-800 font-semibold text-lg"
                   >
                     <div
-                      class="md:w-8 md:h-8 w-6.5 h-6.5 bg-gradient-to-br from-blue-500 to-cyan-500 md:rounded-xl rounded-lg flex items-center justify-center"
+                      class="md:w-8 md:h-8 w-6.5 h-6.5 bg-[#1B4D3E] md:rounded-xl rounded-lg flex items-center justify-center"
                     >
                       <UserCheck class="md:w-5 md:h-5 w-4 h-4 text-white" />
                     </div>
@@ -180,14 +180,14 @@
                       v-model="profile.name"
                       type="text"
                       placeholder="Masukkan nama lengkap Anda"
-                      class="w-full md:px-6 md:py-3 px-3 py-2 bg-gray-50/80 border-2 border-gray-200 md:rounded-2xl rounded-xl text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 transition-all duration-300 backdrop-blur-sm text-md"
+                      class="w-full md:px-6 md:py-3 px-3 py-2 bg-gray-50/80 border-2 border-gray-200 md:rounded-2xl rounded-xl text-gray-900 placeholder-gray-500 focus:border-[#1B4D3E] focus:ring-4 focus:ring-[#1B4D3E]/20 transition-all duration-300 backdrop-blur-sm text-md"
                       :class="{
                         'border-red-400 focus:border-red-400 focus:ring-red-400/20':
                           errors.name,
                       }"
                     />
                     <div
-                      class="absolute inset-0 md:rounded-2xl rounded-xl bg-gradient-to-r from-blue-500/0 to-cyan-500/0 group-hover:from-blue-500/5 group-hover:to-cyan-500/5 transition-all duration-300 pointer-events-none"
+                      class="absolute inset-0 md:rounded-2xl rounded-xl bg-gradient-to-r from-blue-500/0 to-cyan-500/0 group-hover:from-green-500/5 group-hover:to-emerald-500/5 transition-all duration-300 pointer-events-none"
                     ></div>
                   </div>
                   <p v-if="errors.name" class="text-red-500 text-sm md:font-medium">

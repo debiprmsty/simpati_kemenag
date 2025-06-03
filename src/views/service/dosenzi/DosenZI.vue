@@ -1,6 +1,6 @@
 <template>
   <div
-    class="grid grid-cols-1 gap-8 lg:grid-cols-4 lg:gap-8 md:px-8 md:py-10 px-4 py-6 bg-gray-50"
+    class="grid grid-cols-1 gap-8 lg:grid-cols-4 lg:gap-8 md:max-w-[94vw] max-w-[92vw] mx-auto md:my-10 my-6 bg-gray-50"
   >
     <div>
       <div class="px-2 py-4 bg-white rounded-xl shadow-lg h-64">

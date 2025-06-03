@@ -1,28 +1,28 @@
 <template>
-  <!-- FULLSCREEN CONTAINER WITH BACKGROUND IMAGE -->
-  <section class="relative h-screen md:overflow-hidden overflow-y-scroll">
-    <div
-      class="relative z-20 flex flex-col items-center justify-center h-full px-4 md:-mt-2"
-    >
-      <!-- DESKTOP LAYOUT -->
-      <div class="hidden md:flex h-screen overflow-hidden w-screen">
-        <!-- Left: Registration Form -->
-        <div class="w-3/5 p-8 lg:p-16 flex flex-col justify-center mt-5">
-          <h3
-            class="relative inline-block text-3xl font-bold mb-12 acme-regular bg-gradient-to-r from-green-600 via-blue-700 to-blue-500 bg-clip-text text-transparent uppercase tracking-wider"
+  <!-- Wrapper utama: posisi relative, full‐screen, dan pakai background‐image -->
+  <div
+    class="relative min-h-screen w-screen flex items-center justify-center bg-cover bg-center"
+    style="background-image: url('/public/image/bg-auth.png')"
+  >
+    <!-- Overlay putih semi‐transparan menutupi seluruh area -->
+    <div class="absolute inset-0 bg-white opacity-93"></div>
+
+    <!-- Konten utama: posisi relatif agar berada di atas overlay -->
+    <div class="relative overflow-hidden" style="width: 94vw; height: 95vh">
+      <div class="mx-auto grid h-full max-w-7xl grid-cols-1 lg:grid-cols-2">
+        <!-- Left Column - Form -->
+        <div class="flex flex-col justify-center">
+          <h1
+            class="mb-6 text-3xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-indigo-600 md:text-4xl"
           >
-            Daftar Akun
-            <span
-              class="absolute left-0 -bottom-3 w-28 h-1 bg-[#16423C] rounded-sm"
-            ></span>
-          </h3>
-          <h5 class="text-green-800 -mt-8 mb-5 font-medium">
+            Buat Akun Anda
+          </h1>
+          <div class="h-1 md:w-40 bg-green-900 rounded -mt-4 mb-3"></div>
+          <h5 class="text-green-800 -mt-2 mb-5 font-medium">
             * Silakan isi data berikut untuk membuat akun Anda.
           </h5>
-
-          <!-- Registration Form -->
           <form @submit.prevent="handleRegister">
-            <div class="space-y-4">
+            <div class="space-y-5 md:mb-7">
               <!-- Name Field -->
               <div class="relative">
                 <div class="absolute left-4 top-1/2 transform -translate-y-1/2">
@@ -123,7 +123,7 @@
                   v-model="form.password"
                   :type="showPassword ? 'text' : 'password'"
                   class="w-full bg-gray-50 rounded-2xl py-3 pl-12 pr-4 text-m text-green-950 placeholder-gray-500 focus:outline-none focus:bg-gradient-border border-[1.5px] border-gray-300"
-                  placeholder="Masukkan password Anda"
+                  placeholder="Masukkan kata sandi Anda"
                   required
                 />
                 <!-- 2. Tombol toggle -->
@@ -148,7 +148,7 @@
                   class="h-4 w-4 border-green-800 rounded"
                   required
                 />
-                <label for="terms" class="ml-2 block text-sm text-gray-700">
+                <label for="terms" class="ml-2 block text-md text-gray-700">
                   Saya menyetujui
                   <a href="#" class="text-blue-600 underline">Ketentuan Layanan</a>
                   dan
@@ -159,608 +159,247 @@
               <button
                 type="submit"
                 :disabled="!terms"
-                :class="terms == true ? 'w-full bg-gradient-to-r from-green-600 to-blue-600 text-white py-2 px-4 rounded-xl hover:bg-[#16423C] transition duration-200 uppercase font-bold mt-2 hover:cursor-pointer': 'w-full bg-gradient-to-r from-green-300 to-blue-300 text-white py-2 px-4 rounded-xl hover:bg-[#16423C] transition duration-200 uppercase font-bold mt-2 hover:cursor-not-allowed'"
+                :class="
+                  terms == true
+                    ? 'w-full bg-gradient-to-r from-green-600 to-blue-600 text-white py-2 px-4 rounded-xl hover:bg-[#16423C] transition duration-200 uppercase font-bold mt-2 hover:cursor-pointer'
+                    : 'w-full bg-gradient-to-r from-green-300 to-blue-300 text-white py-2 px-4 rounded-xl hover:bg-[#16423C] transition duration-200 uppercase font-bold mt-2 hover:cursor-not-allowed'
+                "
               >
                 Buat Akun
               </button>
             </div>
           </form>
+        </div>
 
-          <div class="mt-5 text-center">
-            <p class="text-gray-600">
-              Sudah memiliki akun?
-              <router-link
-                to="/layanan-publik/auth/login"
-                class="text-blue-600 underline font-medium"
+        <!-- Right Column - Logo and Social -->
+        <div
+          class="relative hidden flex-col items-center justify-center px-6 py-12 lg:flex"
+        >
+          <div
+            class="mb-8 flex h-35 w-35 items-center justify-center rounded-full bg-gradient-to-r from-green-600 to-blue-600 p-1 shadow-lg"
+          >
+            <div
+              class="flex h-full w-full items-center justify-center rounded-full bg-gray-100"
+            >
+              <img
+                class="h-30 w-auto"
+                src="/public/image/logo_web.png"
+                alt="Logo SIMPATI"
+              />
+            </div>
+          </div>
+
+          <h2
+            class="mb-8 text-center text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600 md:text-3xl"
+          >
+            SIMPATI <br /><span class="text-2xl -mt-2"
+              >Kementerian Agama Kabupaten Buleleng</span
+            >
+          </h2>
+
+          <div class="flex space-x-6">
+            <!-- WhatsApp -->
+            <a
+              href="#"
+              class="group flex h-12 w-12 items-center justify-center rounded-2xl bg-green-600/20 shadow-lg transition-all duration-300 hover:bg-green-600/20"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-green-800 transition-colors group-hover:text-green-600"
+                fill="currentColor"
+                viewBox="0 0 24 24"
               >
-                Masuk ke Akun
-              </router-link>
-            </p>
+                <path
+                  d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"
+                />
+              </svg>
+            </a>
+
+            <!-- Instagram -->
+            <a
+              href="#"
+              class="group flex h-12 w-12 items-center justify-center rounded-2xl bg-pink-600/20 shadow-lg transition-all duration-300 hover:bg-pink-600/20"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-pink-800 transition-colors group-hover:text-pink-600"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </a>
+
+            <!-- Facebook -->
+            <a
+              href="#"
+              class="group flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-600/20 shadow-lg transition-all duration-300 hover:bg-blue-600/20"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-blue-800 transition-colors group-hover:text-blue-600"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
+                />
+              </svg>
+            </a>
+
+            <!-- TikTok -->
+            <a
+              href="#"
+              class="group flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-700/20 shadow-lg transition-all duration-300 hover:bg-indigo-700/20"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-indigo-950 transition-colors group-hover:text-indigo-900"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"
+                />
+              </svg>
+            </a>
+
+            <!-- YouTube -->
+            <a
+              href="#"
+              class="group flex h-12 w-12 items-center justify-center rounded-2xl bg-red-600/20 shadow-lg transition-all duration-300 hover:bg-red-600/20"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-red-800 transition-colors group-hover:text-red-600"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
+                />
+              </svg>
+            </a>
           </div>
         </div>
 
-        <!-- Right: Yellow stripe + Info card -->
-        <div class="relative w-2/5 h-full">
-          <div class="flex justify-end mr-17 mt-6">
-            <router-link
-              to="/"
-              class="bg-[#16423C] flex text-white px-2 py-1 mt-3 rounded-lg shadow-lg hover:cursor-pointer"
+        <!-- Mobile version of right column content -->
+        <div class="flex flex-col items-center space-y-6 px-6 py-8 lg:hidden">
+          <button
+            @click="goToHomepage"
+            class="w-full rounded-md border border-gray-700 bg-gray-800/50 px-4 py-2 text-sm font-medium text-white shadow-sm backdrop-blur-sm transition-colors hover:bg-gray-700/50"
+          >
+            Go to Homepage
+          </button>
+
+          <div
+            class="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-purple-600 to-cyan-500 p-1 shadow-lg"
+          >
+            <div
+              class="flex h-full w-full items-center justify-center rounded-full bg-gray-900"
             >
-              <span
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  x="0px"
-                  y="0px"
-                  width="15"
-                  height="15"
-                  viewBox="0,0,256,256"
-                  class="mt-1.5 mr-2"
-                >
-                  <g
-                    fill="#ffffff"
-                    fill-rule="nonzero"
-                    stroke="none"
-                    stroke-width="1"
-                    stroke-linecap="butt"
-                    stroke-linejoin="miter"
-                    stroke-miterlimit="10"
-                    stroke-dasharray=""
-                    stroke-dashoffset="0"
-                    font-family="none"
-                    font-weight="none"
-                    font-size="none"
-                    text-anchor="none"
-                    style="mix-blend-mode: normal"
-                  >
-                    <g transform="scale(5.12,5.12)">
-                      <path
-                        d="M25,1.05078c-0.2175,0 -0.43414,0.06898 -0.61914,0.20898l-23,17.95117c-0.43,0.34 -0.50992,0.9682 -0.16992,1.4082c0.34,0.43 0.9682,0.50992 1.4082,0.16992l1.38086,-1.07812v26.28906c0,0.55 0.45,1 1,1h14v-18h12v18h14c0.55,0 1,-0.45 1,-1v-26.28906l1.38086,1.07812c0.19,0.14 0.39914,0.21094 0.61914,0.21094c0.3,0 0.58906,-0.13086 0.78906,-0.38086c0.34,-0.44 0.26008,-1.0682 -0.16992,-1.4082l-23,-17.95117c-0.185,-0.14 -0.40164,-0.20898 -0.61914,-0.20898zM35,5v1.05078l6,4.67969v-5.73047z"
-                      ></path>
-                    </g>
-                  </g></svg
-              ></span>
-              <p>Beranda</p>
-            </router-link>
+              <span class="text-xl font-bold text-white">LOGO</span>
+            </div>
           </div>
 
-          <div class="rounded-2xl w-68 h-68 mt-15 ml-7 pt-5">
-            <img
-              class="md:w-48 h-auto ml-24 mb-5"
-              src="/public/image/logo_web.png"
-              alt="Logo SIMPATI"
-            />
-            <h1
-              class="md:text-5xl acme-regular bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent ml-26 mt-3"
+          <h2
+            class="text-center text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400"
+          >
+            Join Our Digital Community
+          </h2>
+
+          <div class="flex space-x-4">
+            <!-- WhatsApp -->
+            <a
+              href="#"
+              class="group flex h-10 w-10 items-center justify-center rounded-full bg-gray-800/50 shadow-lg transition-all duration-300 hover:bg-green-600/20"
             >
-              SIMPATI
-            </h1>
-            <div class="flex flex-col justify-start pt-8 lg:pt-0 mt-1 ml-24">
-              <div class="flex justify-center space-x-5 md:mt-3">
-                <div class="bg-white rounded-lg shadow-md p-2">
-                  <a
-                    rel="noopener noreferrer"
-                    href="https://wa.me/+6285928877957"
-                    title="WhatsApp"
-                    class="flex items-center justify-center md:w-7 md:h-7 rounded-full text-[#16423C]"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      x="0px"
-                      y="0px"
-                      width="100"
-                      height="100"
-                      viewBox="0,0,256,256"
-                    >
-                      <g
-                        fill="#16423c"
-                        fill-rule="nonzero"
-                        stroke="none"
-                        stroke-width="1"
-                        stroke-linecap="butt"
-                        stroke-linejoin="miter"
-                        stroke-miterlimit="10"
-                        stroke-dasharray=""
-                        stroke-dashoffset="0"
-                        font-family="none"
-                        font-weight="none"
-                        font-size="none"
-                        text-anchor="none"
-                        style="mix-blend-mode: normal"
-                      >
-                        <g transform="scale(5.12,5.12)">
-                          <path
-                            d="M25,2c-12.682,0 -23,10.318 -23,23c0,3.96 1.023,7.854 2.963,11.29l-2.926,10.44c-0.096,0.343 -0.003,0.711 0.245,0.966c0.191,0.197 0.451,0.304 0.718,0.304c0.08,0 0.161,-0.01 0.24,-0.029l10.896,-2.699c3.327,1.786 7.074,2.728 10.864,2.728c12.682,0 23,-10.318 23,-23c0,-12.682 -10.318,-23 -23,-23zM36.57,33.116c-0.492,1.362 -2.852,2.605 -3.986,2.772c-1.018,0.149 -2.306,0.213 -3.72,-0.231c-0.857,-0.27 -1.957,-0.628 -3.366,-1.229c-5.923,-2.526 -9.791,-8.415 -10.087,-8.804c-0.295,-0.389 -2.411,-3.161 -2.411,-6.03c0,-2.869 1.525,-4.28 2.067,-4.864c0.542,-0.584 1.181,-0.73 1.575,-0.73c0.394,0 0.787,0.005 1.132,0.021c0.363,0.018 0.85,-0.137 1.329,1.001c0.492,1.168 1.673,4.037 1.819,4.33c0.148,0.292 0.246,0.633 0.05,1.022c-0.196,0.389 -0.294,0.632 -0.59,0.973c-0.296,0.341 -0.62,0.76 -0.886,1.022c-0.296,0.291 -0.603,0.606 -0.259,1.19c0.344,0.584 1.529,2.493 3.285,4.039c2.255,1.986 4.158,2.602 4.748,2.894c0.59,0.292 0.935,0.243 1.279,-0.146c0.344,-0.39 1.476,-1.703 1.869,-2.286c0.393,-0.583 0.787,-0.487 1.329,-0.292c0.542,0.194 3.445,1.604 4.035,1.896c0.59,0.292 0.984,0.438 1.132,0.681c0.148,0.242 0.148,1.41 -0.344,2.771z"
-                          ></path>
-                        </g>
-                      </g>
-                    </svg>
-                  </a>
-                </div>
-                <div class="bg-white rounded-lg shadow-md p-2">
-                  <a
-                    rel="noopener noreferrer"
-                    href="https://www.instagram.com/kemenagbuleleng"
-                    title="Instagram"
-                    class="flex items-center justify-center md:w-7 md:h-7 rounded-full text-white"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      x="0px"
-                      y="0px"
-                      width="100"
-                      height="100"
-                      viewBox="0,0,256,256"
-                    >
-                      <g
-                        fill="#16423c"
-                        fill-rule="nonzero"
-                        stroke="none"
-                        stroke-width="1"
-                        stroke-linecap="butt"
-                        stroke-linejoin="miter"
-                        stroke-miterlimit="10"
-                        stroke-dasharray=""
-                        stroke-dashoffset="0"
-                        font-family="none"
-                        font-weight="none"
-                        font-size="none"
-                        text-anchor="none"
-                        style="mix-blend-mode: normal"
-                      >
-                        <g transform="scale(5.12,5.12)">
-                          <path
-                            d="M16,3c-7.17,0 -13,5.83 -13,13v18c0,7.17 5.83,13 13,13h18c7.17,0 13,-5.83 13,-13v-18c0,-7.17 -5.83,-13 -13,-13zM37,11c1.1,0 2,0.9 2,2c0,1.1 -0.9,2 -2,2c-1.1,0 -2,-0.9 -2,-2c0,-1.1 0.9,-2 2,-2zM25,14c6.07,0 11,4.93 11,11c0,6.07 -4.93,11 -11,11c-6.07,0 -11,-4.93 -11,-11c0,-6.07 4.93,-11 11,-11zM25,16c-4.96,0 -9,4.04 -9,9c0,4.96 4.04,9 9,9c4.96,0 9,-4.04 9,-9c0,-4.96 -4.04,-9 -9,-9z"
-                          ></path>
-                        </g>
-                      </g>
-                    </svg>
-                  </a>
-                </div>
-                <div class="bg-white rounded-lg shadow-md p-2">
-                  <a
-                    rel="noopener noreferrer"
-                    href="https://www.facebook.com/share/1Hd41qxV5u/"
-                    title="Facebook"
-                    class="flex items-center justify-center md:w-[29px] md:h-[29px] rounded-full text-white"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      x="0px"
-                      y="0px"
-                      width="100"
-                      height="100"
-                      viewBox="0,0,256,256"
-                    >
-                      <g
-                        fill="#16423c"
-                        fill-rule="nonzero"
-                        stroke="none"
-                        stroke-width="1"
-                        stroke-linecap="butt"
-                        stroke-linejoin="miter"
-                        stroke-miterlimit="10"
-                        stroke-dasharray=""
-                        stroke-dashoffset="0"
-                        font-family="none"
-                        font-weight="none"
-                        font-size="none"
-                        text-anchor="none"
-                        style="mix-blend-mode: normal"
-                      >
-                        <g transform="scale(5.12,5.12)">
-                          <path
-                            d="M41,4h-32c-2.76,0 -5,2.24 -5,5v32c0,2.76 2.24,5 5,5h32c2.76,0 5,-2.24 5,-5v-32c0,-2.76 -2.24,-5 -5,-5zM37,19h-2c-2.14,0 -3,0.5 -3,2v3h5l-1,5h-4v15h-5v-15h-4v-5h4v-3c0,-4 2,-7 6,-7c2.9,0 4,1 4,1z"
-                          ></path>
-                        </g>
-                      </g>
-                    </svg>
-                  </a>
-                </div>
-                <div class="bg-white rounded-lg shadow-md p-2">
-                  <a
-                    rel="noopener noreferrer"
-                    href="https://www.tiktok.com/@kemenagbuleleng"
-                    title="TikTok"
-                    class="flex items-center justify-center md:w-[30px] md:h-[30px] rounded-full text-white"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      x="0px"
-                      y="0px"
-                      width="100"
-                      height="100"
-                      viewBox="0,0,256,256"
-                    >
-                      <g
-                        fill="#16423c"
-                        fill-rule="nonzero"
-                        stroke="none"
-                        stroke-width="1"
-                        stroke-linecap="butt"
-                        stroke-linejoin="miter"
-                        stroke-miterlimit="10"
-                        stroke-dasharray=""
-                        stroke-dashoffset="0"
-                        font-family="none"
-                        font-weight="none"
-                        font-size="none"
-                        text-anchor="none"
-                        style="mix-blend-mode: normal"
-                      >
-                        <g transform="scale(5.12,5.12)">
-                          <path
-                            d="M41,4h-32c-2.757,0 -5,2.243 -5,5v32c0,2.757 2.243,5 5,5h32c2.757,0 5,-2.243 5,-5v-32c0,-2.757 -2.243,-5 -5,-5zM37.006,22.323c-0.227,0.021 -0.457,0.035 -0.69,0.035c-2.623,0 -4.928,-1.349 -6.269,-3.388c0,5.349 0,11.435 0,11.537c0,4.709 -3.818,8.527 -8.527,8.527c-4.709,0 -8.527,-3.818 -8.527,-8.527c0,-4.709 3.818,-8.527 8.527,-8.527c0.178,0 0.352,0.016 0.527,0.027v4.202c-0.175,-0.021 -0.347,-0.053 -0.527,-0.053c-2.404,0 -4.352,1.948 -4.352,4.352c0,2.404 1.948,4.352 4.352,4.352c2.404,0 4.527,-1.894 4.527,-4.298c0,-0.095 0.042,-19.594 0.042,-19.594h4.016c0.378,3.591 3.277,6.425 6.901,6.685z"
-                          ></path>
-                        </g>
-                      </g>
-                    </svg>
-                  </a>
-                </div>
-                <div class="bg-white rounded-lg shadow-md p-2">
-                  <a
-                    rel="noopener noreferrer"
-                    href="https://www.youtube.com/@kemenagbuleleng819"
-                    title="YouTube"
-                    class="flex items-center justify-center md:w-7 md:h-7 rounded-full text-white"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      x="0px"
-                      y="0px"
-                      width="100"
-                      height="100"
-                      viewBox="0,0,256,256"
-                    >
-                      <g
-                        fill="#16423c"
-                        fill-rule="nonzero"
-                        stroke="none"
-                        stroke-width="1"
-                        stroke-linecap="butt"
-                        stroke-linejoin="miter"
-                        stroke-miterlimit="10"
-                        stroke-dasharray=""
-                        stroke-dashoffset="0"
-                        font-family="none"
-                        font-weight="none"
-                        font-size="none"
-                        text-anchor="none"
-                        style="mix-blend-mode: normal"
-                      >
-                        <g transform="scale(5.12,5.12)">
-                          <path
-                            d="M44.89844,14.5c-0.39844,-2.19922 -2.29687,-3.80078 -4.5,-4.30078c-3.29687,-0.69922 -9.39844,-1.19922 -16,-1.19922c-6.59766,0 -12.79687,0.5 -16.09766,1.19922c-2.19922,0.5 -4.10156,2 -4.5,4.30078c-0.40234,2.5 -0.80078,6 -0.80078,10.5c0,4.5 0.39844,8 0.89844,10.5c0.40234,2.19922 2.30078,3.80078 4.5,4.30078c3.5,0.69922 9.5,1.19922 16.10156,1.19922c6.60156,0 12.60156,-0.5 16.10156,-1.19922c2.19922,-0.5 4.09766,-2 4.5,-4.30078c0.39844,-2.5 0.89844,-6.10156 1,-10.5c-0.20312,-4.5 -0.70312,-8 -1.20312,-10.5zM19,32v-14l12.19922,7z"
-                          ></path>
-                        </g>
-                      </g>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 text-gray-400 transition-colors group-hover:text-green-400"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"
+                />
+              </svg>
+            </a>
+
+            <!-- Instagram -->
+            <a
+              href="#"
+              class="group flex h-10 w-10 items-center justify-center rounded-full bg-gray-800/50 shadow-lg transition-all duration-300 hover:bg-pink-600/20"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 text-gray-400 transition-colors group-hover:text-pink-400"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                />
+              </svg>
+            </a>
+
+            <!-- Facebook -->
+            <a
+              href="#"
+              class="group flex h-10 w-10 items-center justify-center rounded-full bg-gray-800/50 shadow-lg transition-all duration-300 hover:bg-blue-600/20"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 text-gray-400 transition-colors group-hover:text-blue-400"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
+                />
+              </svg>
+            </a>
+
+            <!-- TikTok -->
+            <a
+              href="#"
+              class="group flex h-10 w-10 items-center justify-center rounded-full bg-gray-800/50 shadow-lg transition-all duration-300 hover:bg-gray-600/20"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 text-gray-400 transition-colors group-hover:text-white"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"
+                />
+              </svg>
+            </a>
+
+            <!-- YouTube -->
+            <a
+              href="#"
+              class="group flex h-10 w-10 items-center justify-center rounded-full bg-gray-800/50 shadow-lg transition-all duration-300 hover:bg-red-600/20"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 text-gray-400 transition-colors group-hover:text-red-400"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
+                />
+              </svg>
+            </a>
           </div>
         </div>
       </div>
-      
-      <!-- MOBILE LAYOUT -->
-      <div class="md:hidden relative min-h-[105vh] w-full bg-cover bg-right">
-        <!-- logo + teks, center-horizontal, sedikit di atas form -->
-        <div class="absolute inset-x-0 top-10 flex justify-center items-center z-10">
-          <img
-            class="w-8 h-auto mr-3"
-            src="/public/image/logo_web.png"
-            alt="Logo SIMPATI"
-          />
-          <h3
-            class="text-4xl acme-regular bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent"
-          >
-            SIMPATI
-          </h3>
-        </div>
-
-        <!-- floating white card dengan form -->
-        <div
-          class="absolute inset-x-0 top-28 mx-auto w-[98%] sm:w-2/3 max-w-md bg-white rounded-2xl shadow-lg p-6 z-20 space-y-4"
-        >
-          <h3 class="text-center text-xl text-slate-700 poppins-light">
-            Daftar Akun Baru
-          </h3>
-          <h5 class="text-green-800">
-            * Silakan isi data berikut untuk membuat akun Anda.
-          </h5>
-          <form @submit.prevent="handleRegister" class="space-y-3">
-            <div>
-              <label class="block text-green-950 mb-1 text-m font-normal"
-                >Nama Lengkap</label
-              >
-              <input
-                v-model="form.name"
-                type="text"
-                required
-                class="w-full border-gray-300 rounded-xl px-3 py-2 text-sm focus:outline-none focus:bg-gradient-border border-[1.5px]"
-                placeholder="Masukkan nama lengkap Anda"
-              />
-            </div>
-            <div>
-              <label class="block text-green-950 mb-1 text-m font-normal">Email</label>
-              <input
-                v-model="form.email"
-                type="email"
-                required
-                class="w-full border-gray-300 rounded-xl px-3 py-2 text-sm focus:outline-none focus:bg-gradient-border border-[1.5px]"
-                placeholder="nama@email.com"
-              />
-            </div>
-            <div>
-              <label class="block text-green-950 mb-1 text-m font-normal"
-                >Nomor WhatsApp</label
-              >
-              <input
-                v-model="form.no_hp"
-                type="tel"
-                required
-                class="w-full border-gray-300 rounded-xl px-3 py-2 text-sm focus:outline-none focus:bg-gradient-border border-[1.5px]"
-                placeholder="Masukkan nomor WhatsApp Anda"
-              />
-            </div>
-            <div>
-              <label class="block text-green-950 mb-1 text-m font-normal">Alamat</label>
-              <input
-                v-model="form.alamat"
-                type="text"
-                required
-                class="w-full border-gray-300 rounded-xl px-3 py-2 text-sm focus:outline-none focus:bg-gradient-border border-[1.5px]"
-                placeholder="Masukkan alamat tempat tinggal Anda"
-              />
-            </div>
-            <div class="relative">
-              <label class="block text-green-950 mb-1 text-m font-normal">Password</label>
-              <input
-                v-model="form.password"
-                :type="showPassword ? 'text' : 'password'"
-                required
-                class="w-full border-gray-300 rounded-xl px-3 py-2 text-sm focus:outline-none focus:bg-gradient-border border-[1.5px]"
-                placeholder="••••••••"
-              />
-              <button
-                type="button"
-                @click="togglePassword"
-                class="absolute inset-y-0 top-6 right-3 flex items-center text-gray-500"
-              >
-                <component :is="showPassword ? EyeSlashIcon : EyeIcon" class="h-4 w-4" />
-              </button>
-            </div>
-            <div class="flex items-center text-sm mb-7">
-              <input
-                id="terms"
-                v-model="terms"
-                type="checkbox"
-                class="h-4 w-4 text-yellow-500 focus:ring-yellow-400 border-gray-300 rounded"
-                required
-              />
-              <label for="terms-mobile" class="ml-2 text-gray-700">
-                Saya menyetujui
-                <a href="#" class="text-blue-600 underline">Ketentuan Layanan</a>
-                dan
-                <a href="#" class="text-blue-600 underline">Kebijakan Privasi</a>
-              </label>
-            </div>
-            <button
-              type="submit"
-              :disabled="!terms"
-              :class="terms == true ? 'w-full rounded-xl bg-gradient-to-r from-green-600 to-blue-600 text-white font-bold py-2 text-m transition uppercase': 'w-full rounded-xl bg-gradient-to-r from-green-300 to-blue-300 text-white font-bold py-2 text-m transition uppercase'"
-            >
-              Buat Akun
-            </button>
-          </form>
-          <p class="mt-3 text-center text-gray-600 text-m">
-            Sudah memiliki akun?
-            <router-link
-              to="/layanan-publik/auth/login"
-              class="text-blue-600 underline font-medium"
-            >
-              Masuk ke Akun 
-            </router-link>
-          </p>
-        </div>
-        <div
-          class="md:hidden absolute inset-x-0 top-207 flex justify-center items-center space-x-4 z-20"
-        >
-          <a
-            rel="noopener noreferrer"
-            href="https://wa.me/+6285928877957"
-            title="WhatsApp"
-            class="flex items-center justify-center w-7 h-7 rounded-full text-[#16423C]"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              x="0px"
-              y="0px"
-              width="100"
-              height="100"
-              viewBox="0,0,256,256"
-            >
-              <g
-                fill="#16423c"
-                fill-rule="nonzero"
-                stroke="none"
-                stroke-width="1"
-                stroke-linecap="butt"
-                stroke-linejoin="miter"
-                stroke-miterlimit="10"
-                stroke-dasharray=""
-                stroke-dashoffset="0"
-                font-family="none"
-                font-weight="none"
-                font-size="none"
-                text-anchor="none"
-                style="mix-blend-mode: normal"
-              >
-                <g transform="scale(5.12,5.12)">
-                  <path
-                    d="M25,2c-12.682,0 -23,10.318 -23,23c0,3.96 1.023,7.854 2.963,11.29l-2.926,10.44c-0.096,0.343 -0.003,0.711 0.245,0.966c0.191,0.197 0.451,0.304 0.718,0.304c0.08,0 0.161,-0.01 0.24,-0.029l10.896,-2.699c3.327,1.786 7.074,2.728 10.864,2.728c12.682,0 23,-10.318 23,-23c0,-12.682 -10.318,-23 -23,-23zM36.57,33.116c-0.492,1.362 -2.852,2.605 -3.986,2.772c-1.018,0.149 -2.306,0.213 -3.72,-0.231c-0.857,-0.27 -1.957,-0.628 -3.366,-1.229c-5.923,-2.526 -9.791,-8.415 -10.087,-8.804c-0.295,-0.389 -2.411,-3.161 -2.411,-6.03c0,-2.869 1.525,-4.28 2.067,-4.864c0.542,-0.584 1.181,-0.73 1.575,-0.73c0.394,0 0.787,0.005 1.132,0.021c0.363,0.018 0.85,-0.137 1.329,1.001c0.492,1.168 1.673,4.037 1.819,4.33c0.148,0.292 0.246,0.633 0.05,1.022c-0.196,0.389 -0.294,0.632 -0.59,0.973c-0.296,0.341 -0.62,0.76 -0.886,1.022c-0.296,0.291 -0.603,0.606 -0.259,1.19c0.344,0.584 1.529,2.493 3.285,4.039c2.255,1.986 4.158,2.602 4.748,2.894c0.59,0.292 0.935,0.243 1.279,-0.146c0.344,-0.39 1.476,-1.703 1.869,-2.286c0.393,-0.583 0.787,-0.487 1.329,-0.292c0.542,0.194 3.445,1.604 4.035,1.896c0.59,0.292 0.984,0.438 1.132,0.681c0.148,0.242 0.148,1.41 -0.344,2.771z"
-                  ></path>
-                </g>
-              </g>
-            </svg>
-          </a>
-          <a
-            rel="noopener noreferrer"
-            href="https://www.instagram.com/kemenagbuleleng"
-            title="Instagram"
-            class="flex items-center justify-center w-7 h-7 rounded-full text-white"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              x="0px"
-              y="0px"
-              width="100"
-              height="100"
-              viewBox="0,0,256,256"
-            >
-              <g
-                fill="#16423c"
-                fill-rule="nonzero"
-                stroke="none"
-                stroke-width="1"
-                stroke-linecap="butt"
-                stroke-linejoin="miter"
-                stroke-miterlimit="10"
-                stroke-dasharray=""
-                stroke-dashoffset="0"
-                font-family="none"
-                font-weight="none"
-                font-size="none"
-                text-anchor="none"
-                style="mix-blend-mode: normal"
-              >
-                <g transform="scale(5.12,5.12)">
-                  <path
-                    d="M16,3c-7.17,0 -13,5.83 -13,13v18c0,7.17 5.83,13 13,13h18c7.17,0 13,-5.83 13,-13v-18c0,-7.17 -5.83,-13 -13,-13zM37,11c1.1,0 2,0.9 2,2c0,1.1 -0.9,2 -2,2c-1.1,0 -2,-0.9 -2,-2c0,-1.1 0.9,-2 2,-2zM25,14c6.07,0 11,4.93 11,11c0,6.07 -4.93,11 -11,11c-6.07,0 -11,-4.93 -11,-11c0,-6.07 4.93,-11 11,-11zM25,16c-4.96,0 -9,4.04 -9,9c0,4.96 4.04,9 9,9c4.96,0 9,-4.04 9,-9c0,-4.96 -4.04,-9 -9,-9z"
-                  ></path>
-                </g>
-              </g>
-            </svg>
-          </a>
-          <a
-            rel="noopener noreferrer"
-            href="https://www.facebook.com/share/1Hd41qxV5u/"
-            title="Facebook"
-            class="flex items-center justify-center w-[29px] h-[29px] rounded-full text-white"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              x="0px"
-              y="0px"
-              width="100"
-              height="100"
-              viewBox="0,0,256,256"
-            >
-              <g
-                fill="#16423c"
-                fill-rule="nonzero"
-                stroke="none"
-                stroke-width="1"
-                stroke-linecap="butt"
-                stroke-linejoin="miter"
-                stroke-miterlimit="10"
-                stroke-dasharray=""
-                stroke-dashoffset="0"
-                font-family="none"
-                font-weight="none"
-                font-size="none"
-                text-anchor="none"
-                style="mix-blend-mode: normal"
-              >
-                <g transform="scale(5.12,5.12)">
-                  <path
-                    d="M41,4h-32c-2.76,0 -5,2.24 -5,5v32c0,2.76 2.24,5 5,5h32c2.76,0 5,-2.24 5,-5v-32c0,-2.76 -2.24,-5 -5,-5zM37,19h-2c-2.14,0 -3,0.5 -3,2v3h5l-1,5h-4v15h-5v-15h-4v-5h4v-3c0,-4 2,-7 6,-7c2.9,0 4,1 4,1z"
-                  ></path>
-                </g>
-              </g>
-            </svg>
-          </a>
-          <a
-            rel="noopener noreferrer"
-            href="https://www.tiktok.com/@kemenagbuleleng"
-            title="TikTok"
-            class="flex items-center justify-center w-[30px] h-[30px] rounded-full text-white"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              x="0px"
-              y="0px"
-              width="100"
-              height="100"
-              viewBox="0,0,256,256"
-            >
-              <g
-                fill="#16423c"
-                fill-rule="nonzero"
-                stroke="none"
-                stroke-width="1"
-                stroke-linecap="butt"
-                stroke-linejoin="miter"
-                stroke-miterlimit="10"
-                stroke-dasharray=""
-                stroke-dashoffset="0"
-                font-family="none"
-                font-weight="none"
-                font-size="none"
-                text-anchor="none"
-                style="mix-blend-mode: normal"
-              >
-                <g transform="scale(5.12,5.12)">
-                  <path
-                    d="M41,4h-32c-2.757,0 -5,2.243 -5,5v32c0,2.757 2.243,5 5,5h32c2.757,0 5,-2.243 5,-5v-32c0,-2.757 -2.243,-5 -5,-5zM37.006,22.323c-0.227,0.021 -0.457,0.035 -0.69,0.035c-2.623,0 -4.928,-1.349 -6.269,-3.388c0,5.349 0,11.435 0,11.537c0,4.709 -3.818,8.527 -8.527,8.527c-4.709,0 -8.527,-3.818 -8.527,-8.527c0,-4.709 3.818,-8.527 8.527,-8.527c0.178,0 0.352,0.016 0.527,0.027v4.202c-0.175,-0.021 -0.347,-0.053 -0.527,-0.053c-2.404,0 -4.352,1.948 -4.352,4.352c0,2.404 1.948,4.352 4.352,4.352c2.404,0 4.527,-1.894 4.527,-4.298c0,-0.095 0.042,-19.594 0.042,-19.594h4.016c0.378,3.591 3.277,6.425 6.901,6.685z"
-                  ></path>
-                </g>
-              </g>
-            </svg>
-          </a>
-          <a
-            rel="noopener noreferrer"
-            href="https://www.youtube.com/@kemenagbuleleng819"
-            title="YouTube"
-            class="flex items-center justify-center w-9 h-9 rounded-full text-white"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              x="0px"
-              y="0px"
-              width="100"
-              height="100"
-              viewBox="0,0,256,256"
-            >
-              <g
-                fill="#16423c"
-                fill-rule="nonzero"
-                stroke="none"
-                stroke-width="1"
-                stroke-linecap="butt"
-                stroke-linejoin="miter"
-                stroke-miterlimit="10"
-                stroke-dasharray=""
-                stroke-dashoffset="0"
-                font-family="none"
-                font-weight="none"
-                font-size="none"
-                text-anchor="none"
-                style="mix-blend-mode: normal"
-              >
-                <g transform="scale(5.12,5.12)">
-                  <path
-                    d="M44.89844,14.5c-0.39844,-2.19922 -2.29687,-3.80078 -4.5,-4.30078c-3.29687,-0.69922 -9.39844,-1.19922 -16,-1.19922c-6.59766,0 -12.79687,0.5 -16.09766,1.19922c-2.19922,0.5 -4.10156,2 -4.5,4.30078c-0.40234,2.5 -0.80078,6 -0.80078,10.5c0,4.5 0.39844,8 0.89844,10.5c0.40234,2.19922 2.30078,3.80078 4.5,4.30078c3.5,0.69922 9.5,1.19922 16.10156,1.19922c6.60156,0 12.60156,-0.5 16.10156,-1.19922c2.19922,-0.5 4.09766,-2 4.5,-4.30078c0.39844,-2.5 0.89844,-6.10156 1,-10.5c-0.20312,-4.5 -0.70312,-8 -1.20312,-10.5zM19,32v-14l12.19922,7z"
-                  ></path>
-                </g>
-              </g>
-            </svg>
-          </a>
-        </div>
-      </div>
-
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup>
@@ -786,8 +425,8 @@ const terms = ref(false);
 const form = reactive({
   name: "",
   email: "",
-  no_hp:"",
-  alamat:"",
+  no_hp: "",
+  alamat: "",
   password: "",
 });
 
@@ -799,38 +438,38 @@ function togglePassword() {
 const handleRegister = async () => {
   const API_URL = import.meta.env.VITE_API_URL;
 
-      try {
-        const response = await axios.post(`${API_URL}/register`, {
-          name: form.name,
-          email: form.email,
-          no_hp: form.no_hp,
-          alamat: form.alamat,
-          password: form.password,
-        });
-        const result = response.data;
-        
-        if (result.status === 201) {
-          await Swal.fire({
-            icon: "success",
-            title: "Anda Berhasil Mendaftarkan Akun",
-            text: "Anda akan dialihkan ke halaman Masuk Akun",
-            timer: 1500,
-            showConfirmButton: false,
-          });
-          router.push({ name: "Login" });    // <-- gunakan router.push
-        }
-      } catch (error) {
-        console.log(error);
-        Swal.fire({
-          icon: "error",
-          title: "Daftar Akun Gagal",
-          text: error.response?.data?.message || "Terjadi kesalahan",
-        });
-      }
-}
+  try {
+    const response = await axios.post(`${API_URL}/register`, {
+      name: form.name,
+      email: form.email,
+      no_hp: form.no_hp,
+      alamat: form.alamat,
+      password: form.password,
+    });
+    const result = response.data;
+
+    if (result.status === 201) {
+      await Swal.fire({
+        icon: "success",
+        title: "Anda Berhasil Mendaftarkan Akun",
+        text: "Anda akan dialihkan ke halaman Masuk Akun",
+        timer: 1500,
+        showConfirmButton: false,
+      });
+      router.push({ name: "Login" }); // <-- gunakan router.push
+    }
+  } catch (error) {
+    console.log(error);
+    Swal.fire({
+      icon: "error",
+      title: "Daftar Akun Gagal",
+      text: error.response?.data?.message || "Terjadi kesalahan",
+    });
+  }
+};
 </script>
 
-<style scoped>
+<style>
 /* Kelas kustom untuk gradient border pada focus */
 .focus\:bg-gradient-border:focus {
   /* Border jadi transparent */
@@ -845,21 +484,5 @@ const handleRegister = async () => {
      - gradient hanya di border-box */
   background-origin: padding-box, border-box;
   background-clip: padding-box, border-box;
-}
-section::before {
-  content: "";
-  position: absolute;
-  inset: 0; /* top/right/bottom/left = 0 */
-  background-image: url("/public/image/bg-auth.png");
-  background-size: cover;
-  background-position: center;
-  z-index: 0; /* di bawah konten */
-}
-section::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(241, 237, 237, 0.95); /* putih 80% opacity */
-  z-index: 10; /* di atas gambar, tapi di bawah konten */
 }
 </style>

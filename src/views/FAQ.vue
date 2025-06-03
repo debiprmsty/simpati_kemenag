@@ -1,5 +1,5 @@
 <template>
-  <div class="md:p-8 p-4" ref="faqContainer">
+  <div class="md:max-w-[94vw] max-w-[92vw] mx-auto md:my-10 my-4" ref="faqContainer">
     <div class="text-center flex flex-col items-center px-4">
       <h1 class="md:text-2xl font-bold mb-1 uppercase text-green-950">
         Frequently Asked Questions (FAQ)
