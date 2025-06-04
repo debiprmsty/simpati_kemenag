@@ -98,7 +98,7 @@
               <!-- Profile image container -->
               <div class="text-center mb-5">
                 <div class="relative inline-block group">
-                  <!-- Profile image container -->
+                  <!-- Kotak lingkaran untuk foto profil -->
                   <div class="relative w-32 h-32 md:w-40 md:h-40 mx-auto">
                     <div
                       class="w-full h-full rounded-full bg-gradient-to-br from-green-600 to-blue-600 p-1 animate-pulse"
@@ -106,23 +106,24 @@
                       <div
                         class="w-full h-full rounded-full overflow-hidden bg-slate-800 flex items-center justify-center"
                       >
+                        <!-- Tampilkan gambar jika ada, kalau belum tampilkan ikon user -->
                         <img
-                          v-if="profileImage"
-                          :src="profileImage"
+                          v-if="profileImageUrl"
+                          :src="profileImageUrl"
                           class="w-full h-full object-cover rounded-full"
                         />
                         <User v-else class="w-16 h-16 text-gray-400" />
                       </div>
                     </div>
 
-                    <!-- Upload overlay -->
+                    <!-- Overlay untuk upload -->
                     <div
                       class="absolute inset-0 rounded-full bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
                     >
                       <Camera class="w-8 h-8 text-white" />
                     </div>
 
-                    <!-- Upload button -->
+                    <!-- Tombol edit gambar -->
                     <button
                       @click="triggerImageUpload"
                       class="absolute bottom-2 right-2 w-10 h-10 bg-gradient-to-r from-green-600 to-blue-600 rounded-full flex items-center justify-center hover:scale-110 transition-transform duration-300 shadow-lg"
@@ -131,7 +132,7 @@
                     </button>
                   </div>
 
-                  <!-- Hidden file input -->
+                  <!-- Input file tersembunyi -->
                   <input
                     ref="fileInput"
                     type="file"
@@ -145,15 +146,6 @@
                   Klik tombol edit untuk mengunggah foto profil baru
                 </p>
               </div>
-
-              <!-- Hidden file input -->
-              <input
-                ref="fileInput"
-                type="file"
-                accept="image/*"
-                @change="handleImageUpload"
-                class="hidden"
-              />
             </div>
           </div>
 
@@ -161,9 +153,9 @@
           <form @submit.prevent="saveProfile" class="md:space-y-7 space-y-4">
             <!-- Two Column Layout -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-12">
-              <!-- Column 1: Name and Email -->
+              <!-- Kolom kiri: Nama, Email, Alamat -->
               <div class="md:space-y-8 space-y-5">
-                <!-- Full Name -->
+                <!-- Nama Lengkap -->
                 <div class="space-y-3">
                   <label
                     class="flex items-center md:space-x-3 space-x-2 text-gray-800 font-semibold text-lg"
@@ -227,7 +219,7 @@
                   </p>
                 </div>
 
-                <!-- Location -->
+                <!-- Alamat -->
                 <div class="space-y-3">
                   <label
                     class="flex items-center md:space-x-3 space-x-2 text-gray-800 font-semibold text-lg"
@@ -260,9 +252,9 @@
                 </div>
               </div>
 
-              <!-- Column 2: WhatsApp and Password -->
+              <!-- Kolom kanan: WhatsApp dan Password -->
               <div class="md:space-y-8 space-y-5">
-                <!-- WhatsApp Number -->
+                <!-- Nomor WhatsApp -->
                 <div class="space-y-3">
                   <label
                     class="flex items-center md:space-x-3 space-x-2 text-gray-800 font-semibold text-lg"
@@ -310,7 +302,7 @@
                     <input
                       v-model="profile.password"
                       :type="showPassword ? 'text' : 'password'"
-                      placeholder="Masukkan kata sandi Anda"
+                      placeholder="Isi jika ingin memperbarui password"
                       class="w-full md:px-6 md:py-3 px-3 py-2 pr-14 bg-gray-50/80 border-2 border-gray-200 md:rounded-2xl rounded-xl text-gray-900 placeholder-gray-500 focus:border-red-500 focus:ring-4 focus:ring-red-500/20 transition-all duration-300 backdrop-blur-sm text-md"
                       :class="{
                         'border-red-400 focus:border-red-400 focus:ring-red-400/20':
@@ -336,7 +328,7 @@
               </div>
             </div>
 
-            <!-- Action Buttons -->
+            <!-- Tombol Aksi -->
             <div
               class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-12 pt-3"
             >
@@ -359,7 +351,7 @@
                   <span>PEMROSESAN...</span>
                 </span>
 
-                <!-- Button shine effect -->
+                <!-- Efek kilau tombol -->
                 <div
                   class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"
                 ></div>
@@ -379,25 +371,7 @@
       </div>
     </div>
 
-    <!-- Success notification -->
-    <Transition
-      enter-active-class="transition-all duration-500 ease-out"
-      enter-from-class="opacity-0 transform translate-y-4 scale-95"
-      enter-to-class="opacity-100 transform translate-y-0 scale-100"
-      leave-active-class="transition-all duration-300 ease-in"
-      leave-from-class="opacity-100 transform translate-y-0 scale-100"
-      leave-to-class="opacity-0 transform translate-y-4 scale-95"
-    >
-      <div
-        v-if="showSuccess"
-        class="fixed top-8 right-8 bg-gradient-to-r from-green-600 to-blue-600 text-white px-8 py-3 rounded-2xl shadow-2xl backdrop-blur-sm border-2 border-green-400/20 z-50"
-      >
-        <div class="flex items-center space-x-3">
-          <CheckCircle class="w-4 h-4" />
-          <span class="font-semibold text-sm">PROFIL BERHASIL DIPERBARUI</span>
-        </div>
-      </div>
-    </Transition>
+    <!-- SweetAlert2 success notification (tidak perlu manual; Swal.fire() dipanggil di script) -->
 
     <!-- Scanning line effect -->
     <div
@@ -407,7 +381,12 @@
 </template>
 
 <script setup>
-import { ref, reactive } from "vue";
+import { ref, reactive, onMounted } from "vue";
+import axios from "axios";
+import Swal from "sweetalert2";
+import "sweetalert2/dist/sweetalert2.min.css"; // pastikan CSS SweetAlert2 ter-include
+
+// Icon‐icon dari lucide‐vue‐next
 import {
   User,
   UserCheck,
@@ -424,14 +403,30 @@ import {
   MapPinHouseIcon,
 } from "lucide-vue-next";
 
-// Reactive data
-const profileImage = ref("/placeholder.svg?height=176&width=176");
+// ============================================
+// 1. Konfigurasi Base URL dan Endpoints API
+// ============================================
+const API_BASE = import.meta.env.VITE_API_URL;
+// Ganti dengan domain & prefix yang sesuai milikmu
+
+// Endpoint untuk fetch data form (JSON)
+const ENDPOINT_FETCH_FORM = `${API_BASE}/me`; // contoh: GET https://example.com/api/user/profile
+// Endpoint untuk fetch gambar profil
+const ENDPOINT_FETCH_IMAGE = `${API_BASE}/my-avatar`; // contoh: GET https://example.com/api/user/profile/image
+// Endpoint untuk update data profile (JSON)
+const ENDPOINT_UPDATE_PROFILE = `${API_BASE}/update-profile-user`; // contoh: PUT atau POST https://example.com/api/user/profile
+
+// ============================================
+// 2. Reactive State & Ref
+// ============================================
+const profileImageUrl = ref(null); // URL gambar profil yang di‐fetch dari server
+const selectedImageFile = ref(null); // File gambar yang dipilih user (File object)
 const showPassword = ref(false);
 const isLoading = ref(false);
-const showSuccess = ref(false);
 const fileInput = ref(null);
 
-// Form data
+const token = localStorage.getItem("token");
+
 const profile = reactive({
   name: "",
   email: "",
@@ -440,7 +435,15 @@ const profile = reactive({
   password: "",
 });
 
-// Form errors
+const originalProfile = reactive({
+  name: "",
+  email: "",
+  no_hp: "",
+  alamat: "",
+  // password biasanya tidak difetch dari server; field ini dipakai jika user ingin mengubah
+  password: "",
+});
+
 const errors = reactive({
   name: "",
   email: "",
@@ -449,111 +452,214 @@ const errors = reactive({
   password: "",
 });
 
-// Original data for reset
-const originalProfile = {
-  name: "",
-  email: "",
-  no_hp: "",
-  alamat: "",
-  password: "",
-};
-
-// Methods
-const triggerImageUpload = () => {
-  fileInput.value?.click();
-};
-
-const handleImageUpload = (event) => {
-  const file = event.target.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      profileImage.value = e.target.result;
-    };
-    reader.readAsDataURL(file);
-  }
-};
-
+// ============================================
+// 3. Fungsi Utility: Validasi Form
+// ============================================
 const validateForm = () => {
   // Reset errors
   Object.keys(errors).forEach((key) => (errors[key] = ""));
-
   let isValid = true;
 
-  // Validate full name
   if (!profile.name.trim()) {
     errors.name = "Nama lengkap wajib diisi";
     isValid = false;
   }
 
-  // Validate email
+  // Validasi email
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!profile.email.trim()) {
-    errors.email = "Email wajib diisi";
-    isValid = false;
-  } else if (!emailRegex.test(profile.email)) {
+  if (!emailRegex.test(profile.email)) {
     errors.email = "Harap masukkan alamat email yang valid";
-    isValid = false;
-  }
-
-  if (!profile.alamat.trim()) {
-    errors.alamat = "Alamat wajib diisi";
-    isValid = false;
-  }
-
-  // Validate WhatsApp number
-  const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
-  if (!profile.no_hp.trim()) {
-    errors.no_hp = "Nomor WhatsApp wajib diisi";
-    isValid = false;
-  } else if (!phoneRegex.test(profile.no_hp.replace(/[\s\-()]/g, ""))) {
-    errors.no_hp = "Harap masukkan nomor WhatsApp yang valid";
-    isValid = false;
-  }
-
-  // Validate password
-  if (!profile.password.trim()) {
-    errors.password = "Kata sandi wajib diisi";
-    isValid = false;
-  } else if (profile.password && profile.password.length < 8) {
-    errors.password = "Kata sandi minimal harus terdiri dari 8 karakter";
     isValid = false;
   }
 
   return isValid;
 };
 
+// ============================================
+// 4. Fungsi Fetch Data Awal (GET Form + GET Image)
+// ============================================
+const fetchProfileData = async () => {
+  try {
+    // 4.1. GET data profil (JSON)
+    const resForm = await axios.get(ENDPOINT_FETCH_FORM, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    const dataForm = resForm.data.data;
+    profile.name = dataForm.name || "";
+    profile.email = dataForm.email || "";
+    profile.no_hp = dataForm.no_hp || "";
+    profile.alamat = dataForm.alamat || "";
+    profile.password = ""; // kosongkan, user harus mengetik baru jika ingin ganti
+
+    originalProfile.name = dataForm.name || "";
+    originalProfile.email = dataForm.email || "";
+    originalProfile.no_hp = dataForm.no_hp || "";
+    originalProfile.alamat = dataForm.alamat || "";
+    originalProfile.password = "";
+
+    // 4.2. GET gambar profil (mungkin berupa URL langsung)
+    profileImageUrl.value = `${ENDPOINT_FETCH_IMAGE}/${dataForm.avatar}`;
+  } catch (err) {
+    console.error("Gagal fetch data profil:", err);
+    await Swal.fire({
+      icon: "error",
+      title: "Gagal Memuat Data",
+      text: "Tidak dapat mengambil data profil dari server. Coba refresh halaman.",
+    });
+  }
+};
+
+// Panggil fetch saat komponen mounted
+onMounted(() => {
+  fetchProfileData();
+});
+
+// ============================================
+// 5. Fungsi Upload Gambar (jika user memilih file baru)
+// ============================================
+const triggerImageUpload = () => {
+  fileInput.value?.click();
+};
+
+const handleImageUpload = (event) => {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  // Simpan File object untuk nanti di‐upload
+  selectedImageFile.value = file;
+
+  // Preview segera (sebagai data URL) agar user tahu gambarnya
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    profileImageUrl.value = e.target.result;
+  };
+  reader.readAsDataURL(file);
+};
+
+// ============================================
+// 6. Fungsi Update (Upload Image, kemudian Update Profile)
+// ============================================
 const saveProfile = async () => {
   if (!validateForm()) return;
 
   isLoading.value = true;
 
   try {
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    // 6.1 Buat FormData
+    const formData = new FormData();
+    formData.append("name", profile.name);
+    formData.append("email", profile.email);
+    formData.append("no_hp", profile.no_hp);
+    formData.append("alamat", profile.alamat);
+    if (profile.password) {
+      formData.append("password", profile.password);
+    }
+    if (selectedImageFile.value) {
+      formData.append("file", selectedImageFile.value);
+    }
 
-    // Show success message
-    showSuccess.value = true;
-    setTimeout(() => {
-      showSuccess.value = false;
-    }, 4000);
+    // 6.2 Kirim ke endpoint Laravel
+    const res = await axios.post(ENDPOINT_UPDATE_PROFILE, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${token}`,
+      },
+    });
 
-    console.log("Profile saved:", profile);
-  } catch (error) {
-    console.error("Error saving profile:", error);
+    if (res.status === 200 && res.data.status === 200) {
+      const updatedUser = res.data.data;
+
+      // --- Update originalProfile (baseline) seperti biasa ---
+      originalProfile.name = updatedUser.name;
+      originalProfile.email = updatedUser.email;
+      originalProfile.no_hp = updatedUser.no_hp;
+      originalProfile.alamat = updatedUser.alamat;
+      originalProfile.password = "";
+
+      selectedImageFile.value = null;
+
+      // --- Dapatkan URL avatar baru, lalu simpan ke localStorage ---
+      if (updatedUser.avatar) {
+        // Misal ENDPOINT_FETCH_IMAGE = https://example.com/storage/avatar
+        const newAvatarUrl = `${ENDPOINT_FETCH_IMAGE}/${updatedUser.avatar}`;
+        profileImageUrl.value = newAvatarUrl;
+
+        // Simpan di localStorage agar navbar bisa akses
+        localStorage.setItem("avatarUrl", newAvatarUrl);
+      }
+
+      // --- Dispatch custom event agar Navbar tahu user berubah ---
+      window.dispatchEvent(new Event("profileUpdated"));
+
+      // --- Tampilkan SweetAlert sukses seperti biasa ---
+      await Swal.fire({
+        icon: "success",
+        title: "Berhasil",
+        text: "Profil berhasil diperbarui!",
+        timer: 2000,
+        showConfirmButton: false,
+      });
+    } else {
+      await Swal.fire({
+        icon: "warning",
+        title: "Perhatian",
+        text: `Server merespon: ${res.data.messages || res.status}`,
+      });
+    }
+  } catch (err) {
+    console.error("Error menyimpan profil:", err);
+    let pesan = "Terjadi kesalahan saat menyimpan data.";
+    if (err.response && err.response.data && err.response.data.message) {
+      pesan = err.response.data.message;
+    }
+    await Swal.fire({
+      icon: "error",
+      title: "Gagal",
+      text: pesan,
+    });
   } finally {
     isLoading.value = false;
   }
 };
 
+// ============================================
+// 7. Fungsi Reset Form ke Data Asli
+// ============================================
 const resetForm = () => {
-  Object.assign(profile, originalProfile);
-  Object.keys(errors).forEach((key) => (errors[key] = ""));
-  profileImage.value = "/placeholder.svg?height=176&width=176";
+  // profile.name = originalProfile.name;
+  // profile.email = originalProfile.email;
+  // profile.no_hp = originalProfile.no_hp;
+  // profile.alamat = originalProfile.alamat;
+  // profile.password = originalProfile.password;
+  // Object.keys(errors).forEach((key) => (errors[key] = ""));
+  // // Kembalikan gambar ke versi yang terakhir di fetch dari server
+  // fetchProfileImageOnly();
+};
+
+// Fungsi khusus ambil ulang gambar saja (dipakai untuk reset)
+const fetchProfileImageOnly = async () => {
+  try {
+    const resImg = await axios.get(ENDPOINT_FETCH_IMAGE, {
+      responseType: "json",
+    });
+    if (resImg.data && resImg.data.imageUrl) {
+      profileImageUrl.value = resImg.data.imageUrl;
+    } else {
+      profileImageUrl.value = null;
+    }
+  } catch (err) {
+    console.error("Gagal fetch gambar profil:", err);
+    profileImageUrl.value = null;
+  }
 };
 </script>
 
 <style scoped>
+/* Animasi & styling scroll yang sudah ada */
 @keyframes float {
   0%,
   100% {

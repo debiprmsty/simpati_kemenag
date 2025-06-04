@@ -14,23 +14,48 @@
 
     <!-- Mid Menu -->
     <div class="hidden md:flex items-center space-x-6">
+      <!-- Beranda -->
       <router-link
         to="/"
-        class="px-3 py-2 rounded-2xl bg-[#E9EFEC] border border-[#C4DAD2] font-semibold text-gray-800 hover:bg-[#D5E3DA] transition"
+        class="px-3 py-2 rounded-2xl font-semibold text-gray-800 transition"
+        :class="{
+          'bg-[#D5E3DA] border border-[#C4DAD2] hover:bg-[#D5E3DA]': isActiveRoute('/'),
+          'bg-transparent border border-transparent hover:bg-[#D5E3DA]': !isActiveRoute(
+            '/'
+          ),
+        }"
       >
         Beranda
       </router-link>
+
+      <!-- FAQ -->
       <router-link
         to="/faq"
-        class="font-semibold text-gray-800 hover:text-gray-900 transition"
+        class="px-3 py-2 rounded-2xl font-semibold text-gray-800 transition"
+        :class="{
+          'bg-[#D5E3DA] border border-[#C4DAD2] hover:bg-[#D5E3DA]': isActiveRoute(
+            '/faq'
+          ),
+          'bg-transparent border border-transparent hover:bg-[#D5E3DA]': !isActiveRoute(
+            '/faq'
+          ),
+        }"
       >
         FAQ
       </router-link>
+
+      <!-- Pengaduan Publik (dropdown parent) -->
       <div class="relative">
         <button
           @click="togglePengaduanDropdown"
-          ref="pengaduanDropdownButton"
-          class="inline-flex items-center space-x-1 font-medium text-gray-800 hover:text-gray-900 transition"
+          class="inline-flex items-center space-x-1 px-3 py-2 rounded-2xl font-medium text-gray-800 transition"
+          :class="{
+            'bg-[#D5E3DA] border border-[#C4DAD2] hover:bg-[#D5E3DA]':
+              isActiveRoute('/sp4n-lapor') || isActiveRoute('/whatsapp-center'),
+            'bg-transparent border border-transparent hover:bg-[#D5E3DA]': !(
+              isActiveRoute('/sp4n-lapor') || isActiveRoute('/whatsapp-center')
+            ),
+          }"
         >
           <span>Pengaduan Publik</span>
           <svg
@@ -46,18 +71,19 @@
         </button>
         <div
           v-if="pengaduanDropdownOpen"
-          ref="pengaduanDropdownContent"
           class="absolute right-0 mt-2 bg-white border border-gray-100 rounded-xl shadow-lg w-44 z-20"
         >
           <router-link
             to="/sp4n-lapor"
             class="block px-4 py-2 text-gray-700 hover:bg-[#E9EFEC] rounded-xl transition"
+            :class="{ 'bg-[#E9EFEC]': isActiveRoute('/sp4n-lapor') }"
           >
             SP4N Lapor
           </router-link>
           <a
             href="https://wa.me/+6285928877957"
             class="block px-4 py-2 text-gray-700 hover:bg-[#E9EFEC] rounded-xl transition"
+            :class="{ 'bg-[#E9EFEC]': isActiveRoute('/whatsapp-center') }"
           >
             WhatsApp Center
           </a>
@@ -96,7 +122,7 @@
           <img
             :src="user.avatarUrl"
             alt="Avatar"
-            class="h-8 w-8 rounded-full border-2 border-gray-300 group-hover:border-[#16423C] transition"
+            class="h-8 w-8 rounded-full hover:cursor-pointer border-2 border-gray-300 group-hover:border-[#16423C] transition"
           />
         </button>
         <div
@@ -118,6 +144,7 @@
           >
             Pengajuan Saya
           </router-link>
+          <!-- Pastikan memanggil triggerLogoutConfirmation di sini -->
           <button
             @click="triggerLogoutConfirmation"
             class="w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-[#E9EFEC] hover:text-red-600 transition"
@@ -246,7 +273,7 @@
           <img
             :src="user.avatarUrl || '/image/cartoon.png'"
             alt="Avatar"
-            class="h-10 w-10 rounded-full border-2 border-gray-300 group-hover:border-[#16423C] transition"
+            class="h-10 w-10 hover:cursor-pointer rounded-full border-2 border-gray-300 group-hover:border-[#16423C] transition"
           />
           <span
             v-if="user.name"
@@ -296,13 +323,9 @@
         </router-link>
       </div>
 
+      <!-- Tombol Logout Mobile: panggil langsung -->
       <button
-        @click="
-          () => {
-            triggerLogoutConfirmation();
-            mobileOpen = false;
-          }
-        "
+        @click="handleMobileLogout"
         class="w-full text-left block px-4 py-2 font-semibold text-gray-800 hover:bg-gray-100 hover:text-red-500 transition"
       >
         Logout
@@ -315,7 +338,7 @@
     v-if="showLogoutConfirmModal"
     class="fixed inset-0 bg-transparent backdrop-blur-sm flex items-center justify-center z-50 p-4"
   >
-    <!-- Modal putih tetap ada -->
+    <!-- Modal putih -->
     <div class="bg-white p-6 rounded-lg shadow-xl max-w-sm w-full">
       <h3 class="text-lg font-semibold mb-4 text-gray-900">Konfirmasi Logout</h3>
       <p class="text-gray-700 mb-6">Apakah Anda yakin ingin keluar?</p>
@@ -339,12 +362,13 @@
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
-import { useRouter } from "vue-router";
+import { useRouter, useRoute } from "vue-router";
 
 const mobileOpen = ref(false);
-const pengaduanDropdownOpen = ref(false); // Ganti nama dari dropdownOpen
+const pengaduanDropdownOpen = ref(false);
 const profileDropdownOpen = ref(false);
 const showLogoutConfirmModal = ref(false);
+const route = useRoute();
 
 const isLoggedIn = ref(false);
 const user = ref({
@@ -352,10 +376,15 @@ const user = ref({
   name: null,
 });
 
+// Cek apakah path saat ini sama dengan path target
+function isActiveRoute(path) {
+  return route.path === path;
+}
+
 const router = useRouter();
 const apiUrl = import.meta.env.VITE_API_URL;
 
-// Refs for dropdown elements to help with handleClickOutside
+// Refs for dropdown elements
 const pengaduanDropdownButton = ref(null);
 const pengaduanDropdownContent = ref(null);
 const profileDropdownButton = ref(null);
@@ -363,6 +392,9 @@ const profileDropdownContent = ref(null);
 const profileMobileDropdownButton = ref(null);
 const profileMobileDropdownContent = ref(null);
 
+// ===========================
+// FETCH USER DATA FUNCTION
+// ===========================
 async function fetchUserData(token) {
   try {
     const response = await fetch(`${apiUrl}/me`, {
@@ -376,19 +408,14 @@ async function fetchUserData(token) {
     if (response.ok) {
       const data = await response.json();
       user.value.name = data.data.name;
-      user.value.avatarUrl = `${apiUrl}/my-avatar/${data.data.avatar}`;
-      // Jika API juga mengembalikan URL avatar:
-      // if (data.data.avatar_url) user.value.avatarUrl = data.data.avatar_url;
-      // Jika tidak, pastikan avatarUrl di-set dari localStorage atau default di onMounted
-      if (data.data.avatar == null) {
-        // Hanya set jika belum ada (misal dari API)
-        user.value.avatarUrl = "/image/cartoon.png";
+
+      if (data.data.avatar) {
+        user.value.avatarUrl = `${apiUrl}/my-avatar/${data.data.avatar}`;
+      } else {
+        user.value.avatarUrl = localStorage.getItem("avatarUrl") || "/image/cartoon.png";
       }
-      console.log(user.value.avatarUrl);
     } else {
-      console.error("Failed to fetch user data:", response.status);
       if (response.status === 401) {
-        // Jika fetch user gagal karena token tidak valid, lakukan logout
         await performClientSideLogout();
         router.push("/layanan-publik/auth/login");
       }
@@ -398,29 +425,12 @@ async function fetchUserData(token) {
   }
 }
 
-function togglePengaduanDropdown() {
-  pengaduanDropdownOpen.value = !pengaduanDropdownOpen.value;
-  profileDropdownOpen.value = false; // Tutup dropdown lain
-}
-
-function toggleProfileDropdown() {
-  profileDropdownOpen.value = !profileDropdownOpen.value;
-  if (profileDropdownOpen.value) pengaduanDropdownOpen.value = false; // Tutup dropdown lain
-}
-
-function triggerLogoutConfirmation() {
-  profileDropdownOpen.value = false; // Tutup dropdown profil dulu
-  mobileOpen.value = false; // Tutup menu mobile jika terbuka
-  showLogoutConfirmModal.value = true;
-}
-
-function cancelLogout() {
-  showLogoutConfirmModal.value = false;
-}
-
+// ===========================
+// LOGOUT FUNCTIONS
+// ===========================
 async function performClientSideLogout() {
   localStorage.removeItem("token");
-  localStorage.removeItem("avatarUrl"); // Hapus avatar jika disimpan
+  localStorage.removeItem("avatarUrl");
   isLoggedIn.value = false;
   user.value = { avatarUrl: "", name: null };
   profileDropdownOpen.value = false;
@@ -433,18 +443,15 @@ async function executeLogout() {
   const token = localStorage.getItem("token");
 
   if (token && apiUrl) {
-    // Hanya panggil API jika ada token dan apiUrl
     try {
-      // Panggil API logout di backend (opsional tapi direkomendasikan)
       const response = await fetch(`${apiUrl}/logout`, {
-        method: "POST", // atau 'GET', sesuai implementasi backend Anda
+        method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
           Accept: "application/json",
         },
       });
       if (!response.ok) {
-        // Meskipun API logout gagal, tetap lanjutkan logout di client
         console.warn("API logout request failed:", response.status);
       }
     } catch (error) {
@@ -453,28 +460,47 @@ async function executeLogout() {
   }
 
   await performClientSideLogout();
-  router.push("/layanan-publik/auth/login"); // Arahkan ke halaman login
+  router.push("/layanan-publik/auth/login");
 }
 
-onMounted(() => {
-  const token = localStorage.getItem("token");
-  isLoggedIn.value = !!token;
+function cancelLogout() {
+  showLogoutConfirmModal.value = false;
+}
 
-  if (isLoggedIn.value) {
-    // Inisialisasi avatarUrl dari localStorage atau default, akan dioverride oleh fetchUserData jika API menyediakannya
-    user.value.avatarUrl = localStorage.getItem("avatarUrl") || "/image/cartoon.png";
-    fetchUserData(token);
-  }
+// ===========================
+// METODE BARU: triggerLogoutConfirmation
+// ===========================
+function triggerLogoutConfirmation() {
+  // Tutup dropdown profil (jika terbuka)
+  profileDropdownOpen.value = false;
+  // Tampilkan modal konfirmasi logout
+  showLogoutConfirmModal.value = true;
+}
 
-  document.addEventListener("click", handleClickOutside);
-});
+// Untuk tombol logout di versi mobile (langsung memanggil triggerLogoutConfirmation + menutup mobile menu)
+function handleMobileLogout() {
+  mobileOpen.value = false;
+  triggerLogoutConfirmation();
+}
 
-onBeforeUnmount(() => {
-  document.removeEventListener("click", handleClickOutside);
-});
+// ===========================
+// DROPDOWN TOGGLES
+// ===========================
+function togglePengaduanDropdown() {
+  pengaduanDropdownOpen.value = !pengaduanDropdownOpen.value;
+  profileDropdownOpen.value = false;
+}
 
+function toggleProfileDropdown() {
+  profileDropdownOpen.value = !profileDropdownOpen.value;
+  if (profileDropdownOpen.value) pengaduanDropdownOpen.value = false;
+}
+
+// ===========================
+// HANDLE CLICK OUTSIDE
+// ===========================
 const handleClickOutside = (event) => {
-  // Cek untuk dropdown pengaduan
+  // Pengaduan dropdown (desktop & mobile)
   if (
     pengaduanDropdownOpen.value &&
     pengaduanDropdownButton.value &&
@@ -485,7 +511,7 @@ const handleClickOutside = (event) => {
     pengaduanDropdownOpen.value = false;
   }
 
-  // Cek untuk dropdown profil (desktop dan mobile)
+  // Profil dropdown (desktop & mobile)
   if (profileDropdownOpen.value) {
     const isDesktopButton = profileDropdownButton.value?.contains(event.target);
     const isDesktopContent = profileDropdownContent.value?.contains(event.target);
@@ -497,6 +523,41 @@ const handleClickOutside = (event) => {
     }
   }
 };
+
+// ===========================
+// LIFECYCLE: onMounted & onBeforeUnmount
+// ===========================
+onMounted(() => {
+  const token = localStorage.getItem("token");
+  isLoggedIn.value = !!token;
+
+  if (isLoggedIn.value) {
+    // Set initial avatar dari localStorage jika tersedia
+    user.value.avatarUrl = localStorage.getItem("avatarUrl") || "/image/cartoon.png";
+    fetchUserData(token);
+  }
+
+  // Listener untuk custom event "profileUpdated"
+  const onProfileUpdated = () => {
+    const tkn = localStorage.getItem("token");
+    if (tkn) {
+      fetchUserData(tkn);
+    }
+  };
+  window.addEventListener("profileUpdated", onProfileUpdated);
+  window._onProfileUpdated = onProfileUpdated;
+
+  // Listener global untuk klik di luar dropdown
+  document.addEventListener("click", handleClickOutside);
+});
+
+onBeforeUnmount(() => {
+  document.removeEventListener("click", handleClickOutside);
+  if (window._onProfileUpdated) {
+    window.removeEventListener("profileUpdated", window._onProfileUpdated);
+    delete window._onProfileUpdated;
+  }
+});
 </script>
 
 <style>

@@ -73,7 +73,7 @@
             </label>
             <button
               type="submit"
-              class="rounded-md bg-gradient-to-r from-green-600 to-blue-600 px-4 py-1.5 text-white font-semibold"
+              class="rounded-md hover:cursor-pointer bg-gradient-to-r from-green-600 to-blue-600 px-4 py-1.5 text-white font-semibold"
             >
               Masuk
             </button>
