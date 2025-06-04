@@ -94,7 +94,7 @@
             {{ user.name }}
           </span>
           <img
-            :src="user.avatarUrl || '/image/cartoon.png'"
+            :src="user.avatarUrl"
             alt="Avatar"
             class="h-8 w-8 rounded-full border-2 border-gray-300 group-hover:border-[#16423C] transition"
           />
@@ -380,10 +380,11 @@ async function fetchUserData(token) {
       // Jika API juga mengembalikan URL avatar:
       // if (data.data.avatar_url) user.value.avatarUrl = data.data.avatar_url;
       // Jika tidak, pastikan avatarUrl di-set dari localStorage atau default di onMounted
-      if (!user.value.avatarUrl) {
+      if (data.data.avatar == null) {
         // Hanya set jika belum ada (misal dari API)
-        user.value.avatarUrl = localStorage.getItem("avatarUrl") || "/image/cartoon.png";
+        user.value.avatarUrl = "/image/cartoon.png";
       }
+      console.log(user.value.avatarUrl);
     } else {
       console.error("Failed to fetch user data:", response.status);
       if (response.status === 401) {
