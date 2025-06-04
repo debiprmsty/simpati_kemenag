@@ -4,18 +4,20 @@
       class="relative z-20 flex flex-col items-center justify-center h-full px-4 md:-mt-2"
     >
       <!-- Logo dan Judul -->
-      <div class="flex items-center mb-8">
-        <img
-          class="md:w-9 w-8 h-auto mr-2"
-          src="/public/image/logo_web.png"
-          alt="Logo SIMPATI"
-        />
-        <h3
-          class="md:text-3xl text-4xl acme-regular bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent"
-        >
-          SIMPATI
-        </h3>
-      </div>
+      <router-link to="/">
+        <div class="flex items-center mb-8">
+          <img
+            class="md:w-9 w-8 h-auto mr-2"
+            src="/public/image/logo_web.png"
+            alt="Logo SIMPATI"
+          />
+          <h3
+            class="md:text-3xl text-4xl acme-regular bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent"
+          >
+            SIMPATI
+          </h3>
+        </div>
+      </router-link>
 
       <!-- Container Form -->
       <div

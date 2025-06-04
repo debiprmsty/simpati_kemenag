@@ -36,7 +36,7 @@
 
     <div class="md:mx-0 md:p-0 p-4 lg:mt-2">
       <video
-        src="/public/video/jv.mp4"
+        src="/public/video/lv.mp4"
         type="video/mp4"
         class="w-full h-[50vh] md:h-[76vh] object-cover rounded-xl md:rounded-3xl shadow-lg"
         autoplay
