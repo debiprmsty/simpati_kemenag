@@ -1,93 +1,142 @@
 <template>
   <section class="relative h-screen overflow-hidden">
-    <div
-      class="relative z-20 flex flex-col items-center justify-center h-full px-4 md:-mt-2"
-    >
-      <!-- Logo dan Judul -->
-      <router-link to="/">
-        <div class="flex items-center mb-8">
-          <img
-            class="md:w-9 w-8 h-auto mr-2"
-            src="/public/image/logo_web.png"
-            alt="Logo SIMPATI"
-          />
-          <h3
-            class="md:text-3xl text-4xl acme-regular bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent"
-          >
-            SIMPATI
-          </h3>
-        </div>
-      </router-link>
-
-      <!-- Container Form -->
-      <div
-        class="w-full max-w-md md:max-w-xl space-y-6 rounded-2xl bg-white p-6 shadow-lg"
-      >
-        <p class="text-center text-xl text-slate-700 poppins-light">Masuk ke Akun Anda</p>
-
-        <form @submit.prevent="handleLogin" class="space-y-4">
-          <div>
-            <label for="email" class="block text-sm font-medium text-gray-700">
-              Email
-            </label>
-            <input
-              v-model="email"
-              type="email"
-              id="email"
-              class="mt-1 block w-full rounded-md border-2 border-gray-300 px-3 py-2 text-gray-900 focus:outline-none focus:bg-gradient-border"
-              placeholder="nama@email.com"
-              required
+    <div class="relative z-20 flex flex-col items-center justify-center h-full px-4">
+      <div class="w-full max-w-sm mx-auto overflow-hidden bg-white rounded-lg shadow-lg">
+        <div class="px-6 py-4">
+          <div class="flex justify-center mx-auto">
+            <img
+              class="w-auto h-12 sm:h-14"
+              src="/public/image/logo_web.png"
+              alt="logo_simpati"
             />
           </div>
 
-          <div>
-            <label for="password" class="block text-sm font-medium text-gray-700">
-              Password
-            </label>
-            <div class="relative mt-1">
+          <h3
+            class="mt-1.5 md:text-[1.5rem] text-xl font-bold text-center text-green-900"
+          >
+            Selamat Datang Kembali!
+          </h3>
+
+          <p class="text-center md:text-[0.78rem] text-[0.65rem] text-gray-500 mb-3">
+            Masuk menggunakan akun yang sudah didaftarkan
+          </p>
+
+          <form @submit.prevent="handleLogin">
+            <div class="w-full mt-5">
+              <label for="email" class="block text-sm font-medium text-green-900 mb-1.5">
+                Alamat Email
+              </label>
+              <input
+                v-model="email"
+                type="email"
+                id="email"
+                class="w-full px-3 py-1.5 bg-white/5 border border-gray-300 rounded-lg text-sm text-slate-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-700 focus:border-transparent transition-all duration-300"
+                placeholder="nama@email.com"
+                required
+              />
+            </div>
+
+            <div class="relative w-full mt-4">
+              <label
+                for="password"
+                class="block text-sm font-medium text-green-900 mb-1.5"
+              >
+                Kata Sandi
+              </label>
               <input
                 v-model="password"
                 :type="showPassword ? 'text' : 'password'"
                 id="password"
-                class="block w-full rounded-md border-2 border-gray-300 px-3 py-2 text-gray-900 focus:outline-none focus:bg-gradient-border"
+                class="w-full px-3 py-1.5 bg-white/5 border border-gray-300 rounded-lg text-sm text-slate-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-700 focus:border-transparent transition-all duration-300"
                 placeholder="••••••••"
                 required
               />
               <button
                 type="button"
                 @click="showPassword = !showPassword"
-                class="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 hover:text-gray-700"
+                class="absolute inset-y-0 right-0 top-6.5 flex items-center pr-3 text-gray-500 hover:text-gray-700"
               >
                 <component
                   :is="showPassword ? 'EyeSlashIcon' : 'EyeIcon'"
-                  class="h-5 w-5"
+                  class="h-4 w-4"
                 />
               </button>
             </div>
-          </div>
 
-          <div class="flex items-center justify-between">
-            <label class="flex items-center text-sm text-gray-700">
-              <input v-model="rememberMe" type="checkbox" class="form-checkbox h-4 w-4" />
-              <span class="ml-2">Remember me</span>
-            </label>
-            <button
-              type="submit"
-              class="rounded-md bg-gradient-to-r from-green-600 to-blue-600 px-4 py-1.5 text-white font-semibold"
+            <div class="flex items-center justify-between mt-4 mb-2">
+              <a href="#" class="text-[0.85rem] text-gray-600 hover:text-gray-500"
+                >Lupa Kata Sandi?</a
+              >
+
+              <button
+                type="submit"
+                class="px-6 py-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-green-800 rounded-lg hover:bg-green-700 focus:outline-none focus:ring focus:ring-green-300 focus:ring-opacity-50"
+              >
+                Masuk
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="bg-gray-100 flex flex-col items-center py-2 border-t border-gray-200">
+          <div class="text-sm text-slate-900">
+            Belum punya akun?
+            <router-link
+              to="/layanan-publik/auth/register"
+              class="font-semibold text-blue-600 hover:underline"
             >
-              Masuk
-            </button>
+              Buat Akun
+            </router-link>
           </div>
-        </form>
+          <div>
+            <router-link
+              to="/"
+              class="text-sm font-semibold text-blue-600 hover:underline"
+            >
+              Kembali ke Beranda
+            </router-link>
+          </div>
+        </div>
       </div>
-
-      <!-- Link Bawah -->
-      <p class="mt-6 text-sm text-[#16423C]">
-        Belum punya akun?
-        <router-link to="/layanan-publik/auth/register" class="text-blue-600 underline">
-          Buat akun
-        </router-link>
-      </p>
+      <div
+        class="max-w-md grid md:gap-2 gap-1 text-center grid-cols-6 mx-auto overflow-hidden md:mt-5 mt-3 md:pl-10 pl-8"
+      >
+        <div class="flex items-center justify-center">
+          <img
+            src="/public/image/logo_kemenag.png"
+            alt="Logo Kemenag"
+            class="block object-contain md:h-8.5 h-6 -mr-3 md:-mr-5 -mt-1"
+          />
+        </div>
+        <div class="flex items-center justify-center">
+          <img
+            src="/public/image/bmb.png"
+            alt="Bangga Melayani Bangsa"
+            class="block object-contain md:h-8.5"
+          />
+        </div>
+        <div class="flex items-center justify-center">
+          <img
+            src="/public/image/berakhlak.png"
+            alt="Berakhlak"
+            class="block object-contain h-8.5"
+          />
+        </div>
+        <div class="flex items-center justify-center">
+          <img
+            src="/public/image/melasti.png"
+            alt="Melasti"
+            class="block object-contain h-8.5"
+          />
+        </div>
+        <div class="flex items-center justify-center">
+          <img
+            src="/public/image/susila.png"
+            alt="Susila"
+            class="block object-contain h-8.5"
+          />
+        </div>
+      </div>
     </div>
   </section>
 </template>
