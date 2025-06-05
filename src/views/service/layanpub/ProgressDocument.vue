@@ -50,6 +50,7 @@
           <label class="text-gray-600 whitespace-nowrap">Dari:</label>
           <input
             type="date"
+            placeholder="dd/mm/yy"
             v-model="startDate"
             class="w-full border border-gray-300 rounded-lg px-1 py-0.5 sm:px-2 sm:py-1"
           />
@@ -58,6 +59,7 @@
           <label class="text-gray-600 whitespace-nowrap">Sampai:</label>
           <input
             type="date"
+            placeholder="dd/mm/yy"
             v-model="endDate"
             class="w-full border border-gray-300 rounded-lg px-1 py-0.5 sm:px-2 sm:py-1"
           />
@@ -85,7 +87,7 @@
           <!-- Tombol lihat detail timeline -->
           <button
             @click="selectDoc(doc)"
-            class="mt-2 md:w-auto w-22 py-1 sm:mt-0 border-2 border-blue-500 text-blue-500 px-2 rounded-md text-xs sm:text-sm hover:bg-blue-500 hover:text-white transition"
+            class="mt-2 hover:cursor-pointer md:w-auto w-22 py-1 sm:mt-0 border-2 border-blue-500 text-blue-500 px-2 rounded-md text-xs sm:text-sm hover:bg-blue-500 hover:text-white transition"
           >
             Lihat Detail
           </button>
